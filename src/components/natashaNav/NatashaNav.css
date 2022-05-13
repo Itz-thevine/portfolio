@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    /* background: red; */
+}
+
+
+.null{
+
+}
+
+.natashaNav__mobileIcon{
+    display: none;
+}
+
+
+
+/* FIRST SECTION */
+.nav__name{
+    /* background: red; */
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 38px;
+    color: #000000;
+    flex: 0.25;
+}
+
+/* SECOND SECTION */
+.nav > .nav__middle{
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin: 0 200px;
+    /* border: 1px solid red; */
+}
+
+
+.nav__middle > li{
+    list-style-type: none;
+    font-style: normal;
+    font-weight: normal;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 17px;
+    line-height: 22px;
+    color: #000000;
+    border-color: transparent;
+}
+
+.nav__middle > li:hover{
+    /* margin-top: 10px; */
+    cursor: pointer;
+    /* border-bottom: 1px solid black; */
+    /* padding-bottom: 10px; */
+    transition: 0.1s ease-out;
+}
+
+#nav1{
+}
+
+#nav1:hover{
+    border-bottom: 1px solid red;
+    margin-top: 10px;
+    /* padding-bottom: 10px; */
+}
+
+
+@media screen and (max-width:1200px) {
+    .nav > .nav__middle{
+        margin: 0 75px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .nav > .nav__middle{
+        margin: 0px 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav {
+        margin-top: 0.5rem;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .nav > .nav__middle{
+        display: none;
+    }
+
+    /* this is the hamburger menu */
+    .naav__mobileIcon{
+        display: flex; 
+        align-items: center;
+        /* top: 2rem; */
+        cursor: pointer;
+        height:35px;
+        width: 35px;
+    }
+
+    #nav__hidden{
+        position: absolute;
+        left: 0px;
+        top: 45px;
+        background: black;
+        opacity: 0.9;
+        height: 95vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 25px;
+        color: white ;
+        z-index: 1000;
+        /* transition: all 0.5s; */
+        border-radius: 0 0 0 50%;
+    }
+
+    .nav__middle > li{
+        color: white;
+    }
+}
+
+
+
+
+/* THIRD SECTION */
+.nav__icons{
+    /* background: orchid; */
+    display: flex;
+    justify-content: space-between;
+    flex: 0.25;
+}
+
+@media screen and (max-width: 900px) {
+    .nav__icons{
+        display: none;
+    }
+}
+
+.nav__icons > div{
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
+    margin: 0 5px;
+}
