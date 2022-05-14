@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './hero.css';
 import LatestWork1 from '../../assets/latest1.png';
 import LatestWork2 from '../../assets/latest2.png';
-import LatestWork3 from '../../assets/latest3.png';
+import chervon from '../../assets/chervon.png'
 // import OpaqueImage from '../../assets/text.png'
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
         },
         {
             id: 3, 
-            picture: LatestWork3,
+            picture: LatestWork2,
             alt: "latest-photo"
         },
         {
@@ -35,7 +35,7 @@ const Hero = () => {
         },
         {
             id: 6, 
-            picture: LatestWork3,
+            picture: LatestWork1,
             alt: "latest-photo"
         }
     ])
@@ -43,32 +43,37 @@ const Hero = () => {
     return ( 
         <div className="hero container">
              <div className="hero__leftSection">
-                <div className="leftSection__absolute">
-                    {/* <p>missed advice my it no sister</p>
-                    <hr className="rightSection__blueLine" /> */}
-                </div>
-                <h1 className="hero__leftSectionHeading">
-                    About me
-                </h1>
-
-                <div className="hero__leftSectionParagraphDiv">
-                    <p>Whether article spirits new her covered hastily sitting her. Money witty books nor son add. Chicken age had evening believe but proceed pretend mrs. </p>
-
-                    <p>
-                    At missed advice my it no sister. Miss told ham dull knew see she spot near can. Spirit her entire her called. Detract yet delight written farther his general.
+              <div className='hero_leftControl'>
+                    <p className="hero__first">
+                    Hello World! I am
                     </p>
-                </div>
+                    <div className='leftSectionCtrl'>
+                        <p className="hero__second">
+                        Divine
+                        </p>
+                        <div className='dot'></div>
+                    </div>
 
-                <button>
-                    schedule a call
-                </button>
+                    <p className='leftSection__subtext'>
+                    I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
+                    </p>
+
+                    <button className='btn'>
+                        Schedule a call
+                    </button>
+              </div>
+             
+
+               
 
                 <div className="hero__latestWork">
                     <h2>Latest Work</h2>
 
                     <div className="hero__latestWorkRow">
                             {images.map(img => (
-                                <img  key={img.id} src={img.picture} alt={img.alt} />
+                                <div key={img.id} className='imageWrapper'>
+                                    <img src={img.picture} alt={img.alt} className='imgControl' />
+                                </div>
                             ))}
                     </div>
                 </div>
@@ -82,9 +87,13 @@ const Hero = () => {
                     <p className='middleSection__content'>download cv</p>
                 </span>
                     <hr/>
+                           
             </div>
 
             <div className="hero__rightSection">
+                <div className='hero__rightSection_tag'></div>
+                <div className='hero__rightSection_tag'></div>
+                <div className='hero__rightSection_tag'></div>
                 <div className='heroImage'></div>
             </div>                    
            

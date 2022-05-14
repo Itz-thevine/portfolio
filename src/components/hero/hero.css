@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .hero{
     /* border: 1px solid red; */
     margin-top: 85px;
     display: flex;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -20,31 +19,56 @@
     position: relative;
     display: flex;
     justify-content: end;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: row;
 }
 
+.hero__rightSection_tag{
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    z-index: 11;
+}
+
+.hero__rightSection_tag:nth-child(1){
+    background: url('../../assets/branding.png');
+    top: 18%;
+    left:3%;
+    background-repeat: no-repeat;
+}
+.hero__rightSection_tag:nth-child(2){
+    background: url('../../assets/software\ engineer.png');
+    top: 25%;
+    right:0%;
+    background-repeat: no-repeat;
+    
+}
+
+.hero__rightSection_tag:nth-child(3){
+    background: url('../../assets/graphics.png');
+    top: 35%;
+    left: 0%;
+    background-repeat: no-repeat;
+}
 
 .heroImage{
     background-image: url('../../assets/Image.png');
-    height: 130vh;
+    height: 75%;
     width: inherit;
     background-origin: content-box;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-   
+    position: absolute;
+    z-index: 10;
 
 }
 
 .hero__middleSection{
     flex: 0.1;
-    /* writing-mode: vertical-lr; */
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* border: 1px solid red; */
-    padding-top: 30px;
+    padding-top: 15px;
     width: auto;
     height: 115vh;
 }
@@ -59,13 +83,13 @@
     font-family: 'DM Sans', sans-serif;
     writing-mode: vertical-lr;
     unicode-bidi: bidi-override;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     font-style: normal;
     font-weight: normal;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 20px;
     color: #000000;
-    margin: 20px 0; 
+    margin: 10px 0; 
 }
 
 .middleSection__content:nth-child(1){
@@ -91,56 +115,76 @@
 .hero__leftSection{
     position: relative;
         /* border: 1px solid blue; */
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.hero__leftSection > h1{
-    font-family: 'DM Sans', sans-serif;
+.hero_leftControl{
+    display: flex;
+    height: 55vh;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero__first{
+    font-family: 'Segoe UI Variable', sans-serif;
     font-style: normal;
-    font-weight: 900;
-    font-size: 50px;
-    line-height: 63px;
+    font-weight: 500;
+    font-size: 20px;
     color: #000000;
+    margin-bottom: -45px ;
+    padding-left: 1%;
 }
 
-.hero__leftSectionParagraphDiv{
-    /* border: 1px solid red; */
-    margin-top: 1.875rem;
-    width: 406px;
-}
-
-.hero__leftSectionParagraphDiv > p{
-    font-family: 'Poppins', sans-serif;
+.hero__second{
+    font-family: 'Segoe UI Variable', sans-serif;
     font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 20px;
-    color: #2A2A2A;
-
+    font-weight: 700;
+    font-size: 140px;
+    color: #000000;
+    margin: 0 0;
+    width: auto;
 }
 
-.hero__leftSectionParagraphDiv > p:nth-child(2){
-    margin-top: 20px;
+.leftSectionCtrl{
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
 }
 
-.hero__leftSection > button{
-    margin-top: 3.75rem; /* 60px */
-    margin-bottom: 4.0625rem; /* 65px */
-    padding: 15px 34px 20px 24px;
+.dot{
+    height: 25px;
+    width: 25px;
+    background-color: #54D670;
+    margin-left: 7px;
+    border-radius: 50px;
+}
+
+.leftSection__subtext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-size: 20px;
+    width: 87%;
+}
+
+.btn{
+    margin-top: 30px; /* 60px */
+    padding: 15px 24px 15px 24px;
     background: white;
     border: 1px solid #C4C4C4;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 25px;
     color: #2A2A2A;
     cursor: pointer;
+    width: 30%
 }
 
 .hero__latestWork > h2{
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Segoe UI Variable', sans-serif;
     font-style: normal;
     font-weight: 900;
     font-size: 50px;
@@ -151,17 +195,22 @@
 
 .hero__latestWorkRow{
     display: flex;
-    overflow-x: scroll;
-    /* background: red; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    
 }
 
-.hero__latestWorkRow > img{
-    margin-right: 20px;
+.imageWrapper{
+    width: auto;
+    display: flex;
+    
 }
 
-::-webkit-scrollbar {
-    display: none;
+.imgControl{
+    margin-right: 0px;
+    width: 80%;
 }
+
 
 
 @media screen and (max-width: 1200px) {

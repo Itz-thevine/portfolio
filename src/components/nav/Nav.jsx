@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './NatashaNav.css';
+import './nav.css';
 import * as BsIcons from 'react-icons/bs';
 import Logo from '../../assets/logoDark.png';
 
@@ -18,17 +18,16 @@ const Nav = () => {
             </div>
 
             <ul className="nav__middle" id={click ? "nav__hidden" : ""}>
-                <li id="nav1" onClick={() => setClick(!click)}>portfolio</li>
-                <li onClick={() => setClick(!click)}>about me</li>
-                <li onClick={() => setClick(!click)}>my blog</li>
-                <li onClick={() => setClick(!click)}>reviews</li>
-                <li onClick={() => setClick(!click)}>contact me</li>
+                <li onClick={() => setClick(!click)}>Home</li>
+                <li onClick={() => setClick(!click)}>About me</li>
+                <li onClick={() => setClick(!click)}>Works</li>
+                <li onClick={() => setClick(!click)}>Skils</li>
+                <li onClick={() => setClick(!click)}>Contact</li>
             </ul>
 
             <div className='nav__icons'>
                 <BsIcons.BsTwitter />
                 <BsIcons.BsInstagram />
-                <BsIcons.BsVimeo />
                 <BsIcons.BsBehance />   
                 <BsIcons.BsLinkedin />
             </div>

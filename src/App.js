@@ -1,14 +1,15 @@
 import './App.css';
 import React from 'react';
 import Hero from './components/hero/Hero';
-import NatashaNav from './components/natashaNav/Nav';
+import Nav from './components/nav/Nav';
+import About from './components/about/About';
 
 function App() {
   return (
     <div className="app">
-          <NatashaNav />
-          {/* <NatashaMain /> */}
-          <Hero />
+          <Nav />
+          <Hero/>
+          <About/>
     </div>
   );
 }
