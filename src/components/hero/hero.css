@@ -32,16 +32,18 @@
 
 .hero__rightSection_tag:nth-child(1){
     background: url('../../assets/branding.png');
-    top: 18%;
-    left:3%;
+    top: 6%;
+    left: 3%;
     background-repeat: no-repeat;
+    background-size: 80%;
+    
 }
 .hero__rightSection_tag:nth-child(2){
     background: url('../../assets/software\ engineer.png');
     top: 25%;
     right:0%;
     background-repeat: no-repeat;
-    
+    background-size: 80%;
 }
 
 .hero__rightSection_tag:nth-child(3){
@@ -49,11 +51,12 @@
     top: 35%;
     left: 0%;
     background-repeat: no-repeat;
+    background-size: 80%;
 }
 
 .heroImage{
     background-image: url('../../assets/Image.png');
-    height: 75%;
+    height: 100%;
     width: inherit;
     background-origin: content-box;
     background-position: center;
@@ -183,6 +186,10 @@
     width: 30%
 }
 
+.hero__latestWork{
+    /* border: 2px solid black; */
+}
+
 .hero__latestWork > h2{
     font-family: 'Segoe UI Variable', sans-serif;
     font-style: normal;
@@ -197,7 +204,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    border:  ;   
 }
 
 .imageWrapper{
@@ -207,8 +214,8 @@
 }
 
 .imgControl{
-    margin-right: 0px;
-    width: 80%;
+    margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 
