@@ -45,7 +45,7 @@ const Hero = () => {
             <div className="hero__leftSection">
                 <div className='hero_leftControl'>
                         <p className="hero__first">
-                        Hello World! I am
+                            Hello World! I am
                         </p>
                         <div className='leftSectionCtrl'>
                             <p className="hero__second">

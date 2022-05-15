@@ -1,0 +1,22 @@
+.skillContainer{
+    width: auto;
+    color: #54D670;
+    height: auto; 
+    margin-right: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skillImage{
+    font-size: 6rem;
+    display: flex;
+}
+
+.skillText{
+    color: black;
+    font-size: 20px;
+    margin-top: 0;
+}
