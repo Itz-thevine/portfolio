@@ -5,9 +5,14 @@ import './services.css'
 const Services = () => {
   return (
     <div className='servicesContainer'>
-        <Service/>
-        <Service/>
-        <Service/>
+        <div>
+            <h1>My services</h1>
+        </div>
+       <div className='servicesControl'>
+            <Service/>
+            <Service/>
+            <Service/>
+       </div>
     </div>
   )
 }
