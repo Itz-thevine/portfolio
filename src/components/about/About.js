@@ -27,8 +27,6 @@ const About = () => {
           <h1 className='about_SkillLeft_maintext'>My Skills</h1>
         </div>
 
-
-
         <div className='about_skillRight'>
           <Skill icons='AiFillHtml5' name='HTML' />
           <Skill icons='DiCss3' name='CSS'/>

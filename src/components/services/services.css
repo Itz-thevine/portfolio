@@ -1,8 +1,39 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
+
 .servicesContainer{
     display: flex;
     flex-direction: column;
+    padding: 4% 7% 4% 7%;
+    margin-bottom: 80px;
+    background-color: var(--mainColorOne);
+    color: white;
 }
 
 .servicesControl{
     display: flex;
+    margin-top: 50px;
+    padding: 0 2%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service_SkillLeft_subtext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: white;
+    margin-bottom: -15px ;
+    padding-left: 1%;
+    font-size: 20px;
+}
+
+.services_SkillLeft_maintext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: white;
+    margin: 0 0;
+    width: auto;
+    padding-left: 1% ;
 }

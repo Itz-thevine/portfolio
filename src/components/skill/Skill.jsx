@@ -119,6 +119,16 @@ const Card = ({icons, name}) => {
             </>
           )
         }
+        {
+          icons === 'SiGithub' && (
+            <>
+            <div className='skillImage'>
+            <SiIcons.SiGithub/>
+            </div>  
+            <p className='skillText'>{name}</p>
+            </>
+          )
+        }
         
         {
           icons === 'SiNpm' && (

@@ -1,8 +1,17 @@
 @import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
 
+.workContainer{
+    padding: 0 7% 0 7%;
+}
+
+.workMaintext{
+    margin: 2% 0 2% 0;
+}
 
 .workTag{
     display: flex;
+    margin-bottom: 2%;
+    padding-left: 1%;
 }
 
 .workTag > div {
@@ -23,5 +32,34 @@
     display: flex;
     margin-top: 20px;
     flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    padding: 0 1%;
 }
 
+.workPadding{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.about_SkillLeft_subtext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: -15px ;
+    padding-left: 1%;
+    font-size: 20px;
+}
+
+.about_SkillLeft_maintext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: #000000;
+    margin: 0 0;
+    width: auto;
+    padding-left: 1% ;
+}

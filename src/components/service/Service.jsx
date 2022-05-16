@@ -1,15 +1,12 @@
 import React from 'react'
 import './service.css'
-import * as DiIcons from 'react-icons/di'
 
-function Service() {
+function Service({title, subtext, icons}) {
   return (
     <div className='serviceContainer'>
-        <div className='service_icon'>
-            <DiIcons.DiCode/>
-        </div>
-        <h1 className='service_mainText'>Graphics Design</h1>
-        <p className='service_subText'>I create captivating and high quality graphics and logo designs where user readability, coupled with best design practices are prioritized </p>
+        <img src={icons} width={200} height={100} alt="" className='imgStyle'/>
+        <h1 className='service_mainText'>{title}</h1>
+        <p className='service_subText'>{subtext} </p>
     </div>
   )
 }

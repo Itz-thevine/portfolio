@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     font-family: 'Segoe UI Variable', sans-serif;
+    margin-top: 40px;
 }
 
 .contact_subtext{
@@ -27,7 +28,7 @@
 }
 
 .contact_bottom{
-    margin: 40px 0;
+    margin: 40px 0 0 0 ;
     display: flex;
     flex-direction: row;
 }
@@ -35,7 +36,9 @@
 .contact_bottom__details{
     display: flex;
     flex-direction: column;
-    flex: 0.8;
+    flex: 1;
+    padding-left: 10%;
+    justify-content: center;
 }
 
 .contact_bottom__details > p{
@@ -49,27 +52,51 @@
 
 .contact_bottom__icons{
     display: flex;
-    justify-content: space-between;
-    width: 15%;
-    font-size: 25px;
+    font-size: 20px;
     margin-top: 20px;
 }
 
-.contact_bottom__message{
-    display: flex;
-    flex-direction: column;
-    flex: 1.2;
+.contact_bottom__icons > div{
+    margin-right: 15px;
 }
-.contact_bottom__message label{
+
+.contact_bottom__message{
+    background-color: var(--mainColorOne);
+    padding: 5% 12% 5% 8% ;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    color: white;
 }
 
 .contact_bottom_form{
+    display: flex;
+    flex-direction: column;
     border: none;
     border-bottom: 2px solid #47B25B;
+    background-color: var(--mainColorOne);
+    height: 35px;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .btn{
     margin-top: 30px;
+}
+
+.txtArea{
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-bottom: 2px solid #47B25B;
+    background-color: var(--mainColorOne);
+    width: 100%;
+    margin-bottom: 15px;
+    resize: none;
+}
+
+::placeholder{
+    font-family: 'Segoe UI Variable', sans-serif;
+    color: white;
 }

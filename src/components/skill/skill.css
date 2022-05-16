@@ -1,9 +1,10 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
+
+
 .skillContainer{
-    width: auto;
+    width: 150px;
     color: #54D670;
     height: auto; 
-    margin-right: 20px;
-    border-radius: 10px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -11,12 +12,13 @@
 }
 
 .skillImage{
-    font-size: 6rem;
+    font-size: 5rem;
     display: flex;
 }
 
 .skillText{
-    color: black;
+    color: var(--mainColorOne);
     font-size: 20px;
     margin-top: 0;
+    font-family: 'Segoe UI Variable', sans-serif;
 }

@@ -37,6 +37,21 @@ const Works = () => {
         id: 6, 
         picture: LatestWork1,
         alt: "latest-photo"
+    },
+    {
+        id: 6, 
+        picture: LatestWork1,
+        alt: "latest-photo"
+    },
+    {
+        id: 7, 
+        picture: LatestWork1,
+        alt: "latest-photo"
+    },
+    {
+        id:8, 
+        picture: LatestWork1,
+        alt: "latest-photo"
     }
   ]
 
@@ -44,7 +59,8 @@ const Works = () => {
   return (
     <div className='workContainer'>
       <div className='workMaintext'>
-        <h1>My works</h1>
+        <p className='about_SkillLeft_subtext'>I Build Real Value</p>
+        <h1 className='about_SkillLeft_maintext'>My works</h1>
       </div>
 
       <div className='workTag'>
@@ -55,11 +71,13 @@ const Works = () => {
       </div>
 
       <div className='workDisplay'>
-        {images.map(img => (
-          <div key={img.id} className='workDisplayWrapper'>
-              <img src={img.picture} alt={img.alt} width={170} height={130} className='imgControl' />
-          </div>
-        ))}
+        <div className='workPadding'>
+          {images.map(img => (
+            <div key={img.id} className='workDisplayWrapper'>
+                <img src={img.picture} alt={img.alt} width={170} height={130} className='imgControl' />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )
