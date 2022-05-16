@@ -9,8 +9,18 @@
     font-family: 'Segoe UI Variable', sans-serif;
 }
 
+.aboutTop{
+    display: flex;
+}
+
 .about_mainText{
-    
+    padding-left: 7%;
+    padding-right: 2%;
+    background-color: var(--mainColorOne);
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 400px
 }
 
 .about_mainText span{

@@ -5,17 +5,19 @@ import './about.css';
 const About = () => {
   return (
     <div className='aboutContainer'>
-      <div className='about_mainText'><h1>I Know That Good <span>Software</span> Means Good <span>Business</span></h1></div>
+      <div className='aboutTop'>
+        <div className='about_mainText'><h1>I Know That Good <span>Software</span> Means Good <span>Business</span></h1></div>
 
-      <div className='about_subText'>
-        <p>I am a brand identity designer and a web develop based in Nigeria with 2 
-        years of experience in Graphics design  
-        and sound knowledge of Javascript Libraries (React.Js, Next.Js and Vue.Js) </p>
+        <div className='about_subText'>
+          <p>I am a brand identity designer and a web develop based in Nigeria with 2 
+          years of experience in Graphics design  
+          and sound knowledge of Javascript Libraries (React.Js, Next.Js and Vue.Js) </p>
 
-        <p>
-        I am passionate about constructing and maintaining partnerships that 
-        results in creative wins.
-        </p>
+          <p>
+          I am passionate about constructing and maintaining partnerships that 
+          results in creative wins.
+          </p>
+        </div>
       </div>
 
       <div className='about_skill'>

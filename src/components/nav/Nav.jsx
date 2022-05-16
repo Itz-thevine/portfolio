@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './nav.css';
 import * as BsIcons from 'react-icons/bs';
-import Logo from '../../assets/logoWhite.png';
+import Logo from '../../assets/logoDark.png';
 
 
 
@@ -20,8 +20,8 @@ const Nav = () => {
             <ul className="nav__middle" id={click ? "nav__hidden" : ""}>
                 <li onClick={() => setClick(!click)}>Home</li>
                 <li onClick={() => setClick(!click)}>About me</li>
+                <li onClick={() => setClick(!click)}>Skills</li>
                 <li onClick={() => setClick(!click)}>Works</li>
-                <li onClick={() => setClick(!click)}>Skils</li>
                 <li onClick={() => setClick(!click)}>Contact</li>
             </ul>
 

@@ -1,22 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 2rem;
-    background-color: var(--mainColorOne);
-    color: white;
-    /* background: red; */
-}
-
-
-.null{
-
-}
-
-.natashaNav__mobileIcon{
-    display: none;
+    padding: 2rem 6% 1rem 6%;
+    background-color: white;
+    color: var(--mainColorOne);
 }
 
 
@@ -42,8 +32,8 @@
 .nav__middle > li{
     list-style-type: none;
     font-style: normal;
-    font-weight: normal;
-    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-family: 'Segoe UI Variable', sans-serif;
     font-size: 17px;
     line-height: 22px;
     border-color: transparent;
