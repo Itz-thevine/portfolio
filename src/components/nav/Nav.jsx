@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './nav.css';
 import * as BsIcons from 'react-icons/bs';
-import Logo from '../../assets/logoDark.png';
+import Logo from '../../assets/logoWhite.png';
 
 
 

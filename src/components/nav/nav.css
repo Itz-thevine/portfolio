@@ -4,7 +4,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    padding-top: 2rem;
+    background-color: var(--mainColorOne);
+    color: white;
     /* background: red; */
 }
 
@@ -22,22 +24,18 @@
 /* FIRST SECTION */
 .nav__name{
     /* background: red; */
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
     font-weight: 900;
     font-size: 30px;
     line-height: 38px;
-    color: #000000;
     flex: 0.25;
 }
 
 /* SECOND SECTION */
-.nav > .nav__middle{
+.nav__middle{
     display: flex;
     justify-content: space-between;
     flex: 1;
     margin: 0 200px;
-    /* border: 1px solid red; */
 }
 
 
@@ -48,26 +46,22 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 17px;
     line-height: 22px;
-    color: #000000;
     border-color: transparent;
 }
 
-.nav__middle > li:hover{
-    /* margin-top: 10px; */
-    cursor: pointer;
-    /* border-bottom: 1px solid black; */
-    /* padding-bottom: 10px; */
-    transition: 0.1s ease-out;
+
+
+
+/* THIRD SECTION */
+.nav__icons{
+    /* background: orchid; */
+    display: flex;
+    justify-content: space-between;
+    flex: 0.25;
 }
 
-#nav1{
-}
 
-#nav1:hover{
-    border-bottom: 1px solid red;
-    margin-top: 10px;
-    /* padding-bottom: 10px; */
-}
+
 
 
 @media screen and (max-width:1200px) {
@@ -126,16 +120,6 @@
     }
 }
 
-
-
-
-/* THIRD SECTION */
-.nav__icons{
-    /* background: orchid; */
-    display: flex;
-    justify-content: space-between;
-    flex: 0.25;
-}
 
 @media screen and (max-width: 900px) {
     .nav__icons{

@@ -1,0 +1,27 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
+
+
+.workTag{
+    display: flex;
+}
+
+.workTag > div {
+    margin-right: 10px;
+    background-color: #08140A;
+    padding: 1% 2%;
+    border-radius: 7px;
+    color: white;
+    font-family: 'Segoe UI Variable', sans-serif;
+}
+
+
+.workTag > div:nth-child(1) {
+    background-color: #47B25B;
+}
+
+.workDisplay{
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+

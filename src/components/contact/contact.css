@@ -1,0 +1,75 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
+
+.contact_container{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI Variable', sans-serif;
+}
+
+.contact_subtext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #000000;
+    margin-bottom: -15px ;
+    padding-left: 1%;
+    font-size: 20px;
+}
+
+.contact_maintext{
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    color: #000000;
+    margin: 0 0;
+    width: auto;
+}
+
+.contact_bottom{
+    margin: 40px 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact_bottom__details{
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+}
+
+.contact_bottom__details > p{
+    margin: 0;
+}
+
+.contact_bottom__details span{
+    font-weight: 700;
+}
+
+
+.contact_bottom__icons{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.contact_bottom__message{
+    display: flex;
+    flex-direction: column;
+    flex: 1.2;
+}
+.contact_bottom__message label{
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_bottom_form{
+    border: none;
+    border-bottom: 2px solid #47B25B;
+}
+
+.btn{
+    margin-top: 30px;
+}

@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import './hero.css';
 import LatestWork1 from '../../assets/latest1.png';
 import LatestWork2 from '../../assets/latest2.png';
-import chervon from '../../assets/chervon.png'
-// import OpaqueImage from '../../assets/text.png'
+import Button from '../button/Button';
 
 const Hero = () => {
 
@@ -58,9 +57,9 @@ const Hero = () => {
                         I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
                         </p>
 
-                        <button className='btn'>
-                            Schedule a call
-                        </button>
+                        <div className='btnPostiton'>
+                            <Button name='Schedule A Call'/>
+                        </div>
                 </div>
 
                 <div className="hero__latestWork">

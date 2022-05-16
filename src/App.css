@@ -1,3 +1,10 @@
+:root{
+  --mainColorOne: #08140A;
+  --mainColorTwo: #47B25B;
+  --mainColorThree: #54D670;
+}
+
+
 .app{
   padding: 0% 6% 0 6%;
 }

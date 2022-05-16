@@ -1,0 +1,15 @@
+
+.btn{
+    padding: 15px 24px 15px 24px;
+    background: white;
+    border: 1px solid #C4C4C4;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 25px;
+    color: #2A2A2A;
+    cursor: pointer;
+    width: 30%;
+    text-align: center;
+}
