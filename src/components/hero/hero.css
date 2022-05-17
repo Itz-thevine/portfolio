@@ -8,12 +8,13 @@
     padding: 0 6% 0 6%;
     background-color: white;
     color: var(--mainColorOne);
+    height: 800px;
 }
 
-
+/* 
 .hero > div{
     width: 100%;
-}
+} */
 
 
 /* LEFT SECTION */
@@ -76,9 +77,6 @@
     display: flex;
 }
 
-.hero__latestWork{
-    /* border: 2px solid black; */
-}
 
 .hero__latestWork > h2{
     font-family: 'Segoe UI Variable', sans-serif;
@@ -93,7 +91,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .imageWrapper{
@@ -103,7 +101,6 @@
 }
 
 .imgControl{
-    margin-right: 15px;
     margin-bottom: 15px;
 }
 
@@ -116,7 +113,6 @@
     flex-direction: column;
     padding-top: 15px;
     width: auto;
-    height: 115vh;
 }
 
 
@@ -166,6 +162,7 @@
     justify-content: end;
     align-items: flex-start;
     flex-direction: row;
+    width: 100%;
 }
 
 .hero__rightSection_tag{
@@ -201,15 +198,13 @@
 
 .heroImage{
     background-image: url('../../assets/Image.png');
-    height: 100%;
     width: inherit;
     background-origin: content-box;
-    background-position: initial;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     z-index: 10;
-
+    height: 800px;
 }
 
 
