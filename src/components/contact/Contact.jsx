@@ -14,7 +14,7 @@ export default function Contact() {
             <p className='contact_subtext'>Hire Me</p>
             <h1 className='contact_maintext'>Get in Touch</h1>
           </div>
-          <div className=''>
+          <div className='contact_b'>
             <p>Call: <span>+234 70 3693 6113</span> </p>
             <p>WhatsApp: <span>+234 70 3693 6113</span> </p>
             <p>Email: <span>divine2christ@yahoo.com</span> </p>

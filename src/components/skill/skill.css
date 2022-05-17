@@ -22,3 +22,21 @@
     margin-top: 0;
     font-family: 'Segoe UI Variable', sans-serif;
 }
+
+
+@media screen and (max-width: 1200px) {
+    
+    .skillImage{
+        font-size: 3rem;
+    }
+    .skillContainer{
+        width: 80px;
+    }
+    .skillText{
+        color: var(--mainColorOne);
+        font-size: 15px;
+        margin-top: 0;
+        font-family: 'Segoe UI Variable', sans-serif;
+    }
+
+}

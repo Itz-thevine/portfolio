@@ -13,4 +13,10 @@
     cursor: pointer;
     width: 30%;
     text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+   
 }

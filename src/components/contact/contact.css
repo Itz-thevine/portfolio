@@ -100,3 +100,35 @@
     font-family: 'Segoe UI Variable', sans-serif;
     color: white;
 }
+
+@media screen and (max-width:1200px) {
+    
+    .contact_bottom{
+        margin: 40px 0 0 0 ;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_bottom__details{
+        margin-bottom: 50px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact_top{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_b{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact_bottom__message{
+        padding-top: 15%;
+        padding-bottom: 15%;
+    }
+
+
+}
