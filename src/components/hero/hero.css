@@ -29,9 +29,8 @@
 
 .hero_leftControl{
     display: flex;
-    height: 55vh;
+    height: 365px;
     flex-direction: column;
-    justify-content: center;
 }
 
 .hero__first{
@@ -75,6 +74,10 @@
 .btnPostiton{
     width: auto;
     display: flex;
+}
+
+.hero__latestWork{
+    margin-top: 0;
 }
 
 
