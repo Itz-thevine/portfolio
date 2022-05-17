@@ -43,13 +43,14 @@
 .workPadding{
     display: flex;
     flex-wrap: wrap;
-    /* width: 1170px; */
+    width: 1100px;
 }
 
 .workDisplayWrapper{
-    width: 195px;
+    width: 214px;
     display: flex;
     justify-content: center;
+    margin-bottom: 15px;
 }
 
 
