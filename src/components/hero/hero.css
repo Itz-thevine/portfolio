@@ -204,7 +204,6 @@
     height: 100%;
     width: inherit;
     background-origin: content-box;
-    background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
