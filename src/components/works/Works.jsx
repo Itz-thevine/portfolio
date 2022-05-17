@@ -39,17 +39,17 @@ const Works = () => {
         alt: "latest-photo"
     },
     {
-        id: 6, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    },
-    {
         id: 7, 
         picture: LatestWork1,
         alt: "latest-photo"
     },
     {
-        id:8, 
+        id: 8, 
+        picture: LatestWork1,
+        alt: "latest-photo"
+    },
+    {
+        id:9, 
         picture: LatestWork1,
         alt: "latest-photo"
     }
