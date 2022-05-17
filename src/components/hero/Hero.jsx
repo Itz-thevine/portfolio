@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import './hero.css';
 import LatestWork1 from '../../assets/latest1.png';
 import LatestWork2 from '../../assets/latest2.png';
@@ -6,7 +5,7 @@ import Button from '../button/Button';
 
 const Hero = () => {
 
-    const [images, setImages] = useState([
+    const images = [
         {
             id: 1, 
             picture: LatestWork1,
@@ -37,7 +36,7 @@ const Hero = () => {
             picture: LatestWork1,
             alt: "latest-photo"
         }
-    ])
+    ]
 
     return ( 
         <div className="hero container">
