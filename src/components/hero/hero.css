@@ -22,7 +22,7 @@
     position: relative;
         /* border: 1px solid blue; */
     /* overflow-x: hidden; */
-    flex: 1;
+    flex: 0.9;
     display: flex;
     flex-direction: column;
 }
@@ -108,11 +108,12 @@
 /* middle section */
 
 .hero__middleSection{
-    flex: 0.1;
+    flex: 0.2;
     display: flex;
     flex-direction: column;
     padding-top: 15px;
     width: auto;
+    align-items: center;
 }
 
 
@@ -156,7 +157,7 @@
 
 /* right Section */
 .hero__rightSection{
-    flex: 1;
+    flex: 0.9;
     position: relative;
     display: flex;
     justify-content: end;
