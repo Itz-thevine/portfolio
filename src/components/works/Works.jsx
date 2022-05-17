@@ -1,5 +1,4 @@
 import React from 'react'
-import Work from '../work/Work'
 import './works.css'
 import LatestWork1 from '../../assets/latest1.png';
 import LatestWork2 from '../../assets/latest2.png';
