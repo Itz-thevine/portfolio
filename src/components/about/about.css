@@ -61,13 +61,20 @@
     height: 120px;
 }
 
+.about_skillRight_control{
+    display: flex;
+    justify-content: center;
+}
+
 .about_skillRight{
     margin-top: 20px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
+    width: 1050px;
 }
+
 
 .about_SkillLeft_subtext{
     font-family: 'Segoe UI Variable', sans-serif;

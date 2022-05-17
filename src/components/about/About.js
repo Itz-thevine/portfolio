@@ -27,23 +27,25 @@ const About = () => {
           <h1 className='about_SkillLeft_maintext'>My Skills</h1>
         </div>
 
-        <div className='about_skillRight'>
-          <Skill icons='AiFillHtml5' name='HTML' />
-          <Skill icons='DiCss3' name='CSS'/>
-          <Skill icons='IoLogoJavascript' name='javaScript'/>
-          <Skill icons='DiReact' name='React Js'/>
-          <Skill icons='SiRedux' name='Redux'/>
-          <Skill icons='SiNextdotjs' name='Next Js'/>
-          <Skill icons='SiVuedotjs' name='Vue Js'/>
-          <Skill icons='VscJson' name='Json'/>
-          <Skill icons='SiBootstrap' name='Boostrap'/>
-          <Skill icons='SiTailwindcss' name='Tailwind'/>
-          <Skill icons='SiGithub' name='Git'/>
-          <Skill icons='SiNpm' name='Npm'/>
-          <Skill icons='SiAdobephotoshop' name='Photoshop'/>
-          <Skill icons='SiAdobeillustrator' name='Illustrator'/>
-          <Skill icons='SiAdobexd' name='Adobe XD'/>
-          <Skill icons='SiFigma' name='Figma'/>
+        <div className='about_skillRight_control'>
+          <div className='about_skillRight'>
+            <Skill icons='AiFillHtml5' name='HTML' />
+            <Skill icons='DiCss3' name='CSS'/>
+            <Skill icons='IoLogoJavascript' name='javaScript'/>
+            <Skill icons='DiReact' name='React Js'/>
+            <Skill icons='SiRedux' name='Redux'/>
+            <Skill icons='SiNextdotjs' name='Next Js'/>
+            <Skill icons='SiVuedotjs' name='Vue Js'/>
+            <Skill icons='VscJson' name='Json'/>
+            <Skill icons='SiBootstrap' name='Boostrap'/>
+            <Skill icons='SiTailwindcss' name='Tailwind'/>
+            <Skill icons='SiGithub' name='Git'/>
+            <Skill icons='SiNpm' name='Npm'/>
+            <Skill icons='SiAdobephotoshop' name='Photoshop'/>
+            <Skill icons='SiAdobeillustrator' name='Illustrator'/>
+            <Skill icons='SiAdobexd' name='Adobe XD'/>
+            <Skill icons='SiFigma' name='Figma'/>
+          </div>
         </div>
       
           
