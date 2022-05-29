@@ -9,7 +9,7 @@ import * as VsIcons from 'react-icons/vsc'
 const Card = ({icons, name}) => {
 
   return (
-    <div className='skillContainer'>
+    <div className='skillContainer' id='skills'>
         {
           icons === 'AiFillHtml5' && (
             <>

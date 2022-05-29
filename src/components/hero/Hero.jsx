@@ -99,7 +99,7 @@ const Hero = () => {
     
 
     return ( 
-        <div className="hero container">
+        <div className="hero container" id='hero'>
             <div ref={leftSection} className="hero__leftSection">
                 <div className='hero_leftControl'>
                     

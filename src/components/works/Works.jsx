@@ -89,7 +89,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle(
 
 
   return (
-    <div className='workContainer' ref={middleSection}>
+    <div className='workContainer' ref={middleSection} id='works'>
       <div className='workMaintext'>
         <p className='about_SkillLeft_subtext'>I Build Real Value</p>
         <h1 className='about_SkillLeft_maintext'>My works</h1>

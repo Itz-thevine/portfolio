@@ -97,7 +97,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle
 
 
   return (
-    <div className='aboutContainer'>
+    <div className='aboutContainer' id='about'>
       <div className='aboutTop'>
         <div className='about_mainText' ref={leftSection}><h1>I Know That Good <span>Software</span> Means Good <span>Business</span></h1></div>
 

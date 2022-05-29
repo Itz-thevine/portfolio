@@ -72,7 +72,7 @@ intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.
 
 
   return (
-    <div className='contact_container'>
+    <div className='contact_container' id='contact'>
      
       <div className='contact_bottom'>
         <div className='contact_bottom__details' ref={leftSection}>

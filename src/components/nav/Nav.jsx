@@ -5,6 +5,8 @@ import Logo from '../../assets/logoDark.png';
 import { useRef } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
+import { HashLink as Link } from 'react-router-hash-link';
+import { Link as ExternalLink } from 'react-router-dom';
 
 
 
@@ -43,25 +45,45 @@ const Nav = () => {
     
 
     return ( 
-        <div className="nav container" ref={middleSection}>
+        <div className="nav container" ref={middleSection} id='nav'>
             <div className='navControl'>
                 <div className="nav__name">
                     <img src={Logo} width={150} alt="" />
                 </div>
 
                 <ul className="nav__middle">
-                    <li>Home</li>
-                    <li>About me</li>
-                    <li>Skills</li>
-                    <li>Works</li>
-                    <li>Contact</li>
+                    <li>
+                        <Link to='#nav' className='nav_link'>Home</Link>
+                    </li>
+                    <li>
+                        <Link to='#about' className='nav_link'>About me</Link>
+                    </li>
+                    <li>
+                        <Link to='#skills' className='nav_link'>Skills</Link>
+                    </li>
+                    <li>
+                        <Link to='#works' className='nav_link'>Works</Link>
+                    </li>
+                    <li>
+                        <Link to='#contact' className='nav_link'>Contact</Link>
+                    </li>
                 </ul>
 
                 <div className='nav__icons'>
-                    <BsIcons.BsTwitter />
-                    <BsIcons.BsInstagram />
-                    <BsIcons.BsBehance />   
-                    <BsIcons.BsLinkedin />
+                    <ExternalLink to={{pathname: 'https://twitter.com/ik_thevine'}} target='_blank'>
+                        <div className='nav__icon'>
+                            <BsIcons.BsTwitter />
+                        </div>
+                    </ExternalLink>
+                    <div className='nav__icon'>
+                        <BsIcons.BsInstagram />
+                    </div>
+                    <div className='nav__icon'>
+                        <BsIcons.BsBehance />   
+                    </div>
+                    <div className='nav__icon'>
+                        <BsIcons.BsLinkedin />
+                    </div>
                 </div>
                 <div className='naav__mobileIcon'>
                     <CgIcons.CgMenuRight/> 
