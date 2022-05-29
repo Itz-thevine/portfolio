@@ -1,10 +1,45 @@
 import React from 'react'
 import Service from '../service/Service'
 import './services.css'
+import { useRef } from 'react';
+import {useIntersection} from 'react-use';
+import gsap from 'gsap';
 
 const Services = () => {
+  const middleSection = useRef();
+
+
+  // middle
+  const intersectionMiddle = useIntersection(middleSection, {
+    root: null,
+    rootMargin: "0px",
+    threshold: .75
+})
+
+  
+  const slideInMiddle = (element) => {
+    gsap.to(element, 2, {
+        opacity: 1,
+        y: '0px',
+        ease: 'power4',
+        stagger: {
+            amount: 3
+        }
+    })
+}
+
+const slideOutMiddle = (element) => {
+    gsap.to(element, 2, {
+        opacity: 0,
+        y: '-75px',
+        ease: 'power4.out',
+    })
+}
+
+intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle('.servicesContainer'): slideOutMiddle('.servicesContainer')
+
   return (
-    <div className='servicesContainer'>
+    <div className='servicesContainer' ref={middleSection}>
         <div>
             <p className='service_SkillLeft_subtext'>What I do</p>
             <h1 className='services_SkillLeft_maintext'>My services</h1>

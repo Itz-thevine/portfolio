@@ -1,46 +1,106 @@
 import './hero.css';
-import LatestWork1 from '../../assets/latest1.png';
-import LatestWork2 from '../../assets/latest2.png';
 import Button from '../button/Button';
+import { useRef } from 'react';
+import {useIntersection} from 'react-use';
+import gsap from 'gsap';
 
 const Hero = () => {
 
-    const images = [
-        {
-            id: 1, 
-            picture: LatestWork1,
-            alt: "latest-photo"
-        }, 
-        {
-            id: 2, 
-            picture: LatestWork2,
-            alt: "latest-photo"
-        },
-        {
-            id: 3, 
-            picture: LatestWork2,
-            alt: "latest-photo"
-        },
-        {
-            id: 4, 
-            picture: LatestWork1,
-            alt: "latest-photo"
-        },
-        {
-            id: 5, 
-            picture: LatestWork2,
-            alt: "latest-photo"
-        },
-        {
-            id: 6, 
-            picture: LatestWork1,
-            alt: "latest-photo"
-        }
-    ]
+    // animation
+    const leftSection = useRef();
+    const rightSection = useRef();
+    const middleSection = useRef();
+
+    // leftSection Animation
+    const intersection = useIntersection(leftSection, {
+        root: null,
+        rootMargin: "0px",
+        threshold: .75
+    })
+    const slideInLeft = (element) => {
+        gsap.to(element, 2, {
+            opacity: 1,
+            x: '0px',
+            ease: 'power4',
+            stagger: {
+                amount: 3
+            }
+        })
+    }
+    const slideOutLeft = (element) => {
+        gsap.to(element, 2, {
+            opacity: 0,
+            x: '-100px',
+            ease: 'power4.out',
+            trigger: "#pageWrap",
+        })
+    }
+    intersection && intersection.intersectionRatio > .75 ? slideInLeft('.hero__leftSection'): slideOutLeft('.hero__leftSection')
+
+    // middle
+    const intersectionMiddle = useIntersection(middleSection, {
+        root: null,
+        rootMargin: "0px",
+        threshold: .5
+    })
+
+    
+    const slideInMiddle = (element) => {
+        gsap.to(element, 4, {
+            opacity: 1,
+            y: '0px',
+            ease: 'power4',
+            stagger: {
+                amount: 3
+            }
+        })
+    }
+
+    const slideOutMiddle = (element) => {
+        gsap.to(element, 2, {
+            opacity: 0,
+            y: '-100px',
+            ease: 'power4.out',
+        })
+    }
+
+    intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle('.hero__middleSection'): slideOutMiddle('.hero__middleSection')
+    
+
+
+    // right
+    const intersectionRight = useIntersection(rightSection, {
+        root: null,
+        rootMargin: "0px",
+        threshold: .75
+    })
+
+    const slideInRight = (element) => {
+        gsap.to(element, 2, {
+            opacity: 1,
+            x: '0px',
+            ease: 'power4',
+            stagger: {
+                amount: 3
+            }
+        })
+    }
+
+    const slideOutRight = (element) => {
+        gsap.to(element, 2, {
+            opacity: 0,
+            x: '100px',
+            ease: 'power4.out',
+        })
+    }
+    
+    intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.hero__rightSection'): slideOutRight('.hero__rightSection')
+    // animation end
+    
 
     return ( 
         <div className="hero container">
-            <div className="hero__leftSection">
+            <div ref={leftSection} className="hero__leftSection">
                 <div className='hero_leftControl'>
                     
                     <div className='leftSectionCtrl'>
@@ -64,32 +124,20 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className="hero__latestWork">
-                    <h2>Latest Work</h2>
-
-                    <div className="hero__latestWorkRow">
-                            {images.map(img => (
-                                <div key={img.id} className='imageWrapper'>
-                                    <img src={img.picture} alt={img.alt} width={170} height={130} className='imgControl' />
-                                </div>
-                            ))}
-                    </div>
-                </div>
-
+               
             </div>
             
 
-            <div className="hero__middleSection">
+            <div className="hero__middleSection" ref={middleSection}>
                 <span>
-                    <p className='middleSection__content'>my process</p>
-                    <p className='middleSection__content'>client reviews </p>
-                    <p className='middleSection__content'>download cv</p>
+                    <p className='middleSection__content'>My experience</p>
+                    <p className='middleSection__content'>download my cv</p>
                 </span>
                     <hr/>
                            
             </div>
 
-            <div className="hero__rightSection">
+            <div className="hero__rightSection" ref={rightSection}>
                 <div className='hero__rightSection_tag'></div>
                 <div className='hero__rightSection_tag'></div>
                 <div className='hero__rightSection_tag'></div>

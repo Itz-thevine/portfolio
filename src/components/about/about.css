@@ -9,6 +9,7 @@
     align-items: center;
     font-family: 'Segoe UI Variable', sans-serif;
     color: var(--mainColorOne);
+    overflow-x: hidden;
 }
 
 .aboutTop{
@@ -25,6 +26,7 @@
     align-items: center;
     height: 380px;
     flex: 0.9;
+    opacity: 0;
 }
 
 .about_mainText span{
@@ -41,6 +43,7 @@
     padding-left: 7%;
     align-items: center;
     justify-content: center;
+    opacity: 0;
 }
 
 .about_subText > p {

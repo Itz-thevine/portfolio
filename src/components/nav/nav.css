@@ -6,7 +6,10 @@
     align-items: center;
     padding: 2rem 6% 1rem 6%;
     background-color: white;
+    height: 55px;
     color: var(--mainColorOne);
+    opacity: 0;
+    overflow-x: hidden;
 }
 
 .navControl{
@@ -57,8 +60,6 @@
 .naav__mobileIcon{
     display: none;
 }
-
-
 
 
 @media screen and (max-width: 900px) {

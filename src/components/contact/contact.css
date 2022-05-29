@@ -5,6 +5,7 @@
     flex-direction: column;
     font-family: 'Segoe UI Variable', sans-serif;
     margin-top: 40px;
+    overflow-x: hidden;
 }
 
 .contact_subtext{

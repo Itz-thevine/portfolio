@@ -1,0 +1,88 @@
+.preLoad{
+  
+    
+}
+
+.preLoader{
+    background: url('../../assets/preloader.png');
+    width: 130px;
+    height: 130px;
+    background-repeat: no-repeat;
+    animation: preloader 2.2s 0s ease-out forwards,
+                moveLogo 1s 4.4s ease-out forwards;
+    animation-iteration-count: 2, 1;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.preLoad::after{
+    content: '';
+
+}
+
+.preLoaderText{
+    background: url('../../assets/preloaderText.png');
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: flex;
+    position: absolute;
+    top: -25px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding-bottom: 55px;
+    opacity: 0;
+    animation: appear 2s 4.4s ease-out forwards;
+}
+
+@keyframes preloader {
+    0%{
+        transform: none;
+        opacity: 100%;
+    }
+    50%{
+        transform: scale(0.8);
+        opacity: 50%;
+    }
+    100%{
+        transform: none;
+        opacity: 100%;
+    }
+}
+
+@keyframes moveLogo {
+    0%{
+        transform: none;
+    }
+    100%{
+        transform: translateX(-145px);
+        opacity: 100%;
+    }
+}
+
+@keyframes appear {
+    0%{
+     opacity: 0;
+     transform: translateX(150px);
+    }
+    80%{
+       transform: translateX(-5px);
+    }
+    100%{
+     opacity: 1;
+     transform: translateX(0);
+    }
+}
+

@@ -3,12 +3,14 @@
 @import url('https://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .hero{
-    padding-top: 85px !important;
+    padding-top: 50px !important;
     display: flex;
     padding: 0 6% 0 6%;
     background-color: white;
     color: var(--mainColorOne);
-    height: 800px;
+    height: 500px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 /* 
@@ -20,12 +22,13 @@
 /* LEFT SECTION */
 .hero__leftSection{
     position: relative;
-        /* border: 1px solid blue; */
-    /* overflow-x: hidden; */
     flex: 1;
+    transform: translateX(-100px);
     display: flex;
     flex-direction: column;
+    opacity: 0;
 }
+
 
 .hero_leftControl{
     display: flex;
@@ -115,6 +118,8 @@
     flex-direction: column;
     padding-top: 15px;
     width: auto;
+    animation: slideInRight 0.8s 1s ease-in forwards;
+    opacity: 0;
 }
 
 
@@ -166,6 +171,8 @@
     align-items: flex-start;
     flex-direction: row;
     width: 100%;
+    opacity: 0;
+    /* animation: slideInRight 0.8s 1s ease-in forwards; */
 }
 
 .hero__rightSection_tag{
@@ -177,8 +184,8 @@
 
 .hero__rightSection_tag:nth-child(1){
     background: url('../../assets/branding.png');
-    top: 50px;
-    left: -15px;
+    top: 10px;
+    left: -5px;
     background-repeat: no-repeat;
     background-size: 80%;
     
@@ -208,7 +215,21 @@
     position: absolute;
     z-index: 10;
     height: 800px;
+    top: -40px;
+    right: -20px;
 }
+
+/* 
+@keyframes slideInRight {
+    0%{
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+} */
 
 
 

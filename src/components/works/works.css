@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .workContainer{
-    /* padding: 0 7% 0 7%; */
+    padding: 0 7% 0 7%;
 }
 
 .workMaintext{
@@ -89,6 +89,10 @@
         display: flex;
         width: 90%;
         margin-left: 4%;
+    }
+
+    .workMaintext{
+        padding: 0 6% 0 6%;
     }
 
     
