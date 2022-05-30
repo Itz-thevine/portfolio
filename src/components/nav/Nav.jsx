@@ -1,8 +1,9 @@
 import './nav.css';
 import * as BsIcons from 'react-icons/bs';
 import * as CgIcons from 'react-icons/cg';
+import * as AiIcons from 'react-icons/ai';
 import Logo from '../../assets/logoDark.png';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
 import { HashLink as Link } from 'react-router-hash-link';
@@ -14,8 +15,9 @@ import { Link as ExternalLink } from 'react-router-dom';
 const Nav = () => {
     const middleSection = useRef();
 
-     // middle
-     const intersectionMiddle = useIntersection(middleSection, {
+
+    // middle
+    const intersectionMiddle = useIntersection(middleSection, {
         root: null,
         rootMargin: "0px",
         threshold: .5
@@ -48,18 +50,20 @@ const Nav = () => {
         <div className="nav container" ref={middleSection} id='nav'>
             <div className='navControl'>
                 <div className="nav__name">
-                    <img src={Logo} width={150} alt="" />
+                    <Link to='#hero'>
+                        <img src={Logo} width={150} alt="" />
+                    </Link>
                 </div>
 
                 <ul className="nav__middle">
                     <li>
-                        <Link to='#nav' className='nav_link'>Home</Link>
+                        <Link to='#hero' className='nav_link'>Home</Link>
                     </li>
                     <li>
                         <Link to='#about' className='nav_link'>About me</Link>
                     </li>
                     <li>
-                        <Link to='#skills' className='nav_link'>Skills</Link>
+                        <Link to='#skill' className='nav_link'>Skills</Link>
                     </li>
                     <li>
                         <Link to='#works' className='nav_link'>Works</Link>
@@ -70,20 +74,32 @@ const Nav = () => {
                 </ul>
 
                 <div className='nav__icons'>
-                    <ExternalLink to={{pathname: 'https://twitter.com/ik_thevine'}} target='_blank'>
+                    <a href='https://twitter.com/ik_thevine' target='_blank'>
                         <div className='nav__icon'>
                             <BsIcons.BsTwitter />
                         </div>
-                    </ExternalLink>
-                    <div className='nav__icon'>
-                        <BsIcons.BsInstagram />
-                    </div>
-                    <div className='nav__icon'>
-                        <BsIcons.BsBehance />   
-                    </div>
-                    <div className='nav__icon'>
-                        <BsIcons.BsLinkedin />
-                    </div>
+                    </a>
+                    <a href="https://www.instagram.com/ik_thevine/" target='_blank'>
+                        <div className='nav__icon'>
+                            <BsIcons.BsInstagram />
+                        </div>
+                    </a>
+                    <a href="https://www.behance.net/ik_thevine" target='_blank'>
+                        <div className='nav__icon'>
+                            <BsIcons.BsBehance />   
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ikechukwu-divine-38a885222/" target='_blank'>
+                        <div className='nav__icon'>
+                            <BsIcons.BsLinkedin />
+                        </div>
+                    </a>
+                    <a href="https://github.com/Itz-thevine" target='_blank'>
+                        <div className='nav__icon'>
+                            <AiIcons.AiFillGithub/>
+                        </div>
+                    </a>
+
                 </div>
                 <div className='naav__mobileIcon'>
                     <CgIcons.CgMenuRight/> 

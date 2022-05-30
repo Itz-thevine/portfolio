@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .aboutContainer{
-    margin-top: 80px;
+    padding-top: 130px;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
@@ -43,7 +43,7 @@
     padding-left: 7%;
     align-items: center;
     justify-content: center;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .about_subText > p {
@@ -51,7 +51,8 @@
 }
 
 .about_skill{
-    margin-top: 90px ;
+    margin-top: 50px;
+    padding-top: 20px ;
     display: flex;
     flex-direction: column;
     width: 80%;

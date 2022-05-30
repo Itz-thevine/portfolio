@@ -57,8 +57,13 @@
     margin-top: 20px;
 }
 
-.contact_bottom__icons > div{
+.contact_bottom__icons > a{
     margin-right: 15px;
+    color: var(--mainColorOne);
+}
+
+.contact_bottom__icons > div:hover{
+    animation: scaler 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
 .contact_bottom__message{

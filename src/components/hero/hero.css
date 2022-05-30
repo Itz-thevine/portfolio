@@ -8,7 +8,6 @@
     padding: 0 6% 0 6%;
     background-color: white;
     color: var(--mainColorOne);
-    height: 500px;
     overflow-y: hidden;
     overflow-x: hidden;
 }
@@ -17,6 +16,12 @@
 .hero > div{
     width: 100%;
 } */
+
+.hero_child{
+    display: flex;
+    margin-top: 9%;
+    height: 510px;
+}
 
 
 /* LEFT SECTION */
@@ -138,7 +143,60 @@
     font-size: 15px;
     line-height: 20px;
     margin: 10px 0; 
+    position: relative;
+    cursor: pointer;
 }
+
+.middleSection__content::after{
+    position: absolute;
+    content: "";
+    border-left: .17em solid var(--mainColorOne);
+    top: 0;
+    bottom: 100%;
+    left: -.3em;
+    border-radius: 1em;
+}
+
+.middleSection__content:hover::after{
+    animation: anchor-sideline 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite; 
+
+}
+
+.middleSection__content:hover{
+    text-decoration: none;
+    animation: fader 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite; 
+}
+
+@keyframes anchor-sideline {
+    0%, 10% {
+        top: 0;
+        bottom: 100%;
+        opacity: 100%;
+    }
+    40%, 60%{
+        opacity: 50%;
+        top: 0;
+        bottom: 0;
+    }
+    90%, 100%{
+        top: 100%;
+        bottom: 0%;
+        opacity: 100%;
+    }
+}
+
+@keyframes fader {
+    0%, 10% {
+        opacity: 100%;
+    }
+    40%, 60%{
+        opacity: 50%;
+    }
+    90%, 100%{
+        opacity: 100%;
+    }
+}
+
 
 .middleSection__content:nth-child(1){
     margin-top: 0;

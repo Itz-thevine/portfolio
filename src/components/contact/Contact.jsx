@@ -86,21 +86,31 @@ intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.
             <p>Email: <span>divine2christ@yahoo.com</span> </p>
 
             <div className='contact_bottom__icons'>
-              <div>
-                <BsIcons.BsTwitter />
-              </div>
-              <div>
-                <BsIcons.BsInstagram />
-              </div>
-              <div>
-                <BsIcons.BsBehance />   
-              </div>
-              <div>
-                <BsIcons.BsLinkedin />
-              </div>
-              <div>
-                <AiIcons.AiFillGithub/>
-              </div>
+              <a href='https://twitter.com/ik_thevine' target='_blank'>
+                <div className='nav__icon'>
+                    <BsIcons.BsTwitter />
+                </div>
+              </a>
+              <a href="https://www.instagram.com/ik_thevine/" target='_blank'>
+                  <div className='nav__icon'>
+                      <BsIcons.BsInstagram />
+                  </div>
+              </a>
+              <a href="https://www.behance.net/ik_thevine" target='_blank'>
+                  <div className='nav__icon'>
+                      <BsIcons.BsBehance />   
+                  </div>
+              </a>
+              <a href="https://www.linkedin.com/in/ikechukwu-divine-38a885222/" target='_blank'>
+                  <div className='nav__icon'>
+                      <BsIcons.BsLinkedin />
+                  </div>
+              </a>
+              <a href="https://github.com/Itz-thevine" target='_blank'>
+                  <div className='nav__icon'>
+                      <AiIcons.AiFillGithub/>
+                  </div>
+              </a>
             </div>
           </div>
         </div>

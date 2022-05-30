@@ -72,7 +72,7 @@ const Hero = () => {
     const intersectionRight = useIntersection(rightSection, {
         root: null,
         rootMargin: "0px",
-        threshold: .75
+        threshold: .5
     })
 
     const slideInRight = (element) => {
@@ -94,55 +94,59 @@ const Hero = () => {
         })
     }
     
-    intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.hero__rightSection'): slideOutRight('.hero__rightSection')
+    intersectionRight && intersectionRight.intersectionRatio > .5 ? slideInRight('.hero__rightSection'): slideOutRight('.hero__rightSection')
     // animation end
     
 
     return ( 
         <div className="hero container" id='hero'>
+           <div className='hero_child'>
+
             <div ref={leftSection} className="hero__leftSection">
-                <div className='hero_leftControl'>
-                    
-                    <div className='leftSectionCtrl'>
-                        <div className='txtControl'>
-                            <p className="hero__first">
-                                Hello World! I am
-                            </p>
-                            <p className="hero__second">
-                                Divine
-                            </p>
+                    <div className='hero_leftControl'>
+                        
+                        <div className='leftSectionCtrl'>
+                            <div className='txtControl'>
+                                <p className="hero__first">
+                                    Hello World! I am
+                                </p>
+                                <p className="hero__second">
+                                    Divine
+                                </p>
+                            </div>
+                            <div className='dot'></div>
                         </div>
-                        <div className='dot'></div>
+
+                        <p className='leftSection__subtext'>
+                        I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
+                        </p>
+
+                        <div className='btnPostiton'>
+                            <Button name='Schedule A Call'/>
+                        </div>
                     </div>
 
-                    <p className='leftSection__subtext'>
-                    I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
-                    </p>
+                
+                </div>
+                
 
-                    <div className='btnPostiton'>
-                        <Button name='Schedule A Call'/>
-                    </div>
+                <div className="hero__middleSection" ref={middleSection}>
+                    <span>
+                        <p className='middleSection__content'>My experience</p>
+                        <p className='middleSection__content'>download my cv</p>
+                    </span>
+                        <hr/>
+                            
                 </div>
 
-               
-            </div>
-            
+                <div className="hero__rightSection" ref={rightSection}>
+                    <div className='hero__rightSection_tag'></div>
+                    <div className='hero__rightSection_tag'></div>
+                    <div className='hero__rightSection_tag'></div>
+                    <div className='heroImage'></div>
+                </div>   
 
-            <div className="hero__middleSection" ref={middleSection}>
-                <span>
-                    <p className='middleSection__content'>My experience</p>
-                    <p className='middleSection__content'>download my cv</p>
-                </span>
-                    <hr/>
-                           
-            </div>
-
-            <div className="hero__rightSection" ref={rightSection}>
-                <div className='hero__rightSection_tag'></div>
-                <div className='hero__rightSection_tag'></div>
-                <div className='hero__rightSection_tag'></div>
-                <div className='heroImage'></div>
-            </div>                    
+            </div>                 
            
         </div>
      );

@@ -113,7 +113,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle
         </div>
       </div>
 
-      <div className='about_skill' ref={middleSection}>
+      <div className='about_skill' id='skill' ref={middleSection}>
 
         <div className='about_skillLeft'>
           <p className='about_SkillLeft_subtext'>What I work with</p> 

@@ -1,0 +1,79 @@
+.worksCard{
+    /* background-color: aquamarine; */
+    box-shadow: 1px 10px 21px 0px rgba(0,0,0,0.11);
+    -webkit-box-shadow: 1px 10px 21px 0px rgba(0,0,0,0.11);
+    -moz-box-shadow: 1px 10px 21px 0px rgba(0,0,0,0.11);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    margin-bottom: 4%;
+}
+
+.worksCard:nth-child(even){
+    margin-left: 4%;
+}
+
+
+.worksCard:hover{
+    animation: scaler 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+}
+
+.worksImage{
+    height: auto;
+    width: auto;
+    overflow-x: hidden;
+}
+
+.worke{
+    padding: 2% 7% 0% 7%;
+}
+
+.workTitle{
+    display: flex;
+
+}
+
+.workTitle > div:nth-child(odd){
+    flex: 1.6;
+}
+
+.workTitle > div:nth-child(even){
+    flex: 0.4;
+    margin: 0;
+    display: flex;
+    /* background-color: var(--mainColorOne);
+    color: var(--mainColorTwo); */
+    justify-content: flex-end;
+    margin-top: 10px;
+    color: rgb(152, 152, 152);
+}
+
+.titleOfWork{
+    font-size: 30px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.subOfWork{
+    color: var(--mainColorThree);
+    margin: 0;
+}
+
+.techOfWork{
+    display: flex;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.tech{
+    margin: 0;
+}
+
+.techies{
+    background-color: var(--mainColorOne);
+    padding: 1% 3%;
+    color: white;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}

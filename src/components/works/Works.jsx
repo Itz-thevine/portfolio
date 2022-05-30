@@ -1,10 +1,9 @@
 import React from 'react'
 import './works.css'
-import LatestWork1 from '../../assets/latest1.png';
-import LatestWork2 from '../../assets/latest2.png';
 import { useRef } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
+import WorksCard from '../worksCard/WorksCard';
 
 const Works = () => {
   const middleSection = useRef();
@@ -37,56 +36,7 @@ const slideOutMiddle = (element) => {
 }
 
 intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle('.workContainer'): slideOutMiddle('.workContainer')
-
-
-  const images = [
-    {
-        id: 1, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    }, 
-    {
-        id: 2, 
-        picture: LatestWork2,
-        alt: "latest-photo"
-    },
-    {
-        id: 3, 
-        picture: LatestWork2,
-        alt: "latest-photo"
-    },
-    {
-        id: 4, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    },
-    {
-        id: 5, 
-        picture: LatestWork2,
-        alt: "latest-photo"
-    },
-    {
-        id: 6, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    },
-    {
-        id: 7, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    },
-    {
-        id: 8, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    },
-    {
-        id:9, 
-        picture: LatestWork1,
-        alt: "latest-photo"
-    }
-  ]
-
+  
 
   return (
     <div className='workContainer' ref={middleSection} id='works'>
@@ -104,11 +54,14 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle(
 
       <div className='workDisplay'>
         <div className='workPadding'>
-          {images.map(img => (
-            <div key={img.id} className='workDisplayWrapper'>
-                <img src={img.picture} alt={img.alt} width={170} height={130} className='imgControl' />
-            </div>
-          ))}
+        
+          <div className='workDisplayWrapper'>
+             <WorksCard/>
+             <WorksCard/>
+             <WorksCard/>
+             <WorksCard/>
+             <WorksCard/>
+          </div>
           <div className='work'>
             
           </div>

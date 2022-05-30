@@ -6,12 +6,18 @@
     align-items: center;
     padding: 2rem 6% 1rem 6%;
     background-color: white;
-    height: 55px;
+    height: 45px;
     color: var(--mainColorOne);
     opacity: 0;
     overflow-x: hidden;
     overflow-y: hidden;
+    position: fixed;
+    z-index: 99;
+    width: 90%;
+    top: 0;
 }
+
+
 
 .navControl{
     display: flex;
@@ -116,6 +122,10 @@
     display: flex;
     justify-content: space-between;
     flex: 0.25;
+}
+
+.nav__icons a {
+    color: var(--mainColorOne);
 }
 
 .nav__icon:hover{
