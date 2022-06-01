@@ -10,6 +10,7 @@
     color: var(--mainColorOne);
     overflow-y: hidden;
     overflow-x: hidden;
+    /* position: relative; */
 }
 
 /* 
@@ -19,7 +20,7 @@
 
 .hero_child{
     display: flex;
-    margin-top: 9%;
+    margin-top: 11%;
     height: 510px;
 }
 
@@ -83,6 +84,12 @@
     display: flex;
 }
 
+.btnPostiton a{
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+}
+
 .hero__latestWork{
     margin-top: 0;
 }
@@ -131,6 +138,11 @@
 .hero__middleSection > span{
     display: flex;
     width: 20px;
+}
+
+.hero__middleSection a{
+    text-decoration: none;
+    color: var(--mainColorOne);
 }
 
 .middleSection__content{

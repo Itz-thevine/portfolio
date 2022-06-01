@@ -16,22 +16,63 @@
     background-color: #08140A;
     width: 60%;
     /* justify-content: space-between; */
-
+    
 }
 
 .workTag > div {
-    width: 18%;
+    width: 25%;
     padding: 5% 9%;
     color: white;
     font-family: 'Segoe UI Variable', sans-serif;
     font-weight: 700;
     text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow-x: hidden;
 }
 
 
-.workTag > div:nth-child(1) {
-    background-color: #47B25B;
+.clicked {
+    background-color: var(--mainColorTwo);
+    position: absolute;  
+    overflow-x: hidden;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    margin: auto;
+    right: 100%;
+    bottom: 0;
+    animation: clicked 1s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+
 }
+
+@keyframes clicked {
+    0%, 10% {
+        right: 100%;
+        opacity: 20%;
+    }
+    90%, 100%{
+        right: 0;
+        opacity: 100%;
+    }
+}
+
+.clickText{
+    position: absolute;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 13% 0%;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+
+
 
 .workDisplay{
     display: flex;
@@ -52,6 +93,7 @@
     display: flex;
     margin-bottom: 15px;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .workDisplayWrapper:hover{

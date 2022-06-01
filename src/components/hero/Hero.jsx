@@ -3,6 +3,9 @@ import Button from '../button/Button';
 import { useRef } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
+import { HashLink as Link } from 'react-router-hash-link';
+import Experience from '../experience/Experience';
+
 
 const Hero = () => {
 
@@ -101,39 +104,41 @@ const Hero = () => {
     return ( 
         <div className="hero container" id='hero'>
            <div className='hero_child'>
-
-            <div ref={leftSection} className="hero__leftSection">
-                    <div className='hero_leftControl'>
-                        
-                        <div className='leftSectionCtrl'>
-                            <div className='txtControl'>
-                                <p className="hero__first">
-                                    Hello World! I am
-                                </p>
-                                <p className="hero__second">
-                                    Divine
-                                </p>
+                <div ref={leftSection} className="hero__leftSection">
+                        <div className='hero_leftControl'>
+                            
+                            <div className='leftSectionCtrl'>
+                                <div className='txtControl'>
+                                    <p className="hero__first">
+                                        Hello World! I am
+                                    </p>
+                                    <p className="hero__second">
+                                        Divine
+                                    </p>
+                                </div>
+                                <div className='dot'></div>
                             </div>
-                            <div className='dot'></div>
+
+                            <p className='leftSection__subtext'>
+                            I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
+                            </p>
+
+                            <div className='btnPostiton'>
+                                <Link to='#contact'>
+                                    <Button name='Hire Me'/>
+                                </Link>
+                            </div>
                         </div>
 
-                        <p className='leftSection__subtext'>
-                        I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
-                        </p>
-
-                        <div className='btnPostiton'>
-                            <Button name='Schedule A Call'/>
-                        </div>
+                    
                     </div>
-
-                
-                </div>
-                
+                    
 
                 <div className="hero__middleSection" ref={middleSection}>
                     <span>
                         <p className='middleSection__content'>My experience</p>
-                        <p className='middleSection__content'>download my cv</p>
+
+                        <a href="https://docs.google.com/document/d/1GXq2SAkN5AkPPuFe_Q26eGGfBXhbr8W_shOO3iQxplM/edit?usp=sharing" target='_blank'><p className='middleSection__content'>download my cv</p></a>
                     </span>
                         <hr/>
                             
@@ -145,9 +150,9 @@ const Hero = () => {
                     <div className='hero__rightSection_tag'></div>
                     <div className='heroImage'></div>
                 </div>   
-
             </div>                 
            
+           <Experience/>
         </div>
      );
 }
