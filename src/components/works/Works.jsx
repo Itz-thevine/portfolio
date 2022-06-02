@@ -5,6 +5,7 @@ import {useIntersection} from 'react-use';
 import gsap from 'gsap';
 import WorksCard from '../worksCard/WorksCard';
 import db from '../../data/workData'
+import * as BsIcons from 'react-icons/bs'
 
 const Works = () => {
   const middleSection = useRef();
@@ -39,6 +40,7 @@ const slideOutMiddle = (element) => {
 intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle('.workContainer'): slideOutMiddle('.workContainer')
   // animattion on entry ends 
 
+  // the selection of skill
   const [current, setCurrent] = useState('all')
 
   const clicked = (val) => {
@@ -52,73 +54,162 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle(
     sub: "Pizza sales app",
     tech: ['Next.js', 'api', 'paypal']};
 
+  // the modal
+  const [work, setWork] = useState(false)
+
+  const handleWork = () => {
+    setWork(true)
+  }
+
+  const removeWork = () =>{
+    setWork(false)
+  }
+
+
   return (
-    <div className='workContainer' ref={middleSection} id='works'>
-      <div className='workMaintext'>
-        <p className='about_SkillLeft_subtext'>I Build Real Value</p>
-        <h1 className='about_SkillLeft_maintext'>My works</h1>
-      </div>
+    <>
+      <div className='workContainer' ref={middleSection} id='works'>
+        <div className='workMaintext'>
+          <p className='about_SkillLeft_subtext'>I Build Real Value</p>
+          <h1 className='about_SkillLeft_maintext'>My works</h1>
+        </div>
 
-      <div className='workTag'>
-        <div  onClick={()=>clicked('all')}>
-          <div className={current === 'all' ? 'clicked' : ''}></div>
-          <div className='clickText'>All</div>
-        </div>
-        <div onClick={()=>clicked('web')}>
-          <div className={current === 'web' ? 'clicked' : ''}></div>
-          <div className='clickText'>Web</div>
-        </div>
-        <div onClick={()=>clicked('branding')}>
-          <div className={current === 'branding' ? 'clicked' : ''}></div>
-          <div className='clickText'>Branding</div>
-        </div>
-        <div onClick={()=>clicked('ui')}>
-          <div className={current === 'ui' ? 'clicked' : ''}></div>
-          <div className='clickText'>UI</div>
-        </div>
-      </div>
-
-      <div className='workDisplay'>
-        <div className='workPadding'>
-        
-          <div className='workDisplayWrapper'>
-            {
-              current === 'all' &&(
-                db.map(datum =>(
-                  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
-                ))
-              )
-            }
-            {
-              current === 'web' &&(
-                db.map(datum =>(
-                 datum.type === 'Web' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
-                ))
-              )
-            }
-            {
-              current === 'branding' &&(
-                db.map(datum =>(
-                 datum.type === 'Branding' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
-                ))
-              )
-            }
-           
-            {
-              current === 'ui' &&(
-                db.map(datum =>(
-                 datum.type === 'UI' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
-                ))
-              )
-            }
-           
+        <div className='workTag'>
+          <div  onClick={()=>clicked('all')}>
+            <div className={current === 'all' ? 'clicked' : ''}></div>
+            <div className='clickText'>All</div>
           </div>
-          <div className='work'>
+          <div onClick={()=>clicked('web')}>
+            <div className={current === 'web' ? 'clicked' : ''}></div>
+            <div className='clickText'>Web</div>
+          </div>
+          <div onClick={()=>clicked('branding')}>
+            <div className={current === 'branding' ? 'clicked' : ''}></div>
+            <div className='clickText'>Branding</div>
+          </div>
+          <div onClick={()=>clicked('ui')}>
+            <div className={current === 'ui' ? 'clicked' : ''}></div>
+            <div className='clickText'>UI</div>
+          </div>
+        </div>
+
+        <div className='workDisplay'>
+          <div className='workPadding'>
+          
+            <div className='workDisplayWrapper'>
+              {
+                current === 'all' &&(
+                  Array.apply(null, { length: 6 }).map((e, i) => (
+                    <WorksCard key={i} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
+                  ))
+                )
+              }
+
+              {
+                current === 'web' &&(
+                  Array.apply(null, { length: 10 }).map((e, i) => (
+                  db[i].type === 'Web' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
+                  ))
+                )
+              }
+              {
+                current === 'branding' &&(
+                  Array.apply(null, { length: 10 }).map((e, i) => (
+                  db[i].type === 'Branding' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
+                  ))
+                )
+              }
             
+              {
+                current === 'ui' &&(
+                  Array.apply(null, { length: 10 }).map((e, i) => (
+                  db[i].type === 'UI' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
+                  ))
+                )
+              }
+            
+            </div>
+            <div className='more'>
+              <p onClick={handleWork}>See more </p>
+              <div onClick={handleWork}>
+                <BsIcons.BsArrowRight/>
+                </div>
+              </div>
           </div>
         </div>
       </div>
-    </div>
+      {work && (
+        <div>
+            <div className='workView' onClick={removeWork}>
+            </div>
+            <div className='workViewContainer newcontain'>
+                <div className='expContainer'>
+                <div className='workMaintext workviewFull' style={{marginTop: '0'}}>
+                  <p className='about_SkillLeft_subtext'>I Build Real Value</p>
+                  <h1 className='about_SkillLeft_maintext'>My works</h1>
+                </div>
+
+                <div className='genWork'>
+                  <div className='workTag'>
+                    <div  onClick={()=>clicked('all')}>
+                      <div className={current === 'all' ? 'clicked' : ''}></div>
+                      <div className='clickText'>All</div>
+                    </div>
+                    <div onClick={()=>clicked('web')}>
+                      <div className={current === 'web' ? 'clicked' : ''}></div>
+                      <div className='clickText'>Web</div>
+                    </div>
+                    <div onClick={()=>clicked('branding')}>
+                      <div className={current === 'branding' ? 'clicked' : ''}></div>
+                      <div className='clickText'>Branding</div>
+                    </div>
+                    <div onClick={()=>clicked('ui')}>
+                      <div className={current === 'ui' ? 'clicked' : ''}></div>
+                      <div className='clickText'>UI</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className='workLength'>
+                  <div className='workDisplayWrapper'>
+                    {
+                      current === 'all' &&(
+                        db.map(datum =>(
+                          <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
+                        ))
+                      )
+                    }
+                    {
+                      current === 'web' &&(
+                        db.map(datum =>(
+                        datum.type === 'Web' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
+                        ))
+                      )
+                    }
+                    {
+                      current === 'branding' &&(
+                        db.map(datum =>(
+                        datum.type === 'Branding' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
+                        ))
+                      )
+                    }
+                  
+                    {
+                      current === 'ui' &&(
+                        db.map(datum =>(
+                        datum.type === 'UI' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
+                        ))
+                      )
+                    }
+                  
+                  </div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+      ) }
+    </>
   )
 }
 

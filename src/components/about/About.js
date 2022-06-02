@@ -102,7 +102,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle
         <div className='about_mainText' ref={leftSection}><h1>I Know That Good <span>Software</span> Means Good <span>Business</span></h1></div>
 
         <div className='about_subText' ref={rightSection}>
-          <p>I am a brand identity designer and a web develop based in Nigeria with 2 
+          <p>I am a brand identity designer and a web develop based in Nigeria with 3 
           years of experience in Graphics design  
           and sound knowledge of Javascript Libraries (React.Js, Next.Js and Vue.Js) </p>
 

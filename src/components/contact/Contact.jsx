@@ -6,6 +6,7 @@ import Button from '../button/Button'
 import { useRef } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
+import emailjs from 'emailjs-com';
 
 
 export default function Contact() {
@@ -69,7 +70,23 @@ const slideOutRight = (element) => {
 intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.contact_bottom__message'): slideOutRight('.contact_bottom__message')
 // animation end
 
+// email submit
 
+const form = useRef();
+
+const sendEmail = (e) => {
+  e.preventDefault();
+
+  console.log(e.target)
+
+  emailjs.sendForm('service_mqqgdtq', 'template_efygwpc', form.current, 'EOhoWlAuoDh4KT5BG')
+    .then((result) => {
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+    e.target.reset();
+};
 
   return (
     <div className='contact_container' id='contact'>
@@ -116,11 +133,12 @@ intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.
         </div>
        
         <div className='contact_bottom__message' ref={rightSection}>
-          <form action="">
-              <input type="text" className='contact_bottom_form' placeholder='Name'/>
-              <input type="text" className='contact_bottom_form'placeholder='Email'/>
-              <textarea type="text" className='txtArea' placeholder='Message '/>
-            <Button name='Send Message' className='btn'/>
+          <form ref={form} onSubmit={sendEmail}>
+              <input type="text" className='contact_bottom_form' placeholder='Name' name='name'/>
+              <input type="text" className='contact_bottom_form'placeholder='Email' name='email'/>
+              <textarea type="text" className='txtArea' placeholder='Message' name='message'/>
+              <input type="submit" className='btn' value='Send Message' />
+            {/* <Button name='Send Message' type='submit' className='btn'/> */}
           </form>
 
         </div>

@@ -1,13 +1,23 @@
 import './hero.css';
 import Button from '../button/Button';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
 import { HashLink as Link } from 'react-router-hash-link';
-import Experience from '../experience/Experience';
+import data from '../../data/expData'
 
 
 const Hero = () => {
+    const [experience, setExperience] = useState(false);
+
+    const handleExperience = ()=> {
+        setExperience(true)
+    }
+
+    const removeExperience = ()=>{
+        setExperience(false)
+    }
+
 
     // animation
     const leftSection = useRef();
@@ -136,7 +146,7 @@ const Hero = () => {
 
                 <div className="hero__middleSection" ref={middleSection}>
                     <span>
-                        <p className='middleSection__content'>My experience</p>
+                        <p className='middleSection__content' onClick={handleExperience}>My experience</p>
 
                         <a href="https://docs.google.com/document/d/1GXq2SAkN5AkPPuFe_Q26eGGfBXhbr8W_shOO3iQxplM/edit?usp=sharing" target='_blank'><p className='middleSection__content'>download my cv</p></a>
                     </span>
@@ -152,7 +162,36 @@ const Hero = () => {
                 </div>   
             </div>                 
            
-           <Experience/>
+          {experience && (
+            <div>
+                <div className='experience' onClick={removeExperience}>
+                </div>
+                <div className='experienceContainer'>
+                    <div className='expContainer'>
+                        <h1>My Experience</h1>
+                        <div className='experiences'>
+        
+                            { data.map(e=> (
+                            <div key={e.id} className='exp'>   
+                                <h1><span className='firm'>{e.firm}</span> - {e.role}</h1>
+                                <span>{e.period}</span>
+                                <ul>
+                                    {
+                                        e.duties.map((duty, i) =>(
+                                            <li key={i}>
+                                                <p>{duty}</p>
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                            ))
+                            }   
+                        </div>
+                    </div>
+                </div>
+            </div>
+          ) }
         </div>
      );
 }
