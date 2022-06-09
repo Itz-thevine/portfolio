@@ -152,7 +152,8 @@
         flex-direction: column;
         width: 100%;
         color: var(--mainColorOne);
-    }
+        margin-bottom: 50px;
+    }   
 
 
 }
