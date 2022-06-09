@@ -395,6 +395,10 @@ h1 > .firm{
         margin-top: 50px;
     }
 
+    .hero_child{
+        margin-top: 50%;
+    }
+
     .hero_leftControl{
         align-items: center;
     }
@@ -404,6 +408,10 @@ h1 > .firm{
         display: flex;
         justify-content: center;
         align-items: flex-end;
+    }
+
+    .btnPostiton a{
+        justify-content: center;
     }
 
     .hero__firstControl{
