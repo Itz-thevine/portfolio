@@ -11,3 +11,10 @@
 .app{
   box-sizing: border-box;
 }
+
+@media screen and (max-width: 900px) {
+  .app{
+    width: 100vw;
+    overflow-x: hidden;
+  }
+}
