@@ -138,4 +138,18 @@
     .worksCard:nth-child(even){
         margin-left: 0;
     }
+
+    .titleOfWork{
+        font-size: 25px;
+    }
+    .worksImage{
+        width: 40%;
+        overflow-x: hidden;
+    }
+    .redirec{
+        width: 142px;
+    }
+    .redirec_icon{
+        left: 100px;
+    }
 }
