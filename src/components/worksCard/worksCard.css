@@ -133,7 +133,7 @@
 
 @media screen and (max-width: 900px) {
     .worksCard{
-        width: 96%;
+        width: 100%;
     }
     .worksCard:nth-child(even){
         margin-left: 0;
@@ -143,7 +143,7 @@
         font-size: 25px;
     }
     .worksImage{
-        width: 40%;
+        width: 172px;
         overflow-x: hidden;
     }
     .redirec{
