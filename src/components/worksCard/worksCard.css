@@ -130,3 +130,12 @@
     margin-bottom: 5px;
     display: flex;
 }
+
+@media screen and (max-width: 900px) {
+    .worksCard{
+        width: 96%;
+    }
+    .worksCard:nth-child(even){
+        margin-left: 0;
+    }
+}

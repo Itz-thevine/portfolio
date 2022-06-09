@@ -123,10 +123,6 @@
 }
 
 
-.workDisplayWrapper:hover{
-    /* animation: scaler 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite; */
-}
-
 .about_SkillLeft_subtext{
     font-family: 'Segoe UI Variable', sans-serif;
     font-style: normal;
@@ -252,5 +248,23 @@
     .workTag > div {
         
         padding: 5% 6%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .workContainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .workPadding{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5%;
+    }
+
+    .workDisplayWrapper{
+        width: 100%;
     }
 }

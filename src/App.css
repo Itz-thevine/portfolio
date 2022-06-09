@@ -15,7 +15,7 @@
 
 @media screen and (max-width: 900px) {
   .app{
-    width: 98vw;
+    width: 100vw;
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
