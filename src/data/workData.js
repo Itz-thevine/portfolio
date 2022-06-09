@@ -1,6 +1,12 @@
 import NorthernMenn from '../assets/workImages/nothernMenn.jpg'
 import NiishCloud from '../assets/workImages/niishCloud.jpg'
 import CastleCake from '../assets/workImages/castleCake.jpg'
+import KlassRoom from '../assets/workImages/klassRoom.jpg'
+import netflix from '../assets/workImages/netflixClone.jpg'
+import Speechify from '../assets/workImages/speechify.jpg'
+import Store from '../assets/workImages/store.jpg'
+import splendidFood from '../assets/workImages/splendidFood.jpg'
+import countryDetail from '../assets/workImages/countryDetails.jpg'
 
 const data = [
     {   
@@ -10,14 +16,18 @@ const data = [
         title: "NorthMenn",
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
     },
     {
         id: 2,
-        image: NiishCloud,
+        image: KlassRoom,
         type: 'Web',    
-        title: 'Pizza Store',
-        sub: "Pizza sales app",
-        tech: ['Next.js', 'api', 'paypal'],
+        title: 'KlassRoom',
+        sub: "Student ClassRoom App",
+        tech: ['React js','TailwindCSS', 'Firebase Auth', 'Nested Routing',],
+        project: '',
+        github: '',
     },
     {
         id: 3,
@@ -26,6 +36,8 @@ const data = [
         title: 'castleCake',
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
     },
     {   
         id: 4,
@@ -34,6 +46,8 @@ const data = [
         title: "NorthMenn",
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
     },
     {
         id: 5,
@@ -42,14 +56,18 @@ const data = [
         title: 'castleCake',
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
     },
     {
-        id: 6,
+        id: 9,
         image: NiishCloud,
         type: 'Web',    
-        title: 'Pizza Store',
-        sub: "Pizza sales app",
-        tech: ['Next.js', 'api', 'paypal'],
+        title: 'Foody',
+        sub: "Easy food ordering app",
+        tech: ['Next.js', 'Api', 'Paypal', 'Redux', 'Cookies', 'TailWindCSS'],
+        project: '',
+        github: '',
     },
     {
         id: 7,
@@ -58,6 +76,8 @@ const data = [
         title: 'castleCake',
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
     },
     {   
         id: 8,
@@ -66,14 +86,18 @@ const data = [
         title: "NorthMenn",
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
     },
     {
-        id: 9,
-        image: NiishCloud,
+        id: 6,
+        image: netflix,
         type: 'Web',    
-        title: 'Pizza Store',
+        title: 'Netflix Site Clone',
         sub: "Pizza sales app",
-        tech: ['Next.js', 'api', 'paypal'],
+        tech: ['React js', 'Formik', 'Yul', 'React-router' ],
+        project: '',
+        github: '',
     },
     {
         id: 10,
@@ -82,6 +106,48 @@ const data = [
         title: 'castleCake',
         sub: "Fictional brewing brand design",
         tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
+        project: '',
+        github: '',
+    },
+    {
+        id: 11,
+        image: Speechify,
+        type: 'Web',
+        title: 'Speechify',
+        sub: "Speech to text and text to Speech Conversion App",
+        tech: ['Html', 'CSS', 'javaScript'],
+        project: '',
+        github: '',
+    },
+    {
+        id: 12,
+        image: Store,
+        type: 'Web',
+        title: 'Store',
+        sub: "Speech to text and text to Speech Conversion App",
+        tech: ['React js', 'Api', 'Redux', 'Paypal', 'TailwindCSS'],
+        project: '',
+        github: '',
+    },
+    {
+        id: 13,
+        image: splendidFood,
+        type: 'Web',
+        title: ' HomeRetails',
+        sub: "Home retails app",
+        tech: ['Vue', 'Api', 'Vuex', 'Bootstrap'],
+        project: '',
+        github: '',
+    },
+    {
+        id: 14,
+        image: countryDetail,
+        type: 'Web',
+        title: 'Countries',
+        sub: "Check your countries details",
+        tech: ['Html', 'Boostrap', 'javaScript', 'Api'],
+        project: 'https://ikdivine-countries.netlify.app/',
+        github: 'https://github.com/Itz-thevine/countries',
     },
 ]
 

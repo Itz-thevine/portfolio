@@ -100,7 +100,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle(
               {
                 current === 'all' &&(
                   Array.apply(null, { length: 6 }).map((e, i) => (
-                    <WorksCard key={i} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
+                    <WorksCard key={i} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech} project={db[i].project} github={db[i].github}/>
                   ))
                 )
               }
@@ -108,7 +108,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle(
               {
                 current === 'web' &&(
                   Array.apply(null, { length: 10 }).map((e, i) => (
-                  db[i].type === 'Web' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
+                  db[i].type === 'Web' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech} project={db[i].project} github={db[i].github}/>
                   ))
                 )
               }
@@ -175,14 +175,14 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle(
                     {
                       current === 'all' &&(
                         db.map(datum =>(
-                          <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
+                          <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech} project={datum.project} github={datum.github} />
                         ))
                       )
                     }
                     {
                       current === 'web' &&(
                         db.map(datum =>(
-                        datum.type === 'Web' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
+                        datum.type === 'Web' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech} project={datum.project} github={datum.github}/>
                         ))
                       )
                     }

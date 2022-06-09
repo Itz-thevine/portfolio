@@ -3,90 +3,54 @@ import './worksCard.css'
 import * as AiIcons from 'react-icons/ai'
 import * as FiIcons from 'react-icons/fi'
 
-const WorksCard = ({im, title, sub, type, tech}) => {
+const WorksCard = ({im, title, sub, type, tech, project, github}) => {
   return (
     <div className='worksCard'>
         {
             type === 'Web' && (
-                <>
-                    <div className='worksImage'>
-                        <img src={im} alt="" height={200} className='controlImage' />
+                <div className='worksCardControl'>
+                    <a href={project} className='worksCardControli' target='_blank'>
+                        <div className='worksImage'>
+                            <img src={im} alt="" height={200} className='controlImage' />
+                        </div>
+                        <div className='worke'>
+                            <div className='workTitle'>
+                                <div>
+                                    <p className='titleOfWork'>{title}</p>
+                                    <p className='subOfWork'>{sub}</p>
+                                </div>
+                                <div>
+                                    {type}
+                                </div>
+                            </div>
+                            <div className='techOfWork'>
+                                <p className='tech'>Technologies:</p>
+                                {
+                                    // console.log(tech)
+                                    tech.map((technology , i) => (
+                                        <div key={i} className='techies'>{technology}</div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </a>
+                    <a href={github} className='redirectLink' target='_blank'>
                         <div className='redirec'>
                         </div>
                         <div className='redirec_icon'>
                             <AiIcons.AiFillGithub/>
                         </div>
-                    </div>
-                    <div className='worke'>
-                        <div className='workTitle'>
-                            <div>
-                                <p className='titleOfWork'>{title}</p>
-                                <p className='subOfWork'>{sub}</p>
-                            </div>
-                            <div>
-                                {type}
-                            </div>
-                        </div>
-                        <div className='techOfWork'>
-                            <p className='tech'>Technologies:</p>
-                            {
-                                // console.log(tech)
-                                tech.map((technology , i) => (
-                                    <div key={i} className='techies'>{technology}</div>
-                                ))
-                            }
-                        </div>
-                    </div>
-                </>
+                    </a>
+                </div>
         )}
             
             
         {
             type === 'Branding'  && ( 
-            <>
-                <div className='worksImage'>
-                    <img src={im} alt="" height={200} className='controlImage' />
-                    <div className='redirec'>
-                    </div>
-                    <div className='redirec_icon'>
-                        <AiIcons.AiFillBehanceCircle/>
-                    </div>
-                </div>
-                <div className='worke'>
-                    <div className='workTitle'>
-                        <div>
-                            <p className='titleOfWork'>{title}</p>
-                            <p className='subOfWork'>{sub}</p>
-                        </div>
-                        <div>
-                            {type}
-                        </div>
-                    </div>
-                    <div className='techOfWork'>
-                        <p className='tech'>Software:</p>
-                        {
-                        
-                            
-                            tech.map((technology , i) => (
-                                <div key={i} className='techies'>{technology}</div>
-                            ))
-                        }
-                    </div>
-                </div>
-            </>
-            
-        )}
-
-        {
-            type === 'UI'  && ( 
-                <>
+            <div className='worksCardControl'>
+                <a href="" target='_blank' className='worksCardControli'>
                     <div className='worksImage'>
                         <img src={im} alt="" height={200} className='controlImage' />
-                        <div className='redirec'>
-                        </div>
-                        <div className='redirec_icon'>
-                            <FiIcons.FiFigma/>
-                        </div>
                     </div>
                     <div className='worke'>
                         <div className='workTitle'>
@@ -109,7 +73,51 @@ const WorksCard = ({im, title, sub, type, tech}) => {
                             }
                         </div>
                     </div>
-                </>
+                </a>
+                <div className='redirec'>
+                </div>
+                <div className='redirec_icon'>
+                    <AiIcons.AiFillBehanceCircle/>
+                </div>
+            </div>
+            
+        )}
+
+        {
+            type === 'UI'  && ( 
+                <div className='worksCardControl'>
+                    <a href="" target='_blank' className='worksCardControli'>
+                        <div className='worksImage'>
+                            <img src={im} alt="" height={200} className='controlImage' />
+                        </div>
+                        <div className='worke'>
+                            <div className='workTitle'>
+                                <div>
+                                    <p className='titleOfWork'>{title}</p>
+                                    <p className='subOfWork'>{sub}</p>
+                                </div>
+                                <div>
+                                    {type}
+                                </div>
+                            </div>
+                            <div className='techOfWork'>
+                                <p className='tech'>Software:</p>
+                                {
+                                
+                                    
+                                    tech.map((technology , i) => (
+                                        <div key={i} className='techies'>{technology}</div>
+                                    ))
+                                }
+                            </div>
+                        </div>
+                    </a>
+                    <div className='redirec'>
+                    </div>
+                    <div className='redirec_icon'>
+                        <FiIcons.FiFigma/>
+                    </div>
+                </div>
             )
 
         }
