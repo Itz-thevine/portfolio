@@ -8,3 +8,6 @@
   --mainFont: font-family: 'Open Sans', sans-serif;
 }
 
+.app{
+  box-sizing: border-box;
+}
