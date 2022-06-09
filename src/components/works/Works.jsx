@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import './works.css'
-import { useRef } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
 import WorksCard from '../worksCard/WorksCard';
@@ -8,13 +7,48 @@ import db from '../../data/workData'
 import * as BsIcons from 'react-icons/bs'
 
 const Works = () => {
-  const middleSection = useRef();
 
-// middle
+  // check screen width
+  const [widthSize, setWidthSize] = useState([])
+  const getWindowDimensions =() => {
+    const { innerWidth: width } = window;
+    return {
+      width,
+    };
+  }
+
+   function useWindowDimensions() {
+    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+    useEffect(() => {
+      function handleResize() {
+        setWindowDimensions(getWindowDimensions());
+      }
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return windowDimensions;
+  }
+
+  const {width} = useWindowDimensions()
+
+  
+  const getval = (width)=>{
+    if(width > 900){
+      return 0.5
+    }else{
+      return .25
+    }
+  }
+  
+  // middle
+const middleSection = useRef();
 const intersectionMiddle = useIntersection(middleSection, {
     root: null,
     rootMargin: "0px",
-    threshold: .5
+    threshold: getval(width)
 })
 
 
@@ -37,7 +71,7 @@ const slideOutMiddle = (element) => {
     })
 }
 
-intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle('.workContainer'): slideOutMiddle('.workContainer')
+intersectionMiddle && intersectionMiddle.intersectionRatio > getval(width) ? slideInMiddle('.workContainer'): slideOutMiddle('.workContainer')
   // animattion on entry ends 
 
   // the selection of skill
