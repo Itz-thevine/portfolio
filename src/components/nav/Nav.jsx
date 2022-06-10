@@ -44,6 +44,16 @@ const Nav = () => {
     }
 
     intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle('.nav'): slideOutMiddle('.nav')
+
+
+    // mobile menu
+    const [menu, setMenu] = useState(false);
+
+    const toggleMenu = (value) => {
+            setMenu(!value)
+    }
+
+    console.log(menu)
     
 
     return ( 
@@ -55,7 +65,7 @@ const Nav = () => {
                     </Link>
                 </div>
 
-                <ul className="nav__middle">
+                <ul className={menu ? "nav__middle showMenu" : "hideMenu"}>
                     <li>
                         <Link to='#hero' className='nav_link'>Home</Link>
                     </li>
@@ -101,7 +111,7 @@ const Nav = () => {
                     </a>
 
                 </div>
-                <div className='naav__mobileIcon'>
+                <div className={menu ? 'naav__mobileIcon open_nav' : 'naav__mobileIcon'} onClick={() => toggleMenu(menu)}>
                     <CgIcons.CgMenuRight/> 
                 </div>
                 

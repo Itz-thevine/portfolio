@@ -54,6 +54,25 @@
     border-color: transparent;
 }
 
+
+.hideMenu{
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    margin: 0 150px;
+}
+
+.hideMenu li{
+    list-style-type: none;
+    font-style: normal;
+    font-weight: 600;
+    font-family: 'Segoe UI Variable', sans-serif;
+    font-size: 17px;
+    line-height: 22px;
+    border-color: transparent;
+}
+
 .nav_link {
     text-decoration: none;
     color: var(--mainColorOne);
@@ -147,11 +166,9 @@
         right: 0;
         left: 0;
         margin-left: auto ;
-
+        height: 315px;
     }
-    .nav > .nav__middle{
-        display: none;
-    }
+    
 
     .navControl{
         display: flex;
@@ -167,6 +184,19 @@
         height:35px;
         width: 35px;
         color: var(--mainColorOne);
+        transform: rotate(0deg) ;
+        transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    }
+
+    .open_nav{
+        transform: rotate(-90deg) ;
+        transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    .revealIcon{
+        position: absolute;
+        display: flex;
     }
 
     .nav__icons{
@@ -174,9 +204,29 @@
     }
 
     .nav__middle{
+       position: absolute;
+       width: 100%;
+       background-color: rgb(176, 83, 83);
+       z-index: 101;
+       left: 0;
+       top: 100px;
+       display: flex;
+       flex-direction: column;
+       margin: 0;
+       box-sizing: border-box;
+       align-items: center;
+       justify-content: center
+    }
+
+    .hideMenu{
         display: none;
     }
-    
+
+    .nav__middle li{
+        padding: 15px 0;
+    }
+
+
     #nav__hidden{
         position: absolute;
         left: 0px;
