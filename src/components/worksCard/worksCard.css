@@ -13,6 +13,7 @@
     display: flex;
     width: 100%;
     position: relative;
+
 }
 
 .worksCardControli {
@@ -26,9 +27,13 @@
     margin-left: 4%;
 }
 
+.worksCard{
+    animation: scaleRem 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+
+}
 
 .worksCard:hover{
-    animation: scaler 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    animation: scaleBtn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
 
 .worksImage{

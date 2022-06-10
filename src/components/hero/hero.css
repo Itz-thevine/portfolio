@@ -85,31 +85,27 @@
 }
 
 .btnPostiton a{
-    display: flex;
+    animation: scaler 2s 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     width: 100%;
     text-decoration: none;
 }
 
-.hero__latestWork{
-    margin-top: 0;
+
+@keyframes scaler {
+    0%,10%{
+        transform: scale(1);
+        opacity: 100%;
+    }
+    40%,50%{
+        transform: scale(1.02);
+        opacity: 100%;
+    }
+    90%,100%{
+        transform: scale(1);
+        opacity: 100%;
+    }
 }
 
-
-.hero__latestWork > h2{
-    font-family: 'Segoe UI Variable', sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 50px;
-    line-height: 63px;
-    margin-bottom:1.875rem ; /*30px */
-}
-
-.hero__latestWorkRow{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 642px;
-}
 
 .imageWrapper{
     width: 214px;
@@ -130,7 +126,7 @@
     flex-direction: column;
     padding-top: 15px;
     width: auto;
-    animation: slideInRight 0.8s 1s ease-in forwards;
+    /* animation: slideInRight 0.8s 1s ease-in forwards; */
     opacity: 0;
 }
 
@@ -149,7 +145,6 @@
     font-family: 'Segoe UI Variable', sans-serif;
     writing-mode: vertical-lr;
     unicode-bidi: bidi-override;
-    /* margin-bottom: 20px; */
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -382,6 +377,7 @@ h1 > .firm{
     font-size: 15px;
     padding: 0;
 }
+
 
 
 @media screen and (max-width: 1200px) {

@@ -17,29 +17,11 @@
     justify-content: center;
 }
 
-.btn:hover{
-    animation: scaler 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-}
+
+
 
 @media screen and (max-width: 1200px) {
    .btn{
        width: 35%;
    }
-}
-
-
-
-@keyframes scaler {
-    0%{
-        transform: scale(1);
-        opacity: 100%;
-    }
-    50%{
-        transform: scale(1.1);
-        opacity: 100%;
-    }
-    100%{
-        transform: scale(1);
-        opacity: 100%;
-    }
 }

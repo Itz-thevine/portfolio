@@ -1,7 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .aboutContainer{
-    padding-top: 130px;
+    padding-top: 200px;
     margin-bottom: 50px;
     display: flex;
     justify-content: center;
@@ -125,7 +125,7 @@
     }
 
     .about_skillRight{
-        width: 288px;
+        width: 100%;
         align-items: flex-start;
         flex-wrap: wrap;
     }

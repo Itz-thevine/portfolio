@@ -90,7 +90,13 @@
 
 .btn{
     margin-top: 30px;
+    animation: scaleRem 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
 }
+
+.btn:hover{
+    animation: scaleBtn 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
 
 .txtArea{
     height: 80px;

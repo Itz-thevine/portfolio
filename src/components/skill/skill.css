@@ -32,7 +32,7 @@
         font-size: 3rem;
     }
     .skillContainer{
-        width: 72px;
+        width: 25%;
     }
     .skillText{
         color: var(--mainColorOne);
