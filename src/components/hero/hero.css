@@ -386,10 +386,10 @@ h1 > .firm{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        /* border: 1px solid red; */
         text-align: center;
-        /* margin: 0 auto; */
         margin-top: 50px;
+        height: calc(100vh - 50px);
+        box-sizing: border-box;
     }
 
     .hero_child{

@@ -8,8 +8,7 @@
     width: 130px;
     height: 130px;
     background-repeat: no-repeat;
-    animation: preloader 2.2s 0s ease-out forwards,
-                moveLogo 1s 4.4s ease-out forwards;
+    animation: preloader 2.2s 0s ease-out forwards;
     animation-iteration-count: 2, 1;
     background-position: center;
     background-size: contain;
@@ -28,24 +27,6 @@
 
 }
 
-.preLoaderText{
-    background: url('../../assets/preloaderText.png');
-    width: 250px;
-    height: 250px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    display: flex;
-    position: absolute;
-    top: -25px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    padding-bottom: 55px;
-    opacity: 0;
-    animation: appear 2s 4.4s ease-out forwards;
-}
 
 @keyframes preloader {
     0%{
