@@ -57,29 +57,29 @@ const Nav = () => {
     
 
     return ( 
-        <div className="nav container" ref={middleSection} id='nav'>
+        <div className={menu ? 'nav container addnavH' : 'nav container'} ref={middleSection} id='nav'>
             <div className='navControl'>
                 <div className="nav__name">
-                    <Link to='#hero'>
+                    <Link to='#hero' onClick={() => toggleMenu(menu)}>
                         <img src={Logo} width={150} alt="" />
                     </Link>
                 </div>
 
                 <ul className={menu ? "nav__middle showMenu" : "hideMenu"}>
                     <li>
-                        <Link to='#hero' className='nav_link'>Home</Link>
+                        <Link to='#hero' className='nav_link' onClick={() => toggleMenu(menu)}>Home</Link>
                     </li>
                     <li>
-                        <Link to='#about' className='nav_link'>About me</Link>
+                        <Link to='#about' className='nav_link' onClick={() => toggleMenu(menu)}>About me</Link>
                     </li>
                     <li>
-                        <Link to='#skill' className='nav_link'>Skills</Link>
+                        <Link to='#skill' className='nav_link' onClick={() => toggleMenu(menu)}>Skills</Link>
                     </li>
                     <li>
-                        <Link to='#works' className='nav_link'>Works</Link>
+                        <Link to='#works' className='nav_link' onClick={() => toggleMenu(menu)}>Works</Link>
                     </li>
                     <li>
-                        <Link to='#contact' className='nav_link'>Contact</Link>
+                        <Link to='#contact' className='nav_link' onClick={() => toggleMenu(menu)}>Contact</Link>
                     </li>
                 </ul>
 

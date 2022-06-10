@@ -166,7 +166,14 @@
         right: 0;
         left: 0;
         margin-left: auto ;
-        height: 315px;
+        /* overflow-y: auto; */
+        height: 45px;
+    }
+
+    .addnavH{
+        height: 317px;
+        
+        transform: height 2s cubic-bezier(0.075, 0.82, 0.165, 1);;
     }
     
 
@@ -186,7 +193,8 @@
         color: var(--mainColorOne);
         transform: rotate(0deg) ;
         transition: transform 2s cubic-bezier(0.075, 0.82, 0.165, 1);
-
+       
+        
     }
 
     .open_nav{
@@ -206,19 +214,36 @@
     .nav__middle{
        position: absolute;
        width: 100%;
-       background-color: rgb(176, 83, 83);
-       z-index: 101;
+       z-index: 1300;
        left: 0;
-       top: 100px;
+       top: 85px;
        display: flex;
        flex-direction: column;
        margin: 0;
        box-sizing: border-box;
        align-items: center;
-       justify-content: center
+       justify-content: center;
+    }
+
+    .showMenu{
+        animation: menuone 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        box-shadow: 2px 17px 21px -25px rgba(0,0,0,0.55);
+        -webkit-box-shadow: 2px 17px 21px -25px rgba(0,0,0,0.55);
+        -moz-box-shadow: 2px 17px 21px -25px rgba(0,0,0,0.55);
+    }
+
+    @keyframes menuone {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            top: 100px
+        }
     }
 
     .hideMenu{
+        opacity: 0;
         display: none;
     }
 
@@ -244,6 +269,7 @@
         z-index: 1000;
         /* transition: all 0.5s; */
         border-radius: 0 0 0 50%;
+        height: 300px;
     }
 
     .nav__middle > li{
