@@ -88,6 +88,7 @@
     animation: scaler 2s 2s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
     width: 100%;
     text-decoration: none;
+    display: flex;
 }
 
 
@@ -408,6 +409,7 @@ h1 > .firm{
 
     .btnPostiton a{
         justify-content: center;
+        display: flex;
     }
 
     .hero__firstControl{
