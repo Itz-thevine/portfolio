@@ -40,7 +40,7 @@ const Hero = () => {
     }
     const heroSlideOutLeft = (element) => {
         gsap.to(element, 2, {
-            opacity: 1,
+            opacity: 0,
             x: '-100px',
             ease: 'power4.out',
             trigger: "#pageWrap",
