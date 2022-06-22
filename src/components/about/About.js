@@ -36,25 +36,22 @@ const aboutMiddleSection = useRef();
   aboutIntersection && aboutIntersection.intersectionRatio > .5 ? aboutSlideInLeft('.about_mainText'): aboutSlideOutLeft('.about_mainText')
 
   // middle
-  const intersectionMiddle = useIntersection(aboutMiddleSection, {
+  const aboutIntersectionMiddle = useIntersection(aboutMiddleSection, {
     root: null,
     rootMargin: "0px",
-    threshold: .75
+    threshold: .5
 })
 
   
-  const slideInMiddle = (element) => {
+  const aboutSlideInMiddle = (element) => {
     gsap.to(element, 2, {
         opacity: 1,
         y: '0px',
         ease: 'power4',
-        stagger: {
-            amount: 3
-        }
     })
 }
 
-const slideOutMiddle = (element) => {
+const aboutSlideOutMiddle = (element) => {
     gsap.to(element, 2, {
         opacity: 0,
         y: '-75px',
@@ -62,7 +59,7 @@ const slideOutMiddle = (element) => {
     })
 }
 
-intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle('.about_skill'): slideOutMiddle('.about_skill')
+aboutIntersectionMiddle && aboutIntersectionMiddle.intersectionRatio > .5 ? aboutSlideInMiddle('.about_skill'): aboutSlideOutMiddle('.about_skill')
 
 
 
