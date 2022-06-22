@@ -35,9 +35,7 @@ const Hero = () => {
             opacity: 1,
             x: '0px',
             ease: 'power4',
-            stagger: {
-                amount: 3
-            }
+
         })
     }
     const heroSlideOutLeft = (element) => {

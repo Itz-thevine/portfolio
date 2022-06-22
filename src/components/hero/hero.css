@@ -251,7 +251,7 @@
 .hero__rightSection_tag:nth-child(1){
     background: url('../../assets/branding.png');
     top: 10px;
-    left: -5px;
+    left: 15px;
     background-repeat: no-repeat;
     background-size: 80%;
     
@@ -259,7 +259,7 @@
 .hero__rightSection_tag:nth-child(2){
     background: url('../../assets/software\ engineer.png');
     top: 200px;
-    right:-40px;
+    right:-60px;
     background-repeat: no-repeat;
     background-size: 80%;
 }
@@ -282,7 +282,7 @@
     z-index: 10;
     height: 800px;
     top: -40px;
-    right: -20px;
+    right: -45px;
 }
 
 /* 
@@ -387,13 +387,12 @@ h1 > .firm{
         justify-content: center;
         align-items: center;
         text-align: center;
-        margin-top: 50px;
         height: calc(100vh - 50px);
         box-sizing: border-box;
     }
 
     .hero_child{
-        margin-top: 50%;
+        margin-top: 40%;
     }
 
     .hero_leftControl{

@@ -29,9 +29,6 @@ const Nav = () => {
             opacity: 1,
             y: '0px',
             ease: 'power4',
-            stagger: {
-                amount: 3
-            }
         })
     }
 
