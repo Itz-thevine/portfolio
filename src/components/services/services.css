@@ -3,7 +3,7 @@
 .servicesContainer{
     display: flex;
     flex-direction: column;
-    padding: 30px 7% 4% 7%;
+    padding: 25px 7% 4% 7%;
     background-color: var(--mainColorOne);
     color: white;
     opacity: 0;
