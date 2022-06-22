@@ -20,17 +20,17 @@ const Hero = () => {
 
 
     // animation
-    const leftSection = useRef();
-    const rightSection = useRef();
-    const middleSection = useRef();
+    const heroLeftSection = useRef();
+    const heroRightSection = useRef();
+    const heroMiddleSection = useRef();
 
-    // leftSection Animation
-    const intersection = useIntersection(leftSection, {
+    // heroLeftSection Animation
+    const heroIntersection = useIntersection(heroLeftSection, {
         root: null,
         rootMargin: "0px",
-        threshold: .75
+        threshold: .5
     })
-    const slideInLeft = (element) => {
+    const heroSlideInLeft = (element) => {
         gsap.to(element, 2, {
             opacity: 1,
             x: '0px',
@@ -40,18 +40,18 @@ const Hero = () => {
             }
         })
     }
-    const slideOutLeft = (element) => {
+    const heroSlideOutLeft = (element) => {
         gsap.to(element, 2, {
-            opacity: 0,
+            opacity: 1,
             x: '-100px',
             ease: 'power4.out',
             trigger: "#pageWrap",
         })
     }
-    intersection && intersection.intersectionRatio > .75 ? slideInLeft('.hero__leftSection'): slideOutLeft('.hero__leftSection')
+    heroIntersection && heroIntersection.intersectionRatio > .5 ? heroSlideInLeft('.hero__leftSection'): heroSlideOutLeft('.hero__leftSection')
 
     // middle
-    const intersectionMiddle = useIntersection(middleSection, {
+    const intersectionMiddle = useIntersection(heroMiddleSection, {
         root: null,
         rootMargin: "0px",
         threshold: .5
@@ -82,7 +82,7 @@ const Hero = () => {
 
 
     // right
-    const intersectionRight = useIntersection(rightSection, {
+    const intersectionRight = useIntersection(heroRightSection, {
         root: null,
         rootMargin: "0px",
         threshold: .5
@@ -114,7 +114,7 @@ const Hero = () => {
     return ( 
         <div className="hero container" id='hero'>
            <div className='hero_child'>
-                <div ref={leftSection} className="hero__leftSection">
+                <div ref={heroLeftSection} className="hero__leftSection">
                         <div className='hero_leftControl'>
                             
                             <div className='leftSectionCtrl'>
@@ -144,7 +144,7 @@ const Hero = () => {
                     </div>
                     
 
-                <div className="hero__middleSection" ref={middleSection}>
+                <div className="hero__middleSection" ref={heroMiddleSection}>
                     <span>
                         <p className='middleSection__content' onClick={handleExperience}>My experience</p>
 
@@ -154,7 +154,7 @@ const Hero = () => {
                             
                 </div>
 
-                <div className="hero__rightSection" ref={rightSection}>
+                <div className="hero__rightSection" ref={heroRightSection}>
                     <div className='hero__rightSection_tag'></div>
                     <div className='hero__rightSection_tag'></div>
                     <div className='hero__rightSection_tag'></div>

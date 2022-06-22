@@ -13,18 +13,18 @@ import { Link as ExternalLink } from 'react-router-dom';
 
 
 const Nav = () => {
-    const middleSection = useRef();
+    const navMiddleSection = useRef();
 
 
     // middle
-    const intersectionMiddle = useIntersection(middleSection, {
+    const navIntersectionMiddle = useIntersection(navMiddleSection, {
         root: null,
         rootMargin: "0px",
         threshold: .5
     })
 
     
-    const slideInMiddle = (element) => {
+    const navSlideInMiddle = (element) => {
         gsap.to(element, 2, {
             opacity: 1,
             y: '0px',
@@ -35,7 +35,7 @@ const Nav = () => {
         })
     }
 
-    const slideOutMiddle = (element) => {
+    const navSlideOutMiddle = (element) => {
         gsap.to(element, 2, {
             opacity: 0,
             y: '-50px',
@@ -43,7 +43,7 @@ const Nav = () => {
         })
     }
 
-    intersectionMiddle && intersectionMiddle.intersectionRatio > .5 ? slideInMiddle('.nav'): slideOutMiddle('.nav')
+    navIntersectionMiddle && navIntersectionMiddle.intersectionRatio > .5 ? navSlideInMiddle('.nav'): navSlideOutMiddle('.nav')
 
 
     // mobile menu
@@ -57,7 +57,7 @@ const Nav = () => {
     
 
     return ( 
-        <div className={menu ? 'nav container addnavH' : 'nav container'} ref={middleSection} id='nav'>
+        <div className={menu ? 'nav container addnavH' : 'nav container'} ref={navMiddleSection} id='nav'>
             <div className='navControl'>
                 <div className="nav__name">
                     <Link to='#hero' onClick={() => toggleMenu(menu)}>

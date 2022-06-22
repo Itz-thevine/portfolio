@@ -26,8 +26,8 @@ const data = [
         title: 'KlassRoom',
         sub: "Student ClassRoom App",
         tech: ['React js','TailwindCSS', 'Firebase Auth', 'Nested Routing',],
-        project: '',
-        github: '',
+        project: 'https://itz-thevine.github.io/classroom/',
+        github: 'https://github.com/Itz-thevine/classroom',
     },
     {
         id: 3,
