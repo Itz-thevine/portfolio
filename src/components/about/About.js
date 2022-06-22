@@ -13,7 +13,7 @@ const aboutMiddleSection = useRef();
   const aboutIntersection = useIntersection(aboutLeftSection, {
       root: null,
       rootMargin: "0px",
-      threshold: .75
+      threshold: .5
   })
   const aboutSlideInLeft = (element) => {
       gsap.to(element, 2, {
@@ -33,7 +33,7 @@ const aboutMiddleSection = useRef();
           trigger: "#pageWrap",
       })
   }
-  aboutIntersection && aboutIntersection.intersectionRatio > .75 ? aboutSlideInLeft('.about_mainText'): aboutSlideOutLeft('.about_mainText')
+  aboutIntersection && aboutIntersection.intersectionRatio > .5 ? aboutSlideInLeft('.about_mainText'): aboutSlideOutLeft('.about_mainText')
 
   // middle
   const intersectionMiddle = useIntersection(aboutMiddleSection, {
@@ -70,7 +70,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle
   const intersectionRight = useIntersection(aboutRightSection, {
     root: null,
     rootMargin: "0px",
-    threshold: .75
+    threshold: .5
   })
 
   const slideInRight = (element) => {
@@ -92,7 +92,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > .75 ? slideInMiddle
       })
   }
   
-  intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.about_subText'): slideOutRight('.about_subText')
+  intersectionRight && intersectionRight.intersectionRatio > .5 ? slideInRight('.about_subText'): slideOutRight('.about_subText')
 
 
 
