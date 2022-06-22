@@ -13,7 +13,7 @@ const Services = () => {
   const servicesIntersectionMiddle = useIntersection(servicesMiddleSection, {
     root: null,
     rootMargin: "0px",
-    threshold: .25
+    threshold: .5
 })
 
   
@@ -36,7 +36,7 @@ const servicesSlideOutMiddle = (element) => {
     })
 }
 
-servicesIntersectionMiddle && servicesIntersectionMiddle.intersectionRatio > .25 ? servicesSlideInMiddle('.servicesContainer'): servicesSlideOutMiddle('.servicesContainer')
+servicesIntersectionMiddle && servicesIntersectionMiddle.intersectionRatio > .5 ? servicesSlideInMiddle('.servicesContainer'): servicesSlideOutMiddle('.servicesContainer')
 
   return (
     <div className='servicesContainer' ref={servicesMiddleSection}>
