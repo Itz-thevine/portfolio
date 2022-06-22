@@ -44,15 +44,15 @@ const Works = () => {
   }
   
   // middle
-const middleSection = useRef();
-const intersectionMiddle = useIntersection(middleSection, {
+const workMiddleSection = useRef();
+const workIntersectionMiddle = useIntersection(workMiddleSection, {
     root: null,
     rootMargin: "0px",
     threshold: getval(width)
 })
 
 
-const slideInMiddle = (element) => {
+const workSlideInMiddle = (element) => {
     gsap.to(element, 2, {
         opacity: 1,
         y: '0px',
@@ -63,7 +63,7 @@ const slideInMiddle = (element) => {
     })
 }
 
-const slideOutMiddle = (element) => {
+const workSlideOutMiddle = (element) => {
     gsap.to(element, 2, {
         opacity: 0,
         y: '-75px',
@@ -71,7 +71,7 @@ const slideOutMiddle = (element) => {
     })
 }
 
-intersectionMiddle && intersectionMiddle.intersectionRatio > getval(width) ? slideInMiddle('.workContainer'): slideOutMiddle('.workContainer')
+workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > getval(width) ? workSlideInMiddle('.workContainer'): workSlideOutMiddle('.workContainer')
   // animattion on entry ends 
 
   // the selection of skill
@@ -102,7 +102,7 @@ intersectionMiddle && intersectionMiddle.intersectionRatio > getval(width) ? sli
 
   return (
     <>
-      <div className='workContainer' ref={middleSection} id='works'>
+      <div className='workContainer' ref={workMiddleSection} id='works'>
         <div className='workMaintext'>
           <p className='about_SkillLeft_subtext'>I Build Real Value</p>
           <h1 className='about_SkillLeft_maintext'>My works</h1>
