@@ -39,7 +39,7 @@ const aboutMiddleSection = useRef();
   const aboutIntersectionMiddle = useIntersection(aboutMiddleSection, {
     root: null,
     rootMargin: "0px",
-    threshold: .5
+    threshold: .75
 })
 
   
@@ -59,7 +59,7 @@ const aboutSlideOutMiddle = (element) => {
     })
 }
 
-aboutIntersectionMiddle && aboutIntersectionMiddle.intersectionRatio > .5 ? aboutSlideInMiddle('.about_skill'): aboutSlideOutMiddle('.about_skill')
+aboutIntersectionMiddle && aboutIntersectionMiddle.intersectionRatio > .75 ? aboutSlideInMiddle('.about_skill'): aboutSlideOutMiddle('.about_skill')
 
 
 
