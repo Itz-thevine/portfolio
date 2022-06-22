@@ -11,17 +11,17 @@ import emailjs from 'emailjs-com';
 
 export default function Contact() {
   // animation
-  const leftSection = useRef();
-  const rightSection = useRef();
+  const contactLeftSection = useRef();
+  const contactRightSection = useRef();
 
-// leftSection Animation
-const intersection = useIntersection(leftSection, {
+// contactLeftSection Animation
+const contactIntersectionLeft = useIntersection(contactLeftSection, {
   root: null,
   rootMargin: "0px",
-  threshold: .75
+  threshold: .5
 })
 
-const slideInLeft = (element) => {
+const contactSlideInLeft = (element) => {
     gsap.to(element, 2, {
         opacity: 1,
         x: '0px',
@@ -31,7 +31,7 @@ const slideInLeft = (element) => {
         }
     })
 }
-const slideOutLeft = (element) => {
+const contactSlideOutLeft = (element) => {
     gsap.to(element, 2, {
         opacity: 0,
         x: '-100px',
@@ -39,16 +39,16 @@ const slideOutLeft = (element) => {
         trigger: "#pageWrap",
     })
 }
-intersection && intersection.intersectionRatio > .75 ? slideInLeft('.contact_bottom__details'): slideOutLeft('.contact_bottom__details')
+contactIntersectionLeft && contactIntersectionLeft.intersectionRatio > .5 ? contactSlideInLeft('.contact_bottom__details'): contactSlideOutLeft('.contact_bottom__details')
 
 // right
-const intersectionRight = useIntersection(rightSection, {
+const contactIntersectionRight = useIntersection(contactRightSection, {
   root: null,
   rootMargin: "0px",
-  threshold: .75
+  threshold: .5
 })
 
-const slideInRight = (element) => {
+const contactSlideInRight = (element) => {
   gsap.to(element, 2, {
       opacity: 1,
       x: '0px',
@@ -59,7 +59,7 @@ const slideInRight = (element) => {
   })
 }
 
-const slideOutRight = (element) => {
+const contactSlideOutRight = (element) => {
   gsap.to(element, 2, {
       opacity: 0,
       x: '100px',
@@ -67,7 +67,7 @@ const slideOutRight = (element) => {
   })
 }
 
-intersectionRight && intersectionRight.intersectionRatio > .75 ? slideInRight('.contact_bottom__message'): slideOutRight('.contact_bottom__message')
+contactIntersectionRight && contactIntersectionRight.intersectionRatio > .5 ? contactSlideInRight('.contact_bottom__message'): contactSlideOutRight('.contact_bottom__message')
 // animation end
 
 // email submit
@@ -92,7 +92,7 @@ const sendEmail = (e) => {
     <div className='contact_container' id='contact'>
      
       <div className='contact_bottom'>
-        <div className='contact_bottom__details' ref={leftSection}>
+        <div className='contact_bottom__details' ref={contactLeftSection}>
           <div className='contact_top'>
             <p className='contact_subtext'>Hire Me</p>
             <h1 className='contact_maintext'>Get in Touch</h1>
@@ -132,7 +132,7 @@ const sendEmail = (e) => {
           </div>
         </div>
        
-        <div className='contact_bottom__message' ref={rightSection}>
+        <div className='contact_bottom__message' ref={contactRightSection}>
           <form ref={form} onSubmit={sendEmail}>
               <input type="text" className='contact_bottom_form' placeholder='Name' name='name'/>
               <input type="text" className='contact_bottom_form'placeholder='Email' name='email'/>
