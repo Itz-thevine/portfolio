@@ -289,5 +289,9 @@
         justify-content: center;
         align-items: center;
     }
+
+    .clickText{
+        margin-bottom: 20px;
+    }
     
 }
