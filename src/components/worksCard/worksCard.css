@@ -143,18 +143,27 @@
     .worksCard:nth-child(even){
         margin-left: 0;
     }
+    
+    .worke{
+        width: 100%;
+        padding-bottom: 2%;
+    }
 
     .titleOfWork{
         font-size: 25px;
     }
     .worksImage{
         width: 172px;
+        display: none;
         overflow-x: hidden;
     }
     .redirec{
         width: 142px;
+        display: none;
     }
     .redirec_icon{
-        left: 100px;
+        right: 0px;
+        width: 30px;
+        position: absolute;
     }
 }

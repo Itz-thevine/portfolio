@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import WorksCard from '../worksCard/WorksCard';
 import db from '../../data/workData'
 import * as BsIcons from 'react-icons/bs'
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Works = () => {
 
@@ -48,7 +49,7 @@ const workMiddleSection = useRef();
 const workIntersectionMiddle = useIntersection(workMiddleSection, {
     root: null,
     rootMargin: "0px",
-    threshold: getval(width)
+    threshold: .25
 })
 
 
@@ -71,34 +72,94 @@ const workSlideOutMiddle = (element) => {
     })
 }
 
-workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > getval(width) ? workSlideInMiddle('.workContainer'): workSlideOutMiddle('.workContainer')
+workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workSlideInMiddle('.workContainer'): workSlideOutMiddle('.workContainer')
   // animattion on entry ends 
 
   // the selection of skill
   const [current, setCurrent] = useState('all')
 
+  const worksArray = []
   const clicked = (val) => {
-    setCurrent(val);
+    setCurrent(val); 
+    
   }
-  const obj = {
-    id: 2,
-    image: 'NiishCloud',
-    type: 'web',    
-    title: 'Pizza Store',
-    sub: "Pizza sales app",
-    tech: ['Next.js', 'api', 'paypal']};
+ 
+  const [now, setNow] = useState(0)
 
-  // the modal
-  const [work, setWork] = useState(false)
-
-  const handleWork = () => {
-    setWork(true)
-  }
-
-  const removeWork = () =>{
-    setWork(false)
+  if(current === 'all'){
+    db.map(d => {
+      worksArray.push(d)
+    })
+  }else{
+    db.map(d => {
+      if(d.type === current){
+        worksArray.push(d)
+      }
+    })
   }
 
+  
+
+  
+  let remainder = worksArray.length % 6
+  let divider = ''
+  if(remainder > 0){
+    divider = Math.trunc((worksArray.length/6) + 1)
+  }else{
+    divider = Math.trunc(worksArray.length/6)
+  }
+
+  var rows = [];
+  for (var z = 0; z < divider; z++) {
+      
+      rows.push(z);
+  }
+  
+
+
+  
+  const lowest =() =>{
+    let a = now * 6
+    return a
+
+  }
+
+  const highest = () =>{
+      if(now <= 0){
+        let j = Math.abs(worksArray.length - 6)
+        if (worksArray.length > 6) {
+          return 6
+        }else{
+          return j
+        }
+      }else{
+        let a = now
+        let z = 0
+        for (let index = 0; index < a; index++) {
+            z += 6          
+        }
+        console.log('z: ' + z)
+        console.log('length: ' + worksArray.length)
+        let k = Math.abs(worksArray.length - z)
+        a += 1
+        if (k >= 6) {
+          return (6*a)
+        }else{
+          return (lowest() + k )
+        }
+      }
+  }
+  
+  var displayWorks = []
+  for(var i = lowest() ; i < highest(); i++){
+    displayWorks.push(
+      <WorksCard key={i} im={worksArray[i].image} title={worksArray[i].title} sub={worksArray[i].sub} type={worksArray[i].type} tech={worksArray[i].tech} project={worksArray[i].project} github={worksArray[i].github}/>
+      // console.log(worksArray[i].title)
+       )
+
+  } 
+ 
+  const [green, setGreen] = useState('')
 
   return (
     <>
@@ -109,20 +170,20 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > getval(widt
         </div>
 
         <div className='workTag'>
-          <div  onClick={()=>clicked('all')}>
+          <div  onClick={()=>{clicked('all'); setNow(0)}}>
             <div className={current === 'all' ? 'clicked' : ''}></div>
             <div className='clickText'>All</div>
           </div>
-          <div onClick={()=>clicked('web')}>
-            <div className={current === 'web' ? 'clicked' : ''}></div>
+          <div onClick={()=>{clicked('Web'); setNow(0)}}>
+            <div className={current === 'Web' ? 'clicked' : ''}></div>
             <div className='clickText'>Web</div>
           </div>
-          <div onClick={()=>clicked('branding')}>
-            <div className={current === 'branding' ? 'clicked' : ''}></div>
+          <div onClick={()=>{clicked('Branding'); setNow(0)}}>
+            <div className={current === 'Branding' ? 'clicked' : ''}></div>
             <div className='clickText'>Branding</div>
           </div>
-          <div onClick={()=>clicked('ui')}>
-            <div className={current === 'ui' ? 'clicked' : ''}></div>
+          <div onClick={()=>{clicked('UI'); setNow(0)}}>
+            <div className={current === 'UI' ? 'clicked' : ''}></div>
             <div className='clickText'>UI</div>
           </div>
         </div>
@@ -131,118 +192,19 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > getval(widt
           <div className='workPadding'>
           
             <div className='workDisplayWrapper'>
-              {
-                current === 'all' &&(
-                  Array.apply(null, { length: 6 }).map((e, i) => (
-                    <WorksCard key={i} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech} project={db[i].project} github={db[i].github}/>
-                  ))
-                )
-              }
-
-              {
-                current === 'web' &&(
-                  Array.apply(null, { length: 10 }).map((e, i) => (
-                  db[i].type === 'Web' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech} project={db[i].project} github={db[i].github}/>
-                  ))
-                )
-              }
-              {
-                current === 'branding' &&(
-                  Array.apply(null, { length: 10 }).map((e, i) => (
-                  db[i].type === 'Branding' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
-                  ))
-                )
-              }
-            
-              {
-                current === 'ui' &&(
-                  Array.apply(null, { length: 10 }).map((e, i) => (
-                  db[i].type === 'UI' &&  <WorksCard key={db[i].id} im={db[i].image} title={db[i].title} sub={db[i].sub} type={db[i].type} tech={db[i].tech}/>
-                  ))
-                )
-              }
+              {displayWorks}
             
             </div>
             <div className='more'>
-              <p onClick={handleWork}>See more </p>
-              <div onClick={handleWork}>
-                <BsIcons.BsArrowRight/>
-                </div>
+             { rows.map((ro, i) => (
+                <Link to='#works' key={i} onClick={()=> setNow(i)} className={now === i ?'myPagination green': 'myPagination'}>{(ro+1)}
+                </Link>
+              ))}
               </div>
           </div>
         </div>
       </div>
-      {work && (
-        <div>
-            <div className='workView' onClick={removeWork}>
-            </div>
-            <div className='workViewContainer newcontain'>
-                <div className='expContainer'>
-                <div className='workMaintext workviewFull' style={{marginTop: '0'}}>
-                  <p className='about_SkillLeft_subtext'>I Build Real Value</p>
-                  <h1 className='about_SkillLeft_maintext'>My works</h1>
-                </div>
-
-                <div className='genWork'>
-                  <div className='workTag'>
-                    <div  onClick={()=>clicked('all')}>
-                      <div className={current === 'all' ? 'clicked' : ''}></div>
-                      <div className='clickText'>All</div>
-                    </div>
-                    <div onClick={()=>clicked('web')}>
-                      <div className={current === 'web' ? 'clicked' : ''}></div>
-                      <div className='clickText'>Web</div>
-                    </div>
-                    <div onClick={()=>clicked('branding')}>
-                      <div className={current === 'branding' ? 'clicked' : ''}></div>
-                      <div className='clickText'>Branding</div>
-                    </div>
-                    <div onClick={()=>clicked('ui')}>
-                      <div className={current === 'ui' ? 'clicked' : ''}></div>
-                      <div className='clickText'>UI</div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className='workLength'>
-                  <div className='workDisplayWrapper'>
-                    {
-                      current === 'all' &&(
-                        db.map(datum =>(
-                          <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech} project={datum.project} github={datum.github} />
-                        ))
-                      )
-                    }
-                    {
-                      current === 'web' &&(
-                        db.map(datum =>(
-                        datum.type === 'Web' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech} project={datum.project} github={datum.github}/>
-                        ))
-                      )
-                    }
-                    {
-                      current === 'branding' &&(
-                        db.map(datum =>(
-                        datum.type === 'Branding' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
-                        ))
-                      )
-                    }
-                  
-                    {
-                      current === 'ui' &&(
-                        db.map(datum =>(
-                        datum.type === 'UI' &&  <WorksCard key={datum.id} im={datum.image} title={datum.title} sub={datum.sub} type={datum.type} tech={datum.tech}/>
-                        ))
-                      )
-                    }
-                  
-                  </div>
-                </div>
-
-              </div>
-            </div>
-        </div>
-      ) }
+     
     </>
   )
 }

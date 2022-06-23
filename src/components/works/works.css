@@ -1,8 +1,8 @@
 @import url('https://fonts.cdnfonts.com/css/segoe-ui-variable');
 
 .workContainer{
-    margin-top: -3% ;
-    padding: 2% 7% 0 7%;
+    margin-top: 0% ;
+    padding: 5% 7% 0 7%;
     font-family: 'Segoe UI Variable', sans-serif;
 }
 
@@ -223,7 +223,21 @@
     padding:  2% 3% 0 3%;
 }
 
+.myPagination{
+    background-color: var(--mainColorOne);
+    height: 50px;
+    margin: 2%;
+    width: 40px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+}
 
+.green{
+    background-color: var(--mainColorTwo);
+    color: var(--mainColorOne);
+}
 
 @media screen and (max-width:1200px) {
     .workDisplayWrapper{
@@ -268,4 +282,5 @@
     .workDisplayWrapper{
         width: 100%;
     }
+    
 }
