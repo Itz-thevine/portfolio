@@ -282,5 +282,12 @@
     .workDisplayWrapper{
         width: 100%;
     }
+
+    .myPagination{
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     
 }
