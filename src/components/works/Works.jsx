@@ -76,7 +76,7 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
   // animattion on entry ends 
 
   // the selection of skill
-  const [current, setCurrent] = useState('all')
+  const [current, setCurrent] = useState('Web')
 
   const worksArray = []
   const clicked = (val) => {
@@ -126,8 +126,8 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
 
   const highest = () =>{
       if(now <= 0){
-        let j = Math.abs(worksArray.length - 6)
-        if (worksArray.length > 6) {
+        let j = Math.abs(worksArray.length )
+        if (worksArray.length >= 6) {
           return 6
         }else{
           return j
@@ -138,8 +138,6 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
         for (let index = 0; index < a; index++) {
             z += 6          
         }
-        console.log('z: ' + z)
-        console.log('length: ' + worksArray.length)
         let k = Math.abs(worksArray.length - z)
         a += 1
         if (k >= 6) {
@@ -150,6 +148,7 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
       }
   }
   
+
   var displayWorks = []
   for(var i = lowest() ; i < highest(); i++){
     displayWorks.push(
@@ -170,10 +169,10 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
         </div>
 
         <div className='workTag'>
-          <div  onClick={()=>{clicked('all'); setNow(0)}}>
+          {/* <div  onClick={()=>{clicked('all'); setNow(0)}}>
             <div className={current === 'all' ? 'clicked' : ''}></div>
             <div className='clickText'>All</div>
-          </div>
+          </div> */}
           <div onClick={()=>{clicked('Web'); setNow(0)}}>
             <div className={current === 'Web' ? 'clicked' : ''}></div>
             <div className='clickText'>Web</div>

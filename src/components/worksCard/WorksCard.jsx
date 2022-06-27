@@ -48,7 +48,7 @@ const WorksCard = ({im, title, sub, type, tech, project, github}) => {
         {
             type === 'Branding'  && ( 
             <div className='worksCardControl'>
-                <a href="" target='_blank' className='worksCardControli'>
+                <a href={project} className='worksCardControli' target='_blank'>
                     <div className='worksImage'>
                         <img src={im} alt="" height={200} className='controlImage' />
                     </div>
@@ -74,11 +74,14 @@ const WorksCard = ({im, title, sub, type, tech, project, github}) => {
                         </div>
                     </div>
                 </a>
-                <div className='redirec'>
-                </div>
-                <div className='redirec_icon'>
-                    <AiIcons.AiFillBehanceCircle/>
-                </div>
+
+                <a href={github} className='redirectLink' target='_blank'>
+                    <div className='redirec'>
+                    </div>
+                    <div className='redirec_icon'>
+                        <AiIcons.AiFillBehanceCircle/>
+                    </div>
+                </a>
             </div>
             
         )}
@@ -86,7 +89,7 @@ const WorksCard = ({im, title, sub, type, tech, project, github}) => {
         {
             type === 'UI'  && ( 
                 <div className='worksCardControl'>
-                    <a href="" target='_blank' className='worksCardControli'>
+                    <a href={project} className='worksCardControli' target='_blank'>
                         <div className='worksImage'>
                             <img src={im} alt="" height={200} className='controlImage' />
                         </div>
@@ -112,11 +115,14 @@ const WorksCard = ({im, title, sub, type, tech, project, github}) => {
                             </div>
                         </div>
                     </a>
-                    <div className='redirec'>
-                    </div>
-                    <div className='redirec_icon'>
-                        <FiIcons.FiFigma/>
-                    </div>
+
+                    <a href={github} className='redirectLink' target='_blank'>
+                        <div className='redirec'>
+                        </div>
+                        <div className='redirec_icon'>
+                            <FiIcons.FiFigma/>
+                        </div>
+                    </a>
                 </div>
             )
 
