@@ -241,12 +241,12 @@
 
 @media screen and (max-width:1200px) {
     .workDisplayWrapper{
-        width: 198px;
+        width: 100%;
     }
 
     .workPadding{
         /* justify-content: center; */
-        width: 400px;
+        width: 100%;
     }
 
     .workTag{

@@ -17,7 +17,7 @@ function App() {
     }, 4000)
   },[])
 
-  console.log(loaded)
+  // console.log(loaded)
 
   return (
     <div className="app">

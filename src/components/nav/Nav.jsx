@@ -50,7 +50,7 @@ const Nav = () => {
             setMenu(!value)
     }
 
-    console.log(menu)
+    // console.log(menu)
     
 
     return ( 

@@ -166,4 +166,10 @@
         width: 30px;
         position: absolute;
     }
+    
+.redirectLink{
+    position: absolute;
+    right: 305px;
+    top: 16px;
+}
 }

@@ -77,13 +77,13 @@ const form = useRef();
 const sendEmail = (e) => {
   e.preventDefault();
 
-  console.log(e.target)
+  // console.log(e.target)
 
   emailjs.sendForm('service_mqqgdtq', 'template_efygwpc', form.current, 'EOhoWlAuoDh4KT5BG')
     .then((result) => {
-        console.log(result.text);
+        // console.log(result.text);
     }, (error) => {
-        console.log(error.text);
+        // console.log(error.text);
     });
     e.target.reset();
 };

@@ -9,10 +9,12 @@ import splendidFood from '../assets/workImages/splendidFood.jpg'
 import countryDetail from '../assets/workImages/countryDetails.jpg'
 import creamy from '../assets/workImages/creamy.jpg'
 import catchy from '../assets/workImages/catchy.jpg'
+import puzzle from '../assets/workImages/puzzle.jpg'
+import set from '../assets/workImages/set.jpg'
+import dvision from '../assets/workImages/dvision.jpg'
 
 const data = [
     {   
-        id: 1,
         image: NorthernMenn,
         type: "Branding",
         title: "NorthMenn",
@@ -22,7 +24,6 @@ const data = [
         github: 'https://www.behance.net/ik_thevine',
     },
     {
-        id: 2,
         image: KlassRoom,
         type: 'Web',    
         title: 'KlassRoom',
@@ -31,18 +32,8 @@ const data = [
         project: 'https://itz-thevine.github.io/classroom/',
         github: 'https://github.com/Itz-thevine/classroom',
     },
-    {
-        id: 3,
-        image: CastleCake,
-        type: 'UI',
-        title: 'castleCake',
-        sub: "Fictional brewing brand design",
-        tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
-        project: '',
-        github: '',
-    },
+    
     {   
-        id: 4,
         image: catchy,
         type: "Branding",
         title: "Catchy kitchen",
@@ -52,17 +43,15 @@ const data = [
         github: 'https://www.behance.net/ik_thevine',
     },
     {
-        id: 5,
-        image: CastleCake,
+        image: set,
         type: 'UI',
-        title: 'castleCake',
-        sub: "Fictional brewing brand design",
-        tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
-        project: '',
-        github: '',
+        title: 'Set',
+        sub: "UI design for a cv creation App",
+        tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
+        project: 'figma.com/file/8ZEB075CLhRXnTD4Ws8Skq/SET?node-id=0%3A1',
+        github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
-        id: 6,
         image: Store,
         type: 'Web',
         title: 'Store',
@@ -72,7 +61,6 @@ const data = [
         github: 'https://github.com/Itz-thevine/store',
     },
     {
-        id: 7,
         image: netflix,
         type: 'Web',    
         title: 'Netflix Clone',
@@ -82,17 +70,15 @@ const data = [
         github: 'https://github.com/Itz-thevine/netflix-clone',
     },
     {
-        id: 7,
-        image: CastleCake,
+        image: puzzle,
         type: 'UI',
-        title: 'castleCake',
+        title: 'puzzle ',
         sub: "Fictional brewing brand design",
-        tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
-        project: '',
-        github: '',
+        tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
+        project: 'https://www.figma.com/file/1BRPqimo7YKJ50jjYyuilP/puzzleLottery',
+        github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {   
-        id: 8,
         image: creamy,
         type: "Branding",
         title: "Creamy cakes",
@@ -102,17 +88,15 @@ const data = [
         github: 'https://www.behance.net/ik_thevine',
     },
     {
-        id: 10,
-        image: CastleCake,
+        image: Speechify,
         type: 'UI',
-        title: 'castleCake',
-        sub: "Fictional brewing brand design",
-        tech: ['Adobe Illustrator', 'Photoshop', 'sketch'],
-        project: '',
-        github: '',
+        title: 'Speechify',
+        sub: "Ui for the speechify web app project",
+        tech: ['figma', 'photoshop', 'illustrator'],
+        project: 'https://www.figma.com/file/GY9NQjuGgtFmJch8JAIgDq/speechify',
+        github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
-        id: 13,
         image: splendidFood,
         type: 'Web',
         title: ' Splendid Food',
@@ -122,29 +106,6 @@ const data = [
         github: 'https://github.com/Itz-thevine/vue3-basic-website',
     },
     {
-        id: 11,
-        image: Speechify,
-        type: 'Web',
-        title: 'Speechify',
-        sub: "Speech to text and text to Speech Conversion App",
-        tech: ['Html', 'CSS', 'javaScript'],
-        project: '',
-        github: '',
-    },
-   
-    {
-        id: 12,
-        image: NiishCloud,
-        type: 'Web',    
-        title: 'Foody',
-        sub: "Easy food ordering app",
-        tech: ['Next.js', 'Api', 'Paypal', 'Redux', 'Cookies', 'TailWindCSS'],
-        project: '',
-        github: '',
-    },
-    
-    {
-        id: 14,
         image: countryDetail,
         type: 'Web',
         title: 'Countries',
@@ -153,6 +114,25 @@ const data = [
         project: 'https://ikdivine-countries.netlify.app/',
         github: 'https://github.com/Itz-thevine/countries',
     },
+    {
+        image: Speechify,
+        type: 'Web',
+        title: 'Speechify',
+        sub: "Speech to text and text to Speech Conversion App",
+        tech: ['Html', 'CSS', 'javaScript'],
+        project: 'https://nostalgic-neumann-2f4939.netlify.app/',
+        github: 'https://github.com/Itz-thevine/Speechify',
+    },
+    {
+        image: dvision,
+        type: 'UI',
+        title: 'Dvision ',
+        sub: "UI re-design, Dvision",
+        tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
+        project: 'https://www.figma.com/file/K09AFA3UX05KQb1ATc7rdC/DVision-Redesign?node-id=0%3A1',
+        github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
+    },
+   
 ]
 
 export default data;
