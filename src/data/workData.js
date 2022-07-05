@@ -55,7 +55,7 @@ const data = [
         image: Store,
         type: 'Web',
         title: 'Store',
-        sub: "Speech to text and text to Speech Conversion App",
+        sub: "A mini e-commerce store",
         tech: ['React js', 'Api', 'Redux', 'Paypal', 'TailwindCSS'],
         project: 'http://Itz-thevine.github.io/store',
         github: 'https://github.com/Itz-thevine/store',
