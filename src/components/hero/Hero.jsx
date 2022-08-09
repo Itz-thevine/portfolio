@@ -43,7 +43,6 @@ const Hero = () => {
             opacity: 0,
             x: '-100px',
             ease: 'power4.out',
-            trigger: "#pageWrap",
         })
     }
     heroIntersection && heroIntersection.intersectionRatio > .5 ? heroSlideInLeft('.hero__leftSection'): heroSlideOutLeft('.hero__leftSection')

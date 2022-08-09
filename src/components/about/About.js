@@ -30,7 +30,6 @@ const aboutMiddleSection = useRef();
           opacity: 0,
           x: '-100px',
           ease: 'power4',
-          trigger: "#pageWrap",
       })
   }
   aboutIntersection && aboutIntersection.intersectionRatio > .5 ? aboutSlideInLeft('.about_mainText'): aboutSlideOutLeft('.about_mainText')

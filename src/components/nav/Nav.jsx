@@ -13,6 +13,11 @@ import { Link as ExternalLink } from 'react-router-dom';
 
 
 const Nav = () => {
+    gsap.config({
+        nullTargetWarn: false,
+        trialWarn: false,
+      });
+
     const navMiddleSection = useRef();
 
 
@@ -52,6 +57,7 @@ const Nav = () => {
 
     // console.log(menu)
     
+   
 
     return ( 
         <div className={menu ? 'nav container addnavH' : 'nav container'} ref={navMiddleSection} id='nav'>

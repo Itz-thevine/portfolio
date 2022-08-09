@@ -36,7 +36,6 @@ const contactSlideOutLeft = (element) => {
         opacity: 0,
         x: '-100px',
         ease: 'power4.out',
-        trigger: "#pageWrap",
     })
 }
 contactIntersectionLeft && contactIntersectionLeft.intersectionRatio > .5 ? contactSlideInLeft('.contact_bottom__details'): contactSlideOutLeft('.contact_bottom__details')
