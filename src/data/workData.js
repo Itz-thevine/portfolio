@@ -10,6 +10,7 @@ import catchy from '../assets/workImages/catchy.jpg'
 import puzzle from '../assets/workImages/puzzle.jpg'
 import set from '../assets/workImages/set.jpg'
 import dvision from '../assets/workImages/dvision.jpg'
+import TokenLite from '../assets/workImages/tokenlite.jpg'
 
 const data = [
     {   
@@ -54,7 +55,7 @@ const data = [
         title: 'Set',
         sub: "UI design for a cv creation App",
         tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
-        project: 'figma.com/file/8ZEB075CLhRXnTD4Ws8Skq/SET?node-id=0%3A1',
+        project: 'https://www.figma.com/file/8ZEB075CLhRXnTD4Ws8Skq/SET?node-id=0%3A1',
         github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
@@ -107,9 +108,18 @@ const data = [
         type: 'Web',
         title: 'Countries',
         sub: "Check your countries details",
-        tech: ['Html', 'Boostrap', 'javaScript', 'Api'],
+        tech: ['Html', 'Bootstrap', 'javaScript', 'Api'],
         project: 'https://ikdivine-countries.netlify.app/',
         github: 'https://github.com/Itz-thevine/countries',
+    },
+    {
+        image: TokenLite,
+        type: 'Web',
+        title: 'Tokenlite',
+        sub: "Crypto trading website",
+        tech: ['Html', 'Bootstrap'],
+        project: 'https://deft-chebakia-0f956c.netlify.app/',
+        github: 'https://github.com/Itz-thevine/tokenLite',
     },
     {
         image: Speechify,
