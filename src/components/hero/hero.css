@@ -15,11 +15,6 @@
     /* position: relative; */
 }
 
-/* 
-.hero > div{
-    width: 100%;
-} */
-
 .hero_child{
     display: flex;
     margin-top: 11%;

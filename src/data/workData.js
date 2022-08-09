@@ -1,6 +1,4 @@
 import NorthernMenn from '../assets/workImages/nothernMenn.jpg'
-import NiishCloud from '../assets/workImages/niishCloud.jpg'
-import CastleCake from '../assets/workImages/castleCake.jpg'
 import KlassRoom from '../assets/workImages/klassRoom.jpg'
 import netflix from '../assets/workImages/netflixClone.jpg'
 import Speechify from '../assets/workImages/speechify.jpg'
@@ -19,7 +17,7 @@ const data = [
         type: "Branding",
         title: "NorthMenn",
         sub: "brand identity design for a brewing company",
-        tech: ['Adobe Illustrator', 'Photoshop', 'hand-sketch'],
+        tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
         project: 'https://www.behance.net/gallery/135635763/North-Menn-Brand-and-Visual-Identity-Project',
         github: 'https://www.behance.net/ik_thevine',
     },
@@ -38,7 +36,7 @@ const data = [
         type: "Branding",
         title: "Catchy kitchen",
         sub: "Mini brand design for a close-house kitchen",
-        tech: ['Adobe Illustrator', 'Photoshop', 'hand-sketch'],
+        tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
         project: 'https://www.behance.net/gallery/136956787/Katchy-Kitchen-Brand-marketing-design',
         github: 'https://www.behance.net/ik_thevine',
     },
@@ -83,7 +81,7 @@ const data = [
         type: "Branding",
         title: "Creamy cakes",
         sub: "Fictional design for an brand design",
-        tech: ['Adobe Illustrator', 'Photoshop', 'hand-sketch'],
+        tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
         project: 'https://www.behance.net/gallery/139055219/Creamy-cakes-and-ice-cream-brand-identity-design',
         github: 'https://www.behance.net/ik_thevine',
     },
