@@ -58,9 +58,9 @@
 .hideMenu{
     display: flex;
     display: flex;
-    justify-content: space-between;
-    flex: 1;
-    margin: 0 150px;
+    justify-content: start;
+    flex: 0.7;
+    margin: 0 0 0 0;
 }
 
 .hideMenu li{
@@ -71,6 +71,8 @@
     font-size: 17px;
     line-height: 22px;
     border-color: transparent;
+    margin-right: 60px;
+    width: max-content;
 }
 
 .nav_link {

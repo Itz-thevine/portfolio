@@ -384,7 +384,8 @@ h1 > .firm{
         justify-content: center;
         align-items: center;
         text-align: center;
-        height: calc(100vh - 50px);
+        /* height: calc(100vh - 50px); */
+        height: auto;
         box-sizing: border-box;
     }
 
