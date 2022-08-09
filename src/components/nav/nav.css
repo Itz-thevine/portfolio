@@ -18,7 +18,16 @@
     left: 0;
 }
 
-
+.scrolledClass{
+    height: 90px;
+    width: 100vw;
+    -webkit-box-shadow: 1px 5px 20px -5px rgba(151, 151, 151, 0.146);; 
+    box-shadow: 1px 5px 20px -5px rgba(151, 151, 151, 0.146);
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    top: 0;
+}
 
 .navControl{
     display: flex;
@@ -64,6 +73,8 @@
 }
 
 .hideMenu li{
+    display: flex;
+    align-items: center;
     list-style-type: none;
     font-style: normal;
     font-weight: 600;
@@ -167,6 +178,8 @@
 
 .nav__icons a {
     color: var(--mainColorOne);
+    display: flex;
+    align-items: center;
 }
 
 .nav__icon{
@@ -197,6 +210,7 @@
         /* overflow-y: auto; */
         height: 45px;
     }
+    
 
     .addnavH{
         height: 317px;
