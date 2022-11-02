@@ -2,9 +2,9 @@
 
 .nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 2rem 6% 1rem 6%;
+    padding: 2rem 0 1rem 0;
     background-color: white;
     height: 45px;
     color: var(--mainColorOne);
@@ -13,9 +13,13 @@
     overflow-y: hidden;
     position: fixed;
     z-index: 99;
-    width: 90%;
+    width: 100vw;
     top: 0;
     left: 0;
+}
+
+.navControl{
+    max-width: 1200px;
 }
 
 .scrolledClass{

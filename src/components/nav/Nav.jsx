@@ -7,9 +7,6 @@ import { useRef, useState } from 'react';
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
 import { HashLink as Link } from 'react-router-hash-link';
-import { Link as ExternalLink } from 'react-router-dom';
-
-
 
 
 const Nav = () => {

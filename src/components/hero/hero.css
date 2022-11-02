@@ -12,13 +12,13 @@
     color: var(--mainColorOne);
     overflow-y: hidden;
     overflow-x: hidden;
-    /* position: relative; */
 }
 
 .hero_child{
     display: flex;
     margin-top: 11%;
     height: 510px;
+    max-width: 1200px;
 }
 
 
