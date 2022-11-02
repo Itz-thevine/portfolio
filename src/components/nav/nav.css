@@ -214,7 +214,6 @@
         /* overflow-y: auto; */
         height: 45px;
     }
-    
 
     .addnavH{
         height: 317px;
@@ -226,6 +225,7 @@
     .navControl{
         display: flex;
         justify-content: space-between;
+        width: 90%;
     }
 
     /* this is the hamburger menu */
