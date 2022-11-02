@@ -51,13 +51,15 @@
 /* SECOND SECTION */
 .nav__middle{
     display: flex;
-    justify-content: space-between;
-    flex: 1;
-    margin: 0 150px;
+    justify-content: start;
+    flex: 0.7 1;
+    margin: 0 0 0 0;
 }
 
 
 .nav__middle li{
+    display: flex;
+    align-items: center;
     list-style-type: none;
     font-style: normal;
     font-weight: 600;
@@ -65,6 +67,8 @@
     font-size: 17px;
     line-height: 22px;
     border-color: transparent;
+    margin-right: 60px;
+    width: max-content;
 }
 
 
@@ -213,6 +217,7 @@
         margin-left: auto ;
         /* overflow-y: auto; */
         height: 45px;
+        justify-content: flex-start;
     }
 
     .addnavH{
