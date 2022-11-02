@@ -1,48 +1,46 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, } from 'react'
 import './works.css'
 import {useIntersection} from 'react-use';
 import gsap from 'gsap';
 import WorksCard from '../worksCard/WorksCard';
 import db from '../../data/workData'
-import * as BsIcons from 'react-icons/bs'
 import { HashLink as Link } from 'react-router-hash-link';
 
 const Works = () => {
 
   // check screen width
-  const [widthSize, setWidthSize] = useState([])
-  const getWindowDimensions =() => {
-    const { innerWidth: width } = window;
-    return {
-      width,
-    };
-  }
+  // const getWindowDimensions =() => {
+  //   const { innerWidth: width } = window;
+  //   return {
+  //     width,
+  //   };
+  // }
 
-   function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+  //  function useWindowDimensions() {
+  //   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
-    useEffect(() => {
-      function handleResize() {
-        setWindowDimensions(getWindowDimensions());
-      }
+  //   useEffect(() => {
+  //     function handleResize() {
+  //       setWindowDimensions(getWindowDimensions());
+  //     }
 
-      window.addEventListener('resize', handleResize);
-      return () => window.removeEventListener('resize', handleResize);
-    }, []);
+  //     window.addEventListener('resize', handleResize);
+  //     return () => window.removeEventListener('resize', handleResize);
+  //   }, []);
 
-    return windowDimensions;
-  }
+  //   return windowDimensions;
+  // }
 
-  const {width} = useWindowDimensions()
+  // const { width } = useWindowDimensions()
 
   
-  const getval = (width)=>{
-    if(width > 900){
-      return 0.5
-    }else{
-      return .25
-    }
-  }
+  // const getval = (width)=>{
+  //   if(width > 900){
+  //     return 0.5
+  //   }else{
+  //     return .25
+  //   }
+  // }
   
   // middle
 const workMiddleSection = useRef();
@@ -158,7 +156,6 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
 
   } 
  
-  const [green, setGreen] = useState('')
 
   return (
     <>
