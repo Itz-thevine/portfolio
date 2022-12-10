@@ -174,13 +174,13 @@ workIntersectionMiddle && workIntersectionMiddle.intersectionRatio > .25 ? workS
             <div className={current === 'Web' ? 'clicked' : ''}></div>
             <div className='clickText'>Web</div>
           </div>
-          <div onClick={()=>{clicked('Branding'); setNow(0)}}>
-            <div className={current === 'Branding' ? 'clicked' : ''}></div>
-            <div className='clickText'>Branding</div>
-          </div>
           <div onClick={()=>{clicked('UI'); setNow(0)}}>
             <div className={current === 'UI' ? 'clicked' : ''}></div>
             <div className='clickText'>UI</div>
+          </div>
+          <div onClick={()=>{clicked('Branding'); setNow(0)}}>
+            <div className={current === 'Branding' ? 'clicked' : ''}></div>
+            <div className='clickText'>Branding</div>
           </div>
         </div>
 

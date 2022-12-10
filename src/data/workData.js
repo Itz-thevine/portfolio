@@ -11,6 +11,7 @@ import puzzle from '../assets/workImages/puzzle.jpg'
 import set from '../assets/workImages/set.jpg'
 import dvision from '../assets/workImages/dvision.jpg'
 import TokenLite from '../assets/workImages/tokenlite.jpg'
+import Chemotronix from '../assets/workImages/Chemotronix.jpg'
 
 const data = [
     {   
@@ -21,6 +22,15 @@ const data = [
         tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
         project: 'https://www.behance.net/gallery/135635763/North-Menn-Brand-and-Visual-Identity-Project',
         github: 'https://www.behance.net/ik_thevine',
+    },
+    {
+        image: Chemotronix,
+        type: 'UI',
+        title: 'Set',
+        sub: "A IoT and BlockChain web app",
+        tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
+        project: 'https://www.figma.com/file/XI0sDCzYCKEoEmQ5PeydTY/Chemotronix?node-id=85%3A405&t=QahEvdFoPFazmZxI-0',
+        github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
         image: Store,
