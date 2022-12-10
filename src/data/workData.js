@@ -122,15 +122,6 @@ const data = [
         github: 'https://github.com/Itz-thevine/tokenLite',
     },
     {
-        image: Speechify,
-        type: 'Web',
-        title: 'Speechify',
-        sub: "Speech to text and text to Speech Conversion App",
-        tech: ['Html', 'CSS', 'javaScript'],
-        project: 'https://nostalgic-neumann-2f4939.netlify.app/',
-        github: 'https://github.com/Itz-thevine/Speechify',
-    },
-    {
         image: dvision,
         type: 'UI',
         title: 'Dvision ',
