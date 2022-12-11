@@ -11,7 +11,7 @@ import puzzle from '../assets/workImages/puzzle.jpg'
 import set from '../assets/workImages/set.jpg'
 import dvision from '../assets/workImages/dvision.jpg'
 import TokenLite from '../assets/workImages/tokenlite.jpg'
-import Chemotronix from '../assets/workImages/Chemotronix.jpg'
+import Chemotronix from '../assets/workImages/chemotronix.jpg'
 
 const data = [
     {   
