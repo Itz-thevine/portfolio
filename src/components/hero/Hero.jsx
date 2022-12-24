@@ -142,11 +142,11 @@ const Hero = () => {
                     
 
                 <div className="hero__middleSection" ref={heroMiddleSection}>
-                    <span>
+                    {/* <span>
                         <p className='middleSection__content' onClick={handleExperience}>My experience</p>
 
                         <a href="https://docs.google.com/document/d/1GXq2SAkN5AkPPuFe_Q26eGGfBXhbr8W_shOO3iQxplM/edit?usp=sharing" target='_blank'><p className='middleSection__content'>download my cv</p></a>
-                    </span>
+                    </span> */}
                         <hr/>
                             
                 </div>
@@ -159,7 +159,7 @@ const Hero = () => {
                 </div>   
             </div>                 
            
-          {experience && (
+          {/* {experience && (
             <div>
                 <div className='experience' onClick={removeExperience}>
                 </div>
@@ -188,7 +188,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-          ) }
+          ) } */}
         </div>
      );
 }
