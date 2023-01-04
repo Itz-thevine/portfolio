@@ -99,7 +99,7 @@ aboutIntersectionMiddle && aboutIntersectionMiddle.intersectionRatio > .75 ? abo
 
         <div className='about_subText' ref={aboutRightSection}>
           <p>
-          Hi, I am Ikechukwu Divine and I am a frontend developer with experience in React, Vue, and Next.js. I've contributed to several open source projects and have worked on a variety of professional projects. I'm always looking to learn new technologies and techniques to improve my skills as a developer. In my free time, you can find me playing games or listening to music. <br/> Fun fact: I have written about 3 songs in my book!
+          I am a frontend developer with experience in React, Vue, and Next.js. I've contributed to several open source projects and have worked on a variety of professional projects. I'm always looking to learn new technologies and techniques to improve my skills as a developer. In my free time, you can find me playing games or listening to music. <br/> Fun fact: I have written about 3 songs in my book!
           </p>
 
           {/* <p>
