@@ -11,7 +11,7 @@ import puzzle from '../assets/workImages/puzzle.jpg'
 import set from '../assets/workImages/set.jpg'
 import dvision from '../assets/workImages/dvision.jpg'
 import TokenLite from '../assets/workImages/tokenlite.jpg'
-import Chemotronix from '../assets/workImages/chemotronix.jpg'
+import tronix from '../assets/workImages/tronix.jpg'
 
 const data = [
     {   
@@ -24,7 +24,7 @@ const data = [
         github: 'https://www.behance.net/ik_thevine',
     },
     {
-        image: Chemotronix,
+        image: tronix,
         type: 'UI',
         title: 'Set',
         sub: "A IoT and BlockChain web app",
