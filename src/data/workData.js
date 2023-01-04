@@ -43,7 +43,7 @@ const data = [
     },
     {
         image: tronix,
-        type: 'web',
+        type: 'Web',
         title: 'Chemotronix',
         sub: "A IoT and BlockChain web app",
         tech: ['Next js', 'ether js', 'wagmi', 'rainbowkit'],
@@ -56,7 +56,7 @@ const data = [
         title: 'Set',
         sub: "UI design for a cv creation App",
         tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
-        project: 'https://www.figma.com/file/8ZEB075CLhRXnTD4Ws8Skq/SET?node-id=0%3A1',
+        project: 'https://chemotronix.vercel.app/',
         github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
