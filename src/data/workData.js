@@ -14,19 +14,10 @@ import TokenLite from '../assets/workImages/tokenlite.jpg'
 import tronix from '../assets/workImages/tronix.jpg'
 
 const data = [
-    {   
-        image: NorthernMenn,
-        type: "Branding",
-        title: "NorthMenn",
-        sub: "brand identity design for a brewing company",
-        tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
-        project: 'https://www.behance.net/gallery/135635763/North-Menn-Brand-and-Visual-Identity-Project',
-        github: 'https://www.behance.net/ik_thevine',
-    },
     {
         image: tronix,
         type: 'UI',
-        title: 'Set',
+        title: 'Chemotronix',
         sub: "A IoT and BlockChain web app",
         tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
         project: 'https://www.figma.com/file/XI0sDCzYCKEoEmQ5PeydTY/Chemotronix?node-id=85%3A405&t=QahEvdFoPFazmZxI-0',
@@ -41,15 +32,6 @@ const data = [
         project: 'http://Itz-thevine.github.io/store',
         github: 'https://github.com/Itz-thevine/store',
     },
-    {   
-        image: catchy,
-        type: "Branding",
-        title: "Catchy kitchen",
-        sub: "Mini brand design for a close-house kitchen",
-        tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
-        project: 'https://www.behance.net/gallery/136956787/Katchy-Kitchen-Brand-marketing-design',
-        github: 'https://www.behance.net/ik_thevine',
-    },
     {
         image: KlassRoom,
         type: 'Web',    
@@ -58,6 +40,15 @@ const data = [
         tech: ['React js','TailwindCSS', 'Firebase', 'Nested Routing',],
         project: 'https://itz-thevine.github.io/classroom/',
         github: 'https://github.com/Itz-thevine/classroom',
+    },
+    {
+        image: tronix,
+        type: 'web',
+        title: 'Chemotronix',
+        sub: "A IoT and BlockChain web app",
+        tech: ['Next js', 'ether js', 'wagmi', 'rainbowkit'],
+        project: 'https://www.figma.com/file/XI0sDCzYCKEoEmQ5PeydTY/Chemotronix?node-id=85%3A405&t=QahEvdFoPFazmZxI-0',
+        github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
         image: set,
@@ -85,15 +76,6 @@ const data = [
         tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
         project: 'https://www.figma.com/file/1BRPqimo7YKJ50jjYyuilP/puzzleLottery',
         github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
-    },
-    {   
-        image: creamy,
-        type: "Branding",
-        title: "Creamy cakes",
-        sub: "Fictional design for an brand design",
-        tech: ['Photoshop','hand-sketch', 'Adobe Illustrator'],
-        project: 'https://www.behance.net/gallery/139055219/Creamy-cakes-and-ice-cream-brand-identity-design',
-        github: 'https://www.behance.net/ik_thevine',
     },
     {
         image: Speechify,
