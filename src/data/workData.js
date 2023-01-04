@@ -47,7 +47,7 @@ const data = [
         title: 'Chemotronix',
         sub: "A IoT and BlockChain web app",
         tech: ['Next js', 'ether js', 'wagmi', 'rainbowkit'],
-        project: 'https://www.figma.com/file/XI0sDCzYCKEoEmQ5PeydTY/Chemotronix?node-id=85%3A405&t=QahEvdFoPFazmZxI-0',
+        project: 'https://chemotronix.vercel.app/',
         github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
@@ -56,7 +56,7 @@ const data = [
         title: 'Set',
         sub: "UI design for a cv creation App",
         tech: ['Adobe Illustrator', 'Photoshop', 'figma'],
-        project: 'https://chemotronix.vercel.app/',
+        project: 'https://www.figma.com/file/8ZEB075CLhRXnTD4Ws8Skq/SET?node-id=0%3A1',
         github: 'https://www.figma.com/files/user/1003689869560047655?fuid=1003689869560047655',
     },
     {
