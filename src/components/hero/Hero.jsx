@@ -127,7 +127,7 @@ const Hero = () => {
                             </div>
 
                             <p className='leftSection__subtext'>
-                            I am a web developer and Brand identity designer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
+                            I am a web developer. My goal is to help individuals, firms and businesses scale up and also achieve all-round goals.
                             </p>
 
                             <div className='btnPostiton'>
@@ -142,11 +142,11 @@ const Hero = () => {
                     
 
                 <div className="hero__middleSection" ref={heroMiddleSection}>
-                    {/* <span>
-                        <p className='middleSection__content' onClick={handleExperience}>My experience</p>
+                    <span>
+                        {/* <p className='middleSection__content' onClick={handleExperience}>My experience</p> */}
 
-                        <a href="https://docs.google.com/document/d/1GXq2SAkN5AkPPuFe_Q26eGGfBXhbr8W_shOO3iQxplM/edit?usp=sharing" target='_blank'><p className='middleSection__content'>download my cv</p></a>
-                    </span> */}
+                        <a href="https://docs.google.com/document/d/1GXq2SAkN5AkPPuFe_Q26eGGfBXhbr8W_shOO3iQxplM/edit?usp=sharing" target='_blank'><p className='middleSection__content'>Download my cv</p></a>
+                    </span>
                         <hr/>
                             
                 </div>

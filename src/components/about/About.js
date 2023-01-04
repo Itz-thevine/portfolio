@@ -98,14 +98,14 @@ aboutIntersectionMiddle && aboutIntersectionMiddle.intersectionRatio > .75 ? abo
         <div className='about_mainText' ref={aboutLeftSection}><h1>I Know That Good <span>Software</span> Means Good <span>Business</span></h1></div>
 
         <div className='about_subText' ref={aboutRightSection}>
-          <p>I am a brand identity designer and a web develop based in Nigeria with 3 
-          years of experience in Graphics design  
-          and sound knowledge of Javascript Libraries (React.Js, Next.Js and Vue.Js) </p>
-
           <p>
+          Hi, I am Ikechukwu Divine and I am a frontend developer with experience in React, Vue, and Next.js. I've contributed to several open source projects and have worked on a variety of professional projects. I'm always looking to learn new technologies and techniques to improve my skills as a developer. In my free time, you can find me playing games or listening to music. <br/> Fun fact: I have written about 3 songs in my book!
+          </p>
+
+          {/* <p>
           I am passionate about constructing and maintaining partnerships that 
           results in creative wins.
-          </p>
+          </p> */}
         </div>
       </div>
 
