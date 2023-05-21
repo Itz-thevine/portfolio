@@ -3,7 +3,7 @@ const expData = [
     firm: 'True Base Media, Remote',
     role: 'Graphic Designer, Brand identity designer',
     period: 'SEPTEMBER 2020 - JULY 2022',
-    duties: ['Create social media designs and media materials.', 'Develop and maintain standard of output.']
+    duties: ['Create social media designs and media resources.', 'Develop and maintain standard of output.']
     },
     {id: 2,
     firm: 'Agrobeam, Ile-ife ',
