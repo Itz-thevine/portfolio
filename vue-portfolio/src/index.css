@@ -6,12 +6,21 @@
 
 .banner-1 {
   @apply px-5  pt-5 md:pt-10 3xl:px-36 2xl:px-36 xl:px-28 lg:px-24 md:px-16;
-  background-color: white;
+}
+
+.banner-1_night {
+  background-color: #041008;
+}
+.banner-2_night {
+  background-color: #2e4a38;
+}
+.special-text{
+  color: #2e4a38;
 }
 
 .banner-2 {
   @apply px-5  pt-5 md:pt-10 3xl:px-36 2xl:px-36 xl:px-28 lg:px-24 md:px-16;
-  background-color: #c1eeca;
+  background-color: #54D670;
 }
 .bg-yellowis {
   background-color: #ffddbf;
@@ -29,18 +38,26 @@
 }
 
 .heading3 {
-  color: #403930;
+  /* color: #403930; */
   @apply md:text-5xl text-xl font-bold font-work_sans tracking-wide;
 }
 
 .project-title {
   @apply text-3xl md:text-4xl font-work_sans tracking-wide font-bold;
-  color: #08140a;
 }
 
 .card {
-  @apply bg-white rounded-2xl md:flex place-items-center my-20 shadow-md;
+  @apply rounded-2xl md:flex place-items-center my-20 shadow-md;
 }
+
+.lightMode-shadow {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.darkMode-shadow {
+  /* box-shadow: 0 25px 50px -12px rgba(251, 251, 251, 0.25); */
+}
+
 .card-image {
   @apply md:w-1/2 md:rounded-r-2xl md:rounded-l-none rounded-b-2xl flex;
 }
@@ -50,7 +67,7 @@
 }
 
 .mainText-2{
-  color: #3d5e3b !important;
+  color: #47B25B !important;
 }
 
 .mainBg{
@@ -59,6 +76,9 @@
 
 .mainBorder{
   border-color: #08140a !important;
+}
+.mainBorder_white{
+  border-color: #ffffff !important;
 }
 
 @layer utilities {

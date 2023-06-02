@@ -1,5 +1,5 @@
 <template>
-  <div class="banner-1">
+  <div class="banner-1" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
     <!-- NavBar -->
     <nav
       class="container px-6 mx-auto md:flex md:justify-between md:items-center"
@@ -32,13 +32,23 @@
         :class="showMenu ? 'flex' : 'hidden'"
         class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
       >
-        <li class="menu-button"><a href="#">Home</a></li>
-        <li class="menu-button"><a href="#work" v-smooth-scroll>Works</a></li>
-        <li class="menu-button">
+        <li class="menu-button dark:text-white"><a href="#">Home</a></li>
+        <li class="menu-button dark:text-white"><a href="#work" v-smooth-scroll>Works</a></li>
+        <li class="menu-button dark:text-white">
           <a href="#testimonial" v-smooth-scroll>Testimonials</a>
         </li>
-        <li class="menu-button"><a href="#about" v-smooth-scroll>About</a></li>
+        <li class="menu-button dark:text-white"><a href="#about" v-smooth-scroll>About</a></li>
       </ul>
+      <label class="relative inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" class="sr-only peer" />
+        <div
+          class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+          @click="toggleDark()"
+        ></div>
+        <span class="dark:text-white text-dark">
+          &nbsp; {{ isDark ? " dark" : " light" }}
+        </span>
+      </label>
     </nav>
     <!-- End Navbar -->
 
@@ -56,18 +66,20 @@
           <a
             href="https://www.linkedin.com/"
             target="_blank"
-            class="mainText hover:underline"
+            :class="{'mainText' : !isDark , 'text-white' : isDark}"
+            class=" hover:underline"
           >
             Divine Ikechukwu</a
           >🙇‍♀️<br />Web Developer and Storyteller
         </h1>
 
         <div class="md:flex gap-1 md:gap-10">
-          <button class="text-white mainBg submit-button hidden md:block">
+          <button class="submit-button hidden md:block" :class="{'mainBg text-white' : !isDark, 'bg-white mainText' : isDark}">
             View My Resume
           </button>
           <button
-            class="text-gray-800 border-4 mainBorder submit-button mb-5 md:mb-0"
+            class="text-gray-800 border-4  submit-button mb-5 md:mb-0"
+            :class="{'mainText mainBorder' :!isDark, 'mainBorder_white text-white' : isDark}"
           >
             Contact Me
           </button>
@@ -84,10 +96,10 @@
 
   <div class="banner-2 space-y-10 pb-20" id="work">
     <h3 class="heading3 my-5">My Recent Work</h3>
-    <div class="card">
+    <div class="card" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
+        <h4 class="project-title item"  :class="{'mainText' : !isDark , 'text-white' : isDark}">Sheepify States</h4>
+        <p class="font-work_sans pr-12" :class="{'mainText' : !isDark , 'text-white' : isDark}">
           Designed some empty state screens in kawaii style for the popular
           sheepify app.Tailwind lets you conditionally apply utility classes in
           different states using variant modifiers. For example, use hover:gap-6
@@ -105,10 +117,10 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title item">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
+        <h4 class="project-title item" :class="{'mainText' : !isDark , 'text-white' : isDark}">Sheepify States</h4>
+        <p class="font-work_sans pr-12" :class="{'mainText' : !isDark , 'text-white' : isDark}">
           Designed some empty state screens in kawaii style for the popular
           sheepify app.Tailwind lets you conditionally apply utility classes in
           different states using variant modifiers. For example, use hover:gap-6
@@ -126,10 +138,10 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
       <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-        <h4 class="project-title">Sheepify States</h4>
-        <p class="font-work_sans pr-12">
+        <h4 class="project-title" :class="{'mainText' : !isDark , 'text-white' : isDark}">Sheepify States</h4>
+        <p class="font-work_sans pr-12" :class="{'mainText' : !isDark , 'text-white' : isDark}">
           Designed some empty state screens in kawaii style for the popular
           sheepify app.Tailwind lets you conditionally apply utility classes in
           different states using variant modifiers. For example, use hover:gap-6
@@ -148,16 +160,18 @@
     </div>
   </div>
 
-  <div class="banner-1" id="testimonial">
+  <div class="banner-1" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }" id="testimonial">
     <div class="space-y-4 grid place-items-center mt-5">
-      <h3 class="heading3">Some Generous Words</h3>
-      <p class="font-work_sans text-gray-600 font-semibold leading-relaxed">
+      <h3 class="heading3"  :class="{'mainText' : !isDark , 'text-white' : isDark}">Some Generous Words</h3>
+      <p class="font-work_sans mainText-2 font-semibold leading-relaxed">
         Some of my favorite testimonials from my clients
       </p>
     </div>
     <div class="max-w-6xl mx-auto px-8 py-16">
       <div class="relative">
-        <div class="relative lg:flex rounded-lg shadow-2xl overflow-hidden">
+        <div class="relative lg:flex rounded-lg LightMode-shadow overflow-hidden" 
+        :class="{ 'darkMode-shadow': isDark, 'lightMode-shadow': !isDark }"
+        >
           <div
             class="h-56 lg:h-auto lg:w-5/12 relative flex items-center justify-center"
           >
@@ -180,9 +194,10 @@
               />
             </svg>
           </div>
-          <div class="relative lg:w-7/12 bg-white">
+          <div class="relative lg:w-7/12" :class="{ 'banner-2_night': isDark, 'bg-white': !isDark }">
             <svg
-              class="absolute h-full text-white w-24 -ml-12"
+              class="absolute h-full w-24 -ml-12"
+              :class="{ 'special-text': isDark, 'text-white': !isDark }"
               fill="currentColor"
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
@@ -192,9 +207,8 @@
             <div
               class="relative py-12 lg:py-24 px-8 lg:px-16 text-gray-700 leading-relaxed"
             >
-              <p>
-                As
-                <strong class="text-gray-900 font-medium">Slack</strong> grows
+              <p :class="{'mainText' : !isDark , 'text-white' : isDark}">
+                As Slack grows
                 rapidly, using Stripe helps them scale payments easily &mdash;
                 supporting everything from getting paid by users around the
                 world to enabling ACH payments for corporate customers.
@@ -202,7 +216,7 @@
               <p class="mt-6">
                 <a
                   href="#"
-                  class="font-medium text-indigo-600 hover:text-indigo-900"
+                  class="font-medium  text-indigo-600 mainText-2 hover:text-indigo-900"
                 >
                   &rarr; Md Solaiman Hossain</a
                 >
@@ -257,15 +271,15 @@
         <br />
          I'm always looking to learn new technologies and techniques to improve my skills as a developer. In my free time, you can find me playing games or listening to music.
       </p>
-      <button class="mainText-2 font-bold text-2xl tracking-wider">
+      <button class="text-white font-bold text-2xl tracking-wider">
         View Case Study
       </button>
     </div>
   </div>
 
-  <div class="banner-1 flex h-full items-center">
+  <div class="banner-1 flex h-full items-center" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
     <div class="w-7/12 p-12">
-      <h2 class="text-gray-700 md:text-6xl text-2xl font-Eczar mb-5 font-bold">
+      <h2 class="special-text md:text-6xl text-2xl font-Eczar mb-5 font-bold">
         Let’s work together and make everything super cute and super useful.
       </h2>
       <a class="underline text-2xl text-blue-600 font-work_sans"
@@ -275,7 +289,7 @@
     <div class="w-5/12 pr-28">
       <div class="flex flex-wrap justify-end gap-2">
         <button
-          class="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+          class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
         >
           <svg
             class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -290,7 +304,7 @@
         </button>
 
         <button
-          class="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+          class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
         >
           <svg
             class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -305,7 +319,7 @@
         </button>
 
         <button
-          class="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+          class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
         >
           <svg
             class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -320,7 +334,7 @@
         </button>
 
         <button
-          class="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+          class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
         >
           <svg
             class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -335,7 +349,7 @@
         </button>
 
         <button
-          class="bg-gray-700 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+          class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
         >
           <svg
             class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -354,12 +368,12 @@
     </div>
   </div>
 </template>
-<script>
-  export default {
-    data() {
-      return {
-        showMenu: false,
-      }
-    },
-  }
+
+<script setup>
+import { useDark, useToggle } from "@vueuse/core";
+
+  const isDark = useDark()
+  const toggleDark = useToggle(isDark);
+  
+  
 </script>
