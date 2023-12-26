@@ -6,7 +6,7 @@
       
           <!-- NavBar -->
           <nav
-            class="container mx-auto md:flex md:justify-between md:items-center"
+            class="container mx-auto lg:flex lg:justify-between lg:items-center"
           >
             <div class="flex items-center justify-between">
               <div class="relative">
@@ -14,57 +14,94 @@
                 <img
                   :src="whiteTextLogo"
                   alt="user image"
-                  class="w-[150px]"
+                  class="w-[100px]"
                   :class="{'hidden': !isDark, 'inline-block': isDark}"
+                  @click="handleNavigation(0)"
                 />
                   <img
                   :src="darkTextLogo"
                   alt="user image"
-                  class="w-[150px]"
+                  class="w-[100px]"
                   :class="{'hidden' : isDark, 'inline-block' : !isDark}"
+                  @click="handleNavigation(0)"
                 />
               </div>
-              <!-- Mobile menu button -->
-              <div @click="showMenu = !showMenu" class="flex md:hidden">
-                <button
-                  type="button"
-                  class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-                >
-                  <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                    <path
-                      fill-rule="evenodd"
-                      d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                    ></path>
-                  </svg>
-                </button>
+              <div class="flex lg:hidden">
+                <label class="flex lg:hidden mr-3 relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" class="sr-only peer" />
+                  <div
+                    class=""
+                    @click="toggleDark()"
+                  ></div>
+                    <span v-if="!isDark" @click="toggleDark()">
+                     
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="#2e4a38"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="#2e4a38"/>
+                      </svg>
+                    </span>
+                    <span v-else @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="white"/>
+                      <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="white"/>
+                      </svg>
+                    </span>
+                </label>
+                <!-- Mobile menu button -->
+                <div @click="showMenu = !showMenu" >
+                  <button
+                    type="button"
+                    class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                  >
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 dark:fill-white fill-dark">
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+
               </div>
             </div>
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
             <ul
-              :class="showMenu ? 'flex' : 'hidden'"
-              class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+              :class="showMenu ? 'bg-white  slide-in flex' : 'slide-out lg:flex bg-white md:bg-transparent'"
+              class="mobileNav flex-col dark:bg-emerald-950 lg:!bg-transparent items-end mt-8 space-y-4 lg:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
             >
               <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(0)">Home</li>
               <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(1)">Works</li>
               <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(2)">
-                Testimonials
+                Blogs
               </li>
-              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About</li>
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About Me</li>
+              <li class="menu-button dark:text-white cursor-pointer " @click="handleNavigation(4)">Contact me</li>
             </ul>
-            <label class="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" value="" class="sr-only peer" />
-              <div
-                class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-                @click="toggleDark()"
-              ></div>
-              <span class="dark:text-white text-dark">
-                &nbsp; {{ isDark ? " Dark" : " Light" }}
-              </span>
-            </label>
+
+            <label class="hidden lg:flex relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" class="sr-only peer" />
+                  <div
+                    class=""
+                    @click="toggleDark()"
+                  ></div>
+                    <span v-if="!isDark" @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="#2e4a38"/>
+                      <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="#2e4a38"/>
+                      </svg>
+                    </span>
+                    <span v-else @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="white"/>
+                        </svg>
+
+                    </span>
+                </label>
           </nav>
           <!-- End Navbar -->
-      
-          <div class="container mx-auto  flex items-center h-screen">
+          
+          <div class="container mx-auto  flex  lg:flex items-center h-screen">
             <div class="w-11/12 space-y-5 md:space-y-10 ">
               <h3
                 class="hello-button mainText-2 w-fit md:py-3 md:px-5 py-1 px-2 rounded-lg 3xl:text-3xl 2xl:text-xl lg:text-xl md:text-md text-sm font-semibold font-work_sans"
@@ -72,7 +109,7 @@
                 👋 {{greeting()}}
               </h3>
               <h1
-                class="lg:text-5xl md:text-3xl sm:text-3xl text-xl font-bold leading-normal mainText-2 min-h-[195px]"
+                class="lg:text-5xl md:text-3xl sm:text-3xl text-xl font-bold leading-normal mainText-2 min-h-[90px] md:min-h-[100px] lg:min-h-[195px]"
                 :class="{'lightWriter' : !isDark , 'darkWriter' : isDark}"
               >
                 I'm a 
@@ -99,7 +136,7 @@
               </div>
             </div>
       
-            <div class="w-8/12 flex justify-end">
+            <div class="w-8/12 hidden lg:flex justify-end">
               <div>
                 <!-- <img src="https://media.tenor.com/CeDk6XdCgOUAAAAi/develop-web.gif" alt="Web Development GIF"> -->
                 <img :src="model" alt="Web Development GIF">
@@ -112,96 +149,135 @@
       <div class="banner-2 space-y-10 pb-20 h-screen" id="work">
         <div class="container mx-auto ">
             <!-- NavBar -->
-            <nav
-              class="container px-6 mx-auto md:flex md:justify-between md:items-center py-3 rounded-lg"
-              :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }"
-            >
-              <div class="flex items-center justify-between">
-                <div class="relative">
-                  
-                  <img
-                    :src="whiteTextLogo"
-                    alt="user image"
-                    class="w-[150px]"
-                    :class="{'hidden': !isDark, 'inline-block': isDark}"
-                  />
-                    <img
-                    :src="darkTextLogo"
-                    alt="user image"
-                    class="w-[150px]"
-                    :class="{'hidden' : isDark, 'inline-block' : !isDark}"
-                  />
-                </div>
-                <!-- Mobile menu button -->
-                <div @click="showMenu = !showMenu" class="flex md:hidden">
-                  <button
-                    type="button"
-                    class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-                  >
-                    <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                      <path
-                        fill-rule="evenodd"
-                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-              <ul
-                :class="showMenu ? 'flex' : 'hidden'"
-                class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+              <nav
+                class="container px-6 mx-auto md:flex md:justify-between md:items-center py-3 rounded-lg"
+                :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }"
               >
-                <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
-                <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(1)">Works</li>
-                <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(2)">
-                  Testimonials
-                </li>
-                <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About</li>
-              </ul>
-              <label class="relative inline-flex items-center cursor-pointer">
-                <input type="checkbox" value="" class="sr-only peer" />
-                <div
-                  class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-                  @click="toggleDark()"
-                ></div>
-                <span class="dark:text-white text-dark">
-                  &nbsp; {{ isDark ? " Dark" : " Light" }}
-                </span>
-              </label>
-            </nav>
+                <div class="flex items-center justify-between">
+                  <div class="relative">
+                    
+                    <img
+                      :src="whiteTextLogo"
+                      alt="user image"
+                      class="w-[100px]"
+                      :class="{'hidden': !isDark, 'inline-block': isDark}"
+                      @click="handleNavigation(0)"
+                    />
+                      <img
+                      :src="darkTextLogo"
+                      alt="user image"
+                      class="w-[100px]"
+                      :class="{'hidden' : isDark, 'inline-block' : !isDark}"
+                      @click="handleNavigation(0)"
+                    />
+                  </div>
+                  <div class="flex lg:hidden">
+                    <label class="flex lg:hidden mr-3 relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" class="sr-only peer" />
+                      <div
+                        class=""
+                        @click="toggleDark()"
+                      ></div>
+                        <span v-if="!isDark" @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="#2e4a38"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="#2e4a38"/>
+                            </svg>
+                        </span>
+                        <span v-else @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="white"/>
+                          <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="white"/>
+                          </svg>
+                         
+
+                        </span>
+                    </label>
+                    <!-- Mobile menu button -->
+                    <div @click="showMenu = !showMenu" >
+                      <button
+                        type="button"
+                        class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                      >
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 dark:fill-white fill-dark">
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <ul
+                  :class="showMenu ? 'bg-white slide-in flex !left-[20px] z-50' : 'slide-out lg:flex bg-white md:bg-transparent !left-[20px]'"
+                  class="mobileNav flex-col dark:bg-emerald-950 lg:!bg-transparent items-end mt-8 space-y-4 lg:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+                >
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
+                  <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(1)">Works</li>
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(2)">
+                    Blogs
+                  </li>
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About Me</li>
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(4)">Contact me</li>
+                </ul>
+
+                <label class="hidden lg:flex relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" class="sr-only peer" />
+                      <div
+                        class=""
+                        @click="toggleDark()"
+                      ></div>
+                        <span v-if="!isDark" @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="#2e4a38"/>
+                          <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="#2e4a38"/>
+                          </svg>
+                        </span>
+                        <span v-else @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="white"/>
+                            </svg>
+
+                        </span>
+                    </label>
+              </nav>
             <!-- End Navbar -->
 
 
             <Splide :options="portfolioOptions" :extensions="{Grid}" aria-label="portfolio splide" class="flex h-[92vh] items-center">
-              <SplideSlide v-for="(value, index) in data" class="works-grid">
-                <div v-for="item in value[index]" :key=index class="flex m-2 ">
-                  <div class="px-8 md:py-8 md:px-8 rounded-lg card !my-0 d-flex flex-col" :class="{'bg-white' : !isDark , 'bg-black' : isDark}"  key=item.title>
-                    <div class="flex justify-between w-[100%] mb-2">
-                      <h4 class="project-title item !text-2xl"  :class="{'mainText' : !isDark , 'text-white' : isDark}">{{item?.title}}</h4>
-                      <span class="flex">
-                        <span class="mr-2 cursor-pointer">
-                          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
-                              <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                          </svg>
-                        </span>
-                        <span className="cursor-pointer">
-                          <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24">
-                          <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
-                          </svg>
-                        </span>
-                      </span>
-                    </div>
-                    <p class="font-work_sans pr-12" :class="{'mainText' : !isDark , 'text-white' : isDark}">
-                      {{item?.sub}}
-                    </p>
+              <SplideSlide v-for="item in data" :key=data.title  class="works">
+                  <div class="px-8 py-8 md:px-8 items-between rounded-lg card !my-0 d-flex flex-col w-[100%]" :class="{'bg-white' : !isDark , 'bg-black' : isDark}"  key=item.title>
                     <div class="w-[100%]">
+                      <div class="flex justify-between w-[100%] mb-2">
+                        <h4 class="project-title item !text-2xl"  :class="{'mainText' : !isDark , 'text-white' : isDark}">{{item?.title}}</h4>
+                        <span class="flex">
+                          <span v-if="item.github" class="mr-2 cursor-pointer" @click="handleLink(item.github)">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 30 30">
+                                <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+                            </svg>
+                          </span>
+                          <span className="cursor-pointer" @click="handleLink(item.project)">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 24 24">
+                            <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z"></path>
+                            </svg>
+                          </span>
+                        </span>
+                      </div>
+                      <p class="font-work_sans flex justify-start w-[100%]" :class="{'mainText' : !isDark , 'text-white' : isDark}">
+                        {{item?.sub}}
+                      </p>
+                    </div>
+
+                    <div class="w-[100%] mt-3">
                       <ul class="flex gap-x-2 flex-wrap justify-start w-[100%]">
                         <li v-for="tool in item?.tech" class="bg-green-100 px-2 pb-1 rounded mt-2" key=tool>{{ tool.charAt(0).toUpperCase() + tool.slice(1) }}</li>
                       </ul>
                     </div>
                   </div>
-                </div>
               </SplideSlide>
             </Splide>
         </div>
@@ -211,70 +287,106 @@
     <SplideSlide>
       <div class="banner-1" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
       
-        <!-- NavBar -->
-        <nav
-          class="container mx-auto md:flex md:justify-between md:items-center"
-        >
-          <div class="flex items-center justify-between">
-            <div class="relative">
-              
-              <img
-                :src="whiteTextLogo"
-                alt="user image"
-                class="w-[150px]"
-                :class="{'hidden': !isDark, 'inline-block': isDark}"
-              />
-                <img
-                :src="darkTextLogo"
-                alt="user image"
-                class="w-[150px]"
-                :class="{'hidden' : isDark, 'inline-block' : !isDark}"
-              />
-            </div>
-            <!-- Mobile menu button -->
-            <div @click="showMenu = !showMenu" class="flex md:hidden">
-              <button
-                type="button"
-                class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
-              >
-                <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                  <path
-                    fill-rule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-          <ul
-            :class="showMenu ? 'flex' : 'hidden'"
-            class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+          <!-- NavBar -->
+          <nav
+            class="container mx-auto lg:flex lg:justify-between lg:items-center"
           >
-            <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
-            <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(1)">Works</li>
-            <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(2)">
-              Testimonials
-            </li>
-            <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About</li>
-          </ul>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" />
-            <div
-              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-              @click="toggleDark()"
-            ></div>
-            <span class="dark:text-white text-dark">
-              &nbsp; {{ isDark ? " Dark" : " Light" }}
-            </span>
-          </label>
-        </nav>
-        <!-- End Navbar -->
-  
+            <div class="flex items-center justify-between">
+              <div class="relative">
+                
+                <img
+                  :src="whiteTextLogo"
+                  alt="user image"
+                  class="w-[100px]"
+                  :class="{'hidden': !isDark, 'inline-block': isDark}"
+                  @click="handleNavigation(0)"
+                />
+                  <img
+                  :src="darkTextLogo"
+                  alt="user image"
+                  class="w-[100px]"
+                  :class="{'hidden' : isDark, 'inline-block' : !isDark}"
+                  @click="handleNavigation(0)"
+                />
+              </div>
+              <div class="flex lg:hidden">
+                <label class="flex lg:hidden mr-3 relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" class="sr-only peer" />
+                  <div
+                    class=""
+                    @click="toggleDark()"
+                  ></div>
+                    <span v-if="!isDark" @click="toggleDark()">
+                     
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="#2e4a38"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="#2e4a38"/>
+                      </svg>
+                    </span>
+                    <span v-else @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="white"/>
+                      <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="white"/>
+                      </svg>
+                    </span>
+                </label>
+                <!-- Mobile menu button -->
+                <div @click="showMenu = !showMenu" >
+                  <button
+                    type="button"
+                    class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                  >
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 dark:fill-white fill-dark">
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <ul
+              :class="showMenu ? 'bg-white  slide-in flex z-50' : 'slide-out lg:flex bg-white md:bg-transparent'"
+              class="mobileNav flex-col dark:bg-emerald-950 lg:!bg-transparent items-end mt-8 space-y-4 lg:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+            >
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(1)">Works</li>
+              <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(2)">
+                Blogs
+              </li>
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About Me</li>
+              <li class="menu-button dark:text-white cursor-pointer " @click="handleNavigation(4)">Contact me</li>
+            </ul>
+
+            <label class="hidden lg:flex relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" class="sr-only peer" />
+                  <div
+                    class=""
+                    @click="toggleDark()"
+                  ></div>
+                    <span v-if="!isDark" @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="#2e4a38"/>
+                      <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="#2e4a38"/>
+                      </svg>
+                    </span>
+                    <span v-else @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="white"/>
+                        </svg>
+
+                    </span>
+                </label>
+          </nav>
+          <!-- End Navbar -->  
         <div class="container mx-auto my-auto flex flex-col justify-center items-center h-screen">
           <!-- <div class="space-y-4 grid place-items-center mt-5">
             <p class="font-work_sans mainText-2 font-semibold leading-relaxed">
-              Some of my favorite testimonials from my clients
+              Some of my favorite Blogs from my clients
             </p>
           </div> -->
           <div class="max-w-6xl mx-auto px-8 py-16">
@@ -318,17 +430,14 @@
                     class="relative py-12 lg:py-24 px-8 lg:px-16 text-gray-700 leading-relaxed"
                   >
                     <p :class="{'mainText' : !isDark , 'text-white' : isDark}">
-                      As Slack grows
-                      rapidly, using Stripe helps them scale payments easily &mdash;
-                      supporting everything from getting paid by users around the
-                      world to enabling ACH payments for corporate customers.
+                     No Blog yet!
                     </p>
                     <p class="mt-6">
                       <a
                         href="#"
                         class="font-medium  text-indigo-600 mainText-2 hover:text-indigo-900"
                       >
-                        &rarr; Md Solaiman Hossain</a
+                        &rarr; Click</a
                       >
                     </p>
                   </div>
@@ -372,82 +481,117 @@
     <SplideSlide>
       <div class="banner-2" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
       
-        <!-- NavBar -->
-        <nav
-          class="container px-6 mx-auto md:flex md:justify-between md:items-center py-3 rounded-lg"
-          :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }"
-        >
-          <div class="flex items-center justify-between">
-            <div class="relative">
-              
-              <img
-                :src="whiteTextLogo"
-                alt="user image"
-                class="w-[150px]"
-                :class="{'hidden': !isDark, 'inline-block': isDark}"
-              />
-                <img
-                :src="darkTextLogo"
-                alt="user image"
-                class="w-[150px]"
-                :class="{'hidden' : isDark, 'inline-block' : !isDark}"
-              />
-            </div>
-            <!-- Mobile menu button -->
-            <div @click="showMenu = !showMenu" class="flex md:hidden">
-              <button
-                type="button"
-                class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+         <!-- NavBar -->
+         <nav
+                class="container px-6 mx-auto md:flex md:justify-between md:items-center py-3 rounded-lg"
+                :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }"
               >
-                <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                  <path
-                    fill-rule="evenodd"
-                    d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                  ></path>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-          <ul
-            :class="showMenu ? 'flex' : 'hidden'"
-            class="flex-col items-end mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
-          >
-            <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
-            <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(1)">Works</li>
-            <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(2)">
-              Testimonials
-            </li>
-            <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(3)">About</li>
-          </ul>
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" />
-            <div
-              class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-              @click="toggleDark()"
-            ></div>
-            <span class="dark:text-white text-dark">
-              &nbsp; {{ isDark ? " Dark" : " Light" }}
-            </span>
-          </label>
-        </nav>
+                <div class="flex items-center justify-between">
+                  <div class="relative">
+                    
+                    <img
+                      :src="whiteTextLogo"
+                      alt="user image"
+                      class="w-[100px]"
+                      :class="{'hidden': !isDark, 'inline-block': isDark}"
+                      @click="handleNavigation(0)"
+                    />
+                      <img
+                      :src="darkTextLogo"
+                      alt="user image"
+                      class="w-[100px]"
+                      :class="{'hidden' : isDark, 'inline-block' : !isDark}"
+                      @click="handleNavigation(0)"
+                    />
+                  </div>
+                  <div class="flex lg:hidden">
+                    <label class="flex lg:hidden mr-3 relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" class="sr-only peer" />
+                      <div
+                        class=""
+                        @click="toggleDark()"
+                      ></div>
+                        <span v-if="!isDark" @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="#2e4a38"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="#2e4a38"/>
+                            </svg>
+                        </span>
+                        <span v-else @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="white"/>
+                          <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="white"/>
+                          </svg>
+                         
+
+                        </span>
+                    </label>
+                    <!-- Mobile menu button -->
+                    <div @click="showMenu = !showMenu" >
+                      <button
+                        type="button"
+                        class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                      >
+                        <svg viewBox="0 0 24 24" class="w-6 h-6 dark:fill-white fill-dark">
+                          <path
+                            fill-rule="evenodd"
+                            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <ul
+                  :class="showMenu ? 'bg-white slide-in flex !left-[20px] z-50' : 'slide-out lg:flex bg-white md:bg-transparent !left-[20px]'"
+                  class="mobileNav flex-col dark:bg-emerald-950 lg:!bg-transparent items-end mt-8 space-y-4 lg:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+                >
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(1)">Works</li>
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(2)">
+                    Blogs
+                  </li>
+                  <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(3)">About Me</li>
+                  <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(4)">Contact me</li>
+                </ul>
+
+                <label class="hidden lg:flex relative inline-flex items-center cursor-pointer">
+                      <input type="checkbox" value="" class="sr-only peer" />
+                      <div
+                        class=""
+                        @click="toggleDark()"
+                      ></div>
+                        <span v-if="!isDark" @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="#2e4a38"/>
+                          <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="#2e4a38"/>
+                          </svg>
+                        </span>
+                        <span v-else @click="toggleDark()">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="white"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="white"/>
+                            </svg>
+
+                        </span>
+                    </label>
+          </nav>
         <!-- End Navbar -->
         
-        <div class="container mx-auto  flex items-center justify-between h-screen">
+        <div class="container mx-auto  flex flex-col justify-center md:flex-row items-center md:justify-between h-screen">
           <img
-            class="md:h-[600px] h-[500px]"
+            class="h-[200px] md:h-[600px] mt-3 md:mt-0"
             :src="mainModel"
             alt="user image"
           />
-          <div class="space-y-5 py-8 px-8 md:py-16 md:px-20 md:w-1/2">
-            <h4 class="project-title item">About Me</h4>
+          <div class="space-y-5 py-4 md:py-8 px-0 md:py-16 md:px-20 md:w-1/2">
             <p class="font-work_sans">
-              I am Divine ikechukwu from Imo State, Nigeria. I am working as a Software developer at Hotels NG, Nigeria for the past few months
-              <br />
-                I'm always looking to learn new technologies and techniques to improve my skills as a developer. In my free time, you can find me playing games or listening to music.
+              I'm Divine Ikechukwu, a seasoned Software Designer/Developer with a passion for transforming innovative concepts into polished solutions. Specializing in crafting user-centric interfaces and seamless functionalities, I excel at creating captivating online experiences. I am actively seeking opportunities in mobile/web design and development.
             </p>
             <button class="text-white font-bold text-2xl tracking-wider">
-              View Case Study
+              Skills
             </button>
           </div>
 
@@ -455,19 +599,155 @@
       </div>
     </SplideSlide>
     <SplideSlide>
-      <div class="banner-1 flex h-full items-center" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
-        <div class="w-7/12 p-12">
-          <h2 class="special-text md:text-6xl text-2xl font-Eczar mb-5 font-bold">
+      <div class="banner-1" :class="{ 'banner-1_night': isDark, 'bg-white': !isDark }">
+      
+       <!-- NavBar -->
+       <nav
+            class="container mx-auto lg:flex lg:justify-between lg:items-center"
+          >
+            <div class="flex items-center justify-between">
+              <div class="relative">
+                
+                <img
+                  :src="whiteTextLogo"
+                  alt="user image"
+                  class="w-[150px]"
+                  :class="{'hidden': !isDark, 'inline-block': isDark}"
+                  @click="handleNavigation(0)"
+                />
+                  <img
+                  :src="darkTextLogo"
+                  alt="user image"
+                  class="w-[150px]"
+                  :class="{'hidden' : isDark, 'inline-block' : !isDark}"
+                  @click="handleNavigation(0)"
+                />
+              </div>
+              <div class="flex lg:hidden">
+                <label class="flex lg:hidden mr-3 relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" class="sr-only peer" />
+                  <div
+                    class=""
+                    @click="toggleDark()"
+                  ></div>
+                    <span v-if="!isDark" @click="toggleDark()">
+                     
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="#2e4a38"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="#2e4a38"/>
+                      </svg>
+                    </span>
+                    <span v-else @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="white"/>
+                      <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="white"/>
+                      </svg>
+                    </span>
+                </label>
+                <!-- Mobile menu button -->
+                <div @click="showMenu = !showMenu" >
+                  <button
+                    type="button"
+                    class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+                  >
+                    <svg viewBox="0 0 24 24" class="w-6 h-6 dark:fill-white fill-dark">
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+
+              </div>
+            </div>
+            <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+            <ul
+              :class="showMenu ? 'bg-white  slide-in flex' : 'slide-out lg:flex bg-white md:bg-transparent'"
+              class="mobileNav flex-col dark:bg-emerald-950 lg:!bg-transparent items-end mt-8 space-y-4 lg:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+            >
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(0)">Home</li>
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(1)">Works</li>
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(2)">
+                Blogs
+              </li>
+              <li class="menu-button dark:text-white cursor-pointer" @click="handleNavigation(3)">About Me</li>
+              <li class="menu-button dark:text-white cursor-pointer !text-lime-500" @click="handleNavigation(4)">Contact me</li>
+            </ul>
+
+            <label class="hidden lg:flex relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" value="" class="sr-only peer" />
+                  <div
+                    class=""
+                    @click="toggleDark()"
+                  ></div>
+                    <span v-if="!isDark" @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20.958 15.325C21.162 14.839 20.579 14.425 20.09 14.641C19.1126 15.07 18.0565 15.2907 16.989 15.289C12.804 15.289 9.412 11.965 9.412 7.864C9.41047 6.47934 9.80385 5.12297 10.546 3.954C10.83 3.506 10.489 2.886 9.969 3.018C5.96 4.041 3 7.613 3 11.862C3 16.909 7.175 21 12.326 21C16.226 21 19.566 18.655 20.958 15.325Z" fill="#2e4a38"/>
+                      <path d="M15.611 3.103C15.081 2.749 14.449 3.381 14.802 3.911L15.432 4.856C15.6876 5.23916 15.824 5.68942 15.824 6.15C15.824 6.61057 15.6876 7.06084 15.432 7.444L14.802 8.389C14.449 8.919 15.082 9.551 15.612 9.197L16.556 8.567C16.9392 8.31143 17.3894 8.17505 17.85 8.17505C18.3106 8.17505 18.7608 8.31143 19.144 8.567L20.089 9.197C20.619 9.551 21.251 8.919 20.897 8.389L20.267 7.444C20.0114 7.06084 19.8751 6.61057 19.8751 6.15C19.8751 5.68942 20.0114 5.23916 20.267 4.856L20.897 3.911C21.251 3.381 20.619 2.749 20.088 3.103L19.144 3.733C18.7608 3.98857 18.3106 4.12495 17.85 4.12495C17.3894 4.12495 16.9392 3.98857 16.556 3.733L15.611 3.103Z" fill="#2e4a38"/>
+                      </svg>
+                    </span>
+                    <span v-else @click="toggleDark()">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7Z" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C12.2652 1 12.5196 1.10536 12.7071 1.29289C12.8946 1.48043 13 1.73478 13 2V3C13 3.26522 12.8946 3.51957 12.7071 3.70711C12.5196 3.89464 12.2652 4 12 4C11.7348 4 11.4804 3.89464 11.2929 3.70711C11.1054 3.51957 11 3.26522 11 3V2C11 1.73478 11.1054 1.48043 11.2929 1.29289C11.4804 1.10536 11.7348 1 12 1ZM3.293 3.293C3.48053 3.10553 3.73484 3.00021 4 3.00021C4.26516 3.00021 4.51947 3.10553 4.707 3.293L6.207 4.793C6.38916 4.9816 6.48995 5.2342 6.48767 5.4964C6.4854 5.7586 6.38023 6.00941 6.19482 6.19482C6.00941 6.38023 5.7586 6.4854 5.4964 6.48767C5.2342 6.48995 4.9816 6.38916 4.793 6.207L3.293 4.707C3.10553 4.51947 3.00021 4.26516 3.00021 4C3.00021 3.73484 3.10553 3.48053 3.293 3.293ZM20.707 3.293C20.8945 3.48053 20.9998 3.73484 20.9998 4C20.9998 4.26516 20.8945 4.51947 20.707 4.707L19.207 6.207C19.1148 6.30251 19.0044 6.37869 18.8824 6.4311C18.7604 6.48351 18.6292 6.5111 18.4964 6.51225C18.3636 6.5134 18.2319 6.4881 18.109 6.43782C17.9862 6.38754 17.8745 6.31329 17.7806 6.2194C17.6867 6.1255 17.6125 6.01385 17.5622 5.89095C17.5119 5.76806 17.4866 5.63638 17.4877 5.5036C17.4889 5.37082 17.5165 5.2396 17.5689 5.1176C17.6213 4.99559 17.6975 4.88525 17.793 4.793L19.293 3.293C19.4805 3.10553 19.7348 3.00021 20 3.00021C20.2652 3.00021 20.5195 3.10553 20.707 3.293ZM1 12C1 11.7348 1.10536 11.4804 1.29289 11.2929C1.48043 11.1054 1.73478 11 2 11H3C3.26522 11 3.51957 11.1054 3.70711 11.2929C3.89464 11.4804 4 11.7348 4 12C4 12.2652 3.89464 12.5196 3.70711 12.7071C3.51957 12.8946 3.26522 13 3 13H2C1.73478 13 1.48043 12.8946 1.29289 12.7071C1.10536 12.5196 1 12.2652 1 12ZM20 12C20 11.7348 20.1054 11.4804 20.2929 11.2929C20.4804 11.1054 20.7348 11 21 11H22C22.2652 11 22.5196 11.1054 22.7071 11.2929C22.8946 11.4804 23 11.7348 23 12C23 12.2652 22.8946 12.5196 22.7071 12.7071C22.5196 12.8946 22.2652 13 22 13H21C20.7348 13 20.4804 12.8946 20.2929 12.7071C20.1054 12.5196 20 12.2652 20 12ZM6.207 17.793C6.39447 17.9805 6.49979 18.2348 6.49979 18.5C6.49979 18.7652 6.39447 19.0195 6.207 19.207L4.707 20.707C4.5184 20.8892 4.2658 20.99 4.0036 20.9877C3.7414 20.9854 3.49059 20.8802 3.30518 20.6948C3.11977 20.5094 3.0146 20.2586 3.01233 19.9964C3.01005 19.7342 3.11084 19.4816 3.293 19.293L4.793 17.793C4.98053 17.6055 5.23484 17.5002 5.5 17.5002C5.76516 17.5002 6.01947 17.6055 6.207 17.793ZM17.793 17.793C17.9805 17.6055 18.2348 17.5002 18.5 17.5002C18.7652 17.5002 19.0195 17.6055 19.207 17.793L20.707 19.293C20.8892 19.4816 20.99 19.7342 20.9877 19.9964C20.9854 20.2586 20.8802 20.5094 20.6948 20.6948C20.5094 20.8802 20.2586 20.9854 19.9964 20.9877C19.7342 20.99 19.4816 20.8892 19.293 20.707L17.793 19.207C17.6055 19.0195 17.5002 18.7652 17.5002 18.5C17.5002 18.2348 17.6055 17.9805 17.793 17.793ZM12 20C12.2652 20 12.5196 20.1054 12.7071 20.2929C12.8946 20.4804 13 20.7348 13 21V22C13 22.2652 12.8946 22.5196 12.7071 22.7071C12.5196 22.8946 12.2652 23 12 23C11.7348 23 11.4804 22.8946 11.2929 22.7071C11.1054 22.5196 11 22.2652 11 22V21C11 20.7348 11.1054 20.4804 11.2929 20.2929C11.4804 20.1054 11.7348 20 12 20Z" fill="white"/>
+                        </svg>
+
+                    </span>
+                </label>
+          </nav>
+          <!-- End Navbar -->
+  
+      <div class="container mx-auto flex flex-col justify-center md:flex-row items-center h-screen">
+        <div class="md:w-7/12 md:p-12">
+          <h2 class="special-text md:text-6xl text-2xl  mb-5 font-bold">
             Let’s work together and make everything super cute and super useful.
           </h2>
-          <a class="underline text-2xl text-blue-600 font-work_sans"
+          <a class="underline text-2xl text-blue-600 font-work_sans cursor-pointer"
+          href="mailto:divine2christ@yahoo.com"
             >📧 divine2christ@yahoo.com</a
           >
         </div>
-        <div class="w-5/12 pr-28">
-          <div class="flex flex-wrap justify-end gap-2">
+        <div class="md:w-5/12 md:pr-28 w-[100%] flex" >
+          <div class="flex flex-wrap justify-end gap-2 mt-9">
             <button
               class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+              @click="handleLink('https://www.linkedin.com/in/ik-divine/')"
+            >
+              <svg
+                class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
+                role="img"
+                viewBox="0 0 256 256"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"
+                  ></path>
+                </g>
+              </svg>
+            </button>
+
+            
+            <button
+              class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+              @click="handleLink('https://twitter.com/ik_thevine')"
+            >
+              <svg
+                class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 text-center"
+                role="img"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.82 18.768L1.753 1.968C1.68413 1.87931 1.64152 1.77307 1.63004 1.66137C1.61855 1.54967 1.63864 1.43698 1.68803 1.33613C1.73741 1.23528 1.8141 1.15032 1.90938 1.09089C2.00466 1.03147 2.11471 0.99998 2.227 1H4.707C4.79829 1.00014 4.88836 1.0211 4.97032 1.06131C5.05229 1.10151 5.124 1.15989 5.18 1.232L18.247 18.032C18.3159 18.1207 18.3585 18.2269 18.37 18.3386C18.3814 18.4503 18.3614 18.563 18.312 18.6639C18.2626 18.7647 18.1859 18.8497 18.0906 18.9091C17.9953 18.9685 17.8853 19 17.773 19H15.293C15.2017 18.9999 15.1116 18.9789 15.0297 18.9387C14.9477 18.8985 14.876 18.8401 14.82 18.768Z" stroke="white" stroke-width="1.5"/>
+                <path d="M18 1L2 19" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+
+            </button>
+
+            <button
+              class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+              @click="handleLink('https://web.facebook.com/profile.php?id=100090193193130')"
             >
               <svg
                 class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -483,21 +763,7 @@
     
             <button
               class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
-            >
-              <svg
-                class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
-                role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
-                />
-              </svg>
-            </button>
-    
-            <button
-              class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
+              @click="handleLink('https://www.instagram.com/ik_thevine/')"
             >
               <svg
                 class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
@@ -505,13 +771,19 @@
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <path
-                  d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"
-                />
+                <g clip-path="url(#clip0_106_8)">
+                  <path d="M12 0C8.7435 0 8.334 0.015 7.0545 0.072C5.775 0.132 4.9035 0.333 4.14 0.63C3.33914 0.931229 2.61374 1.40374 2.0145 2.0145C1.40411 2.61404 0.931661 3.33936 0.63 4.14C0.333 4.902 0.1305 5.775 0.072 7.05C0.015 8.3325 0 8.7405 0 12.0015C0 15.2595 0.015 15.6675 0.072 16.947C0.132 18.225 0.333 19.0965 0.63 19.86C0.9375 20.649 1.347 21.318 2.0145 21.9855C2.6805 22.653 3.3495 23.064 4.1385 23.37C4.9035 23.667 5.7735 23.8695 7.0515 23.928C8.3325 23.985 8.7405 24 12 24C15.2595 24 15.666 23.985 16.947 23.928C18.2235 23.868 19.098 23.667 19.8615 23.37C20.6618 23.0686 21.3867 22.5961 21.9855 21.9855C22.653 21.318 23.0625 20.649 23.37 19.86C23.6655 19.0965 23.868 18.225 23.928 16.947C23.985 15.6675 24 15.2595 24 12C24 8.7405 23.985 8.3325 23.928 7.0515C23.868 5.775 23.6655 4.902 23.37 4.14C23.0684 3.33934 22.5959 2.61401 21.9855 2.0145C21.3864 1.40351 20.661 0.930968 19.86 0.63C19.095 0.333 18.222 0.1305 16.9455 0.072C15.6645 0.015 15.258 0 11.997 0H12ZM10.9245 2.163H12.0015C15.2055 2.163 15.585 2.1735 16.8495 2.232C18.0195 2.2845 18.6555 2.481 19.0785 2.6445C19.638 2.862 20.0385 3.123 20.4585 3.543C20.8785 3.963 21.138 4.362 21.3555 4.923C21.5205 5.3445 21.7155 5.9805 21.768 7.1505C21.8265 8.415 21.8385 8.7945 21.8385 11.997C21.8385 15.1995 21.8265 15.5805 21.768 16.845C21.7155 18.015 21.519 18.6495 21.3555 19.0725C21.1631 19.5935 20.856 20.0647 20.457 20.451C20.037 20.871 19.638 21.1305 19.077 21.348C18.657 21.513 18.021 21.708 16.8495 21.762C15.585 21.819 15.2055 21.8325 12.0015 21.8325C8.7975 21.8325 8.4165 21.819 7.152 21.762C5.982 21.708 5.3475 21.513 4.9245 21.348C4.40325 21.1559 3.93169 20.8494 3.5445 20.451C3.14513 20.064 2.83758 19.5925 2.6445 19.071C2.481 18.6495 2.2845 18.0135 2.232 16.8435C2.175 15.579 2.163 15.1995 2.163 11.994C2.163 8.79 2.175 8.412 2.232 7.1475C2.286 5.9775 2.481 5.3415 2.646 4.9185C2.8635 4.359 3.1245 3.9585 3.5445 3.5385C3.9645 3.1185 4.3635 2.859 4.9245 2.6415C5.3475 2.4765 5.982 2.2815 7.152 2.2275C8.259 2.1765 8.688 2.1615 10.9245 2.16V2.163ZM18.4065 4.155C18.2174 4.155 18.0301 4.19225 17.8554 4.26461C17.6807 4.33698 17.522 4.44305 17.3883 4.57677C17.2545 4.71048 17.1485 4.86923 17.0761 5.04394C17.0037 5.21864 16.9665 5.4059 16.9665 5.595C16.9665 5.7841 17.0037 5.97135 17.0761 6.14606C17.1485 6.32077 17.2545 6.47952 17.3883 6.61323C17.522 6.74695 17.6807 6.85302 17.8554 6.92539C18.0301 6.99775 18.2174 7.035 18.4065 7.035C18.7884 7.035 19.1547 6.88329 19.4247 6.61323C19.6948 6.34318 19.8465 5.97691 19.8465 5.595C19.8465 5.21309 19.6948 4.84682 19.4247 4.57677C19.1547 4.30671 18.7884 4.155 18.4065 4.155ZM12.0015 5.838C11.1841 5.82525 10.3723 5.97523 9.61347 6.27921C8.85459 6.58319 8.16377 7.03511 7.58123 7.60864C6.99868 8.18216 6.53605 8.86585 6.22026 9.61989C5.90448 10.3739 5.74185 11.1833 5.74185 12.0007C5.74185 12.8182 5.90448 13.6276 6.22026 14.3816C6.53605 15.1356 6.99868 15.8193 7.58123 16.3929C8.16377 16.9664 8.85459 17.4183 9.61347 17.7223C10.3723 18.0263 11.1841 18.1763 12.0015 18.1635C13.6193 18.1383 15.1623 17.4779 16.2975 16.3249C17.4326 15.1719 18.0689 13.6188 18.0689 12.0007C18.0689 10.3827 17.4326 8.82962 16.2975 7.67662C15.1623 6.52363 13.6193 5.86324 12.0015 5.838ZM12.0015 7.9995C12.5269 7.9995 13.0471 8.10298 13.5324 8.30402C14.0178 8.50506 14.4588 8.79974 14.8303 9.17122C15.2018 9.5427 15.4964 9.98371 15.6975 10.4691C15.8985 10.9544 16.002 11.4746 16.002 12C16.002 12.5254 15.8985 13.0456 15.6975 13.5309C15.4964 14.0163 15.2018 14.4573 14.8303 14.8288C14.4588 15.2003 14.0178 15.4949 13.5324 15.696C13.0471 15.897 12.5269 16.0005 12.0015 16.0005C10.9405 16.0005 9.92296 15.579 9.17272 14.8288C8.42248 14.0785 8.001 13.061 8.001 12C8.001 10.939 8.42248 9.92146 9.17272 9.17122C9.92296 8.42098 10.9405 7.9995 12.0015 7.9995Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_106_8">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
               </svg>
+
             </button>
     
-            <button
+            <!-- <button
               class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
             >
               <svg
@@ -524,27 +796,14 @@
                   d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.401.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.354-.629-2.758-1.379l-.749 2.848c-.269 1.045-1.004 2.352-1.498 3.146 1.123.345 2.306.535 3.55.535 6.607 0 11.985-5.365 11.985-11.987C23.97 5.39 18.592.026 11.985.026L12.017 0z"
                 />
               </svg>
-            </button>
+            </button> -->
     
-            <button
-              class="banner-2_night p-2 font-semibold text-white inline-flex items-center space-x-2 rounded"
-            >
-              <svg
-                class="w-4 h-4 md:w-10 md:h-10 lg:w-10 lg:h-10 xl:h-10 xl:w-10 fill-current"
-                role="img"
-                viewBox="0 0 256 256"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <path
-                    d="M218.123122,218.127392 L180.191928,218.127392 L180.191928,158.724263 C180.191928,144.559023 179.939053,126.323993 160.463756,126.323993 C140.707926,126.323993 137.685284,141.757585 137.685284,157.692986 L137.685284,218.123441 L99.7540894,218.123441 L99.7540894,95.9665207 L136.168036,95.9665207 L136.168036,112.660562 L136.677736,112.660562 C144.102746,99.9650027 157.908637,92.3824528 172.605689,92.9280076 C211.050535,92.9280076 218.138927,118.216023 218.138927,151.114151 L218.123122,218.127392 Z M56.9550587,79.2685282 C44.7981969,79.2707099 34.9413443,69.4171797 34.9391618,57.260052 C34.93698,45.1029244 44.7902948,35.2458562 56.9471566,35.2436736 C69.1040185,35.2414916 78.9608713,45.0950217 78.963054,57.2521493 C78.9641017,63.090208 76.6459976,68.6895714 72.5186979,72.8184433 C68.3913982,76.9473153 62.7929898,79.26748 56.9550587,79.2685282 M75.9206558,218.127392 L37.94995,218.127392 L37.94995,95.9665207 L75.9206558,95.9665207 L75.9206558,218.127392 Z M237.033403,0.0182577091 L18.8895249,0.0182577091 C8.57959469,-0.0980923971 0.124827038,8.16056231 -0.001,18.4706066 L-0.001,237.524091 C0.120519052,247.839103 8.57460631,256.105934 18.8895249,255.9977 L237.033403,255.9977 C247.368728,256.125818 255.855922,247.859464 255.999,237.524091 L255.999,18.4548016 C255.851624,8.12438979 247.363742,-0.133792868 237.033403,0.000790807055"
-                  ></path>
-                </g>
-              </svg>
-            </button>
+           
           </div>
         </div>
       </div>
+    </div>
+
     </SplideSlide>
   </Splide>
 
@@ -554,7 +813,7 @@
 
 <script setup>
 import { useDark, useToggle } from "@vueuse/core";
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 import {
   Splide, SplideSlide
 } from '@splidejs/vue-splide';
@@ -570,6 +829,8 @@ import mainModel from "./assets/model.png"
 const itemsPerPage = 3;
 const currentPage = ref(1);
 const splideRef = ref(null)
+const showMenu = ref(false) 
+
 
 const paginatedData = computed(() => {
   const start = (currentPage.value - 1) * itemsPerPage;
@@ -610,6 +871,22 @@ const handleNavigation = (navigationPosition) => {
   splideRef.value.go(navigationPosition);
 }
 
+const closeMenu = (e) => {
+  const classname = e.target.className;
+  console.log(classname)
+  if((showMenu.value && !classname.includes("mobileNav")) || (showMenu.value && !classname.includes("slide-in"))){
+    showMenu.value = false;
+  }
+  // showMenu.value = false
+}
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', closeMenu)
+})
+
+onMounted(() => {
+  document.addEventListener('click', closeMenu)
+})
 
 // heroSection
 const greetings =  {
@@ -685,6 +962,12 @@ const openResumeLink = () => {
 };
 
 
+const handleLink = (link) => {
+  window.open(link, '_blank')
+}
+
+
+
 const portfolioOptions = {
   type       : 'loop',
   height     : '75vh',
@@ -693,14 +976,14 @@ const portfolioOptions = {
   gap: '6px',
   breakpoints: {
     640: {
-      height : '8rem',
+      height : "min-content",
       perPage: 1,
     },
   },
+  pagination: true
 }
 
 
 console.log(data)
-
   
 </script>
