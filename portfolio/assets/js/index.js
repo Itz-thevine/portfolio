@@ -1,40 +1,32 @@
-function setModalMaxHeight(element) {
-    var $element = document.querySelector(element);
-    var $content = $element.querySelector('.modal-content');
-    var borderWidth = $content.offsetHeight - $content.clientHeight;
-    var dialogMargin = window.innerWidth < 768 ? 20 : 60;
-    var contentHeight = window.innerHeight - (dialogMargin + borderWidth);
-    var headerHeight = $element.querySelector('.modal-header').offsetHeight || 0;
-    var footerHeight = $element.querySelector('.modal-footer').offsetHeight || 0;
-    var maxHeight = contentHeight - (headerHeight + footerHeight);
-  
-    $content.style.overflow = 'hidden';
-    
-    $element
-      .querySelector('.modal-body').style.maxHeight = maxHeight + 'px';
+const sendMail = () => {
+
+  // Show loading state
+  document.querySelector('.loading').style.display = 'block';
+
+  var params = {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    message: document.getElementById('message').value,
   }
-  
-  document.querySelectorAll('.modal').forEach(function(modal) {
-    modal.addEventListener('show.bs.modal', function() {
-      this.style.display = 'block';
-      setModalMaxHeight(this);
-    });
+
+  const serviceId ="service_4mbk452"
+  const templateId = "template_lley8wh"
+
+  emailjs.send(serviceId, templateId, params).then((res) => {
+    // Hide loading state
+    document.querySelector('.loading').style.display = 'none';
+    // Show success message
+    document.querySelector('.sent-message').style.display = 'block';
+    // Clear form fields
+    document.getElementById('name').value = "";
+    document.getElementById('email').value = "";
+    document.getElementById('message').value = "";
+
+  }).catch((error) => {
+    // Hide loading state
+    document.querySelector('.loading').style.display = 'none';
+    // Show error message
+    document.querySelector('.error-message').style.display = 'block';
+    document.querySelector('.error-message').innerText = 'Failed to send message. Please try again later.';
   });
-  
-  window.addEventListener('resize', function() {
-    var modalIn = document.querySelector('.modal.in');
-    if (modalIn) {
-      setModalMaxHeight(modalIn);
-    }
-  });
-  
-  /* CodeMirror */
-  document.querySelectorAll('.code').forEach(function(codeElement) {
-    var code = codeElement.textContent;
-    var mode = codeElement.dataset.language;
-  
-    codeElement.innerHTML = ''; // Empty the code container
-    codeElement.classList.add('cm-s-bootstrap'); // Add CodeMirror theme class
-    CodeMirror.runMode(code, mode, codeElement); // Run CodeMirror mode
-  });
-  
+}
