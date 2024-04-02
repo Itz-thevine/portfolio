@@ -1,5 +1,6 @@
-const sendMail = () => {
-
+const sendMail = (event) => {
+  event.preventDefault();
+  
   // Show loading state
   document.querySelector('.loading').style.display = 'block';
 
